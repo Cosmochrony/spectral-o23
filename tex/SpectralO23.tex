@@ -1,0 +1,592 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\bstar}{\beta^{*}}
+\newcommand{\ImH}{\mathrm{Im}\,\mathbb{H}}
+\newcommand{\su}{\mathfrak{su}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\Heis}{\mathrm{Heis}_{3}(\mathbb{Z}/q\mathbb{Z})}
+\newcommand{\sigc}{\Sigma_{c}}
+\newcommand{\dpair}{\delta_{\mathrm{pair}}}
+
+\title{Three Stable Directions from Quaternionic Minimality:\\
+Derivation of $\Sigma_{c}(n_{3}) = 3$ from Born--Infeld Fibre Admissibility\\
+\large O23 --- Spectral Admissibility Sub-programme}
+
+\author{J\'{e}r\^{o}me Beau\\
+\small Independent Researcher}
+
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    O21~\cite{Beau2026a25} defined the observable shell $n_{3}$ via the threshold condition
+    $\Sigma_{c}(n_{3}) = 3$ and used it as structural input for the fibre-level transfer
+    $\dpair \to \bstar$.
+    O22 established that Born--Infeld projection locking forces saturation to occur on a
+    BFS shell, closing the question ``why a shell?''
+    The present paper closes the complementary question left open by O21: why is the
+    relevant saturation threshold three-dimensional, i.e.\ why $\Sigma_{c}(n_{3}) = 3$
+    rather than $2$ or $4$?
+    We show that this value is not an arithmetic input but a structural consequence of
+    Born--Infeld fibre admissibility: the value three is not a spectral artefact but
+    the unique dimension of the imaginary subspace of the minimal admissible associative
+    non-commutative algebra.
+    The argument proceeds in three steps.
+    First, an exclusion lemma rules out abelian realizations of the admissible neutral
+    sector and limits the candidate structures to finite subgroups of $\SU(2)$.
+    Second, a quaternionic minimality theorem --- anchored in the Hurwitz-to-$\su(2)$
+    bridge established in SpectralCapacity~\cite{Beau2026a2} --- identifies
+    $\mathbb{H}$ as the minimal associative non-commutative structure compatible with
+    Born--Infeld parity, and shows that the admissible neutral directions correspond to
+    the imaginary subspace $\ImH$, which carries exactly three independent axes.
+    Third, a spectral realization section shows that the ADE binary graphs physically
+    relevant to the programme realize this abstract ``$3$'' as exactly three distinct
+    non-trivial spectral levels, confirming the structural derivation at the observable
+    level.
+    The result is conditional on the absence of additional effective symmetries beyond
+    Born--Infeld parity, in accordance with the explicit scope of O18~\cite{Beau2026a22}.
+  \end{abstract}
+
+  \paragraph{Keywords.}
+    Cosmochrony; spectral admissibility; quaternionic minimality; Born–Infeld constraint;
+    SU(2) representations; imaginary quaternions; Weil representation; ADE classification
+
+    \clearpage
+    \tableofcontents
+
+    \clearpage
+  \section{Position of the Problem after O21--O22}
+  \label{sec:position}
+
+  \subsection{What O21 established and what it left open}
+    \label{ssec:o21-status}
+
+    O21~\cite{Beau2026a25} established the shell-level saturation mechanism and derived
+    the fibre-level transfer $\dpair \to \bstar$.
+    A central ingredient was the threshold condition
+    \begin{equation}
+      \label{eq:threshold}
+      \Sigma_{c}(n_{3}) = 3,
+    \end{equation}
+    which defines the observable shell $n_{3}$ used throughout the cascade analysis.
+    O21 used~\eqref{eq:threshold} as structural input: the value $3$ was interpreted as
+    the number of physically stable directions selected by $\Pi$ in the Weil realisation
+    of $\Heis$, but was not derived from the Born--Infeld structure.
+    O21~§6.1 explicitly identified the derivation of~\eqref{eq:threshold} as the open
+    problem of O23.
+
+    O22~\cite{Beau2026a26} resolved the complementary question.
+    Theorem~4.8 of O22 shows that projection locking under Born--Infeld spectral
+    admissibility forces saturation to occur on a BFS shell ($n_{\mathrm{sat}} \in
+  \mathbb{N}$), answering ``why a shell?''
+    O22~§6.1 confirms that the question ``why $\Sigma_{c}(n_{3}) = 3$?'' thereby becomes
+    well-posed, and assigns it to the present paper.
+    The present result removes the last remaining free structural integer in the spectral
+    admissibility pipeline.
+
+  \subsection{The three distinct ``3''s that must not be conflated}
+    \label{ssec:three-threes}
+
+    The number $3$ appears in three structurally distinct places in the programme, and
+    O23 must keep them separate throughout.
+
+    \begin{enumerate}
+      \item $\dim_{\mathbb{R}} \ImH = 3$: the real dimension of the imaginary quaternions,
+      i.e.\ the subspace of $\mathbb{H}$ orthogonal to $\mathbb{R} \cdot \mathbf{1}$ and
+      closed under the commutator.
+      This is the algebraic ``$3$'' that O23 derives.
+
+      \item $\dim_{\mathbb{R}} \su(2) = 3$: the dimension of the Lie algebra $\su(2)$
+      (equivalently, the dimension of $\SU(2)$ as a Lie group).
+      This coincides with~(1) because $\su(2) \cong \ImH$ as real Lie algebras, but the
+      identification must be derived, not assumed.
+
+      \item $\Sigma_{c}(n_{3}) = 3$: the observable threshold of O21.
+      This is the spectral ``$3$'' that the present paper derives as the signature of~(1)
+      at the level of the Gram--Schmidt capacity count.
+    \end{enumerate}
+
+    The causal chain of O23 is: $(1) \Rightarrow (2) \Rightarrow (3)$.
+    Collapsing these three occurrences into a single unexplained ``$3$'' would reproduce
+    exactly the gap that O23 is designed to close.
+
+  \subsection{Scope and what this paper does not claim}
+    \label{ssec:scope}
+
+    O23 derives the value $3$ in~\eqref{eq:threshold} as a structural consequence of
+    Born--Infeld fibre admissibility.
+    It does \emph{not} determine the numerical value of $n_{3}$ as a function of
+    $(c_{\chi}, \lambda_{n}, \text{graph geometry})$.
+    That determination requires the extended numerical programme described in
+    O22~§6.2 and remains an open direction.
+    The present result is therefore a structural closure, not a quantitative one.
+
+  \section{Exclusion Lemma: No Abelian Realisation of the Admissible Neutral Sector}
+  \label{sec:exclusion}
+
+  \subsection{Setup: neutral generators and the spinorial constraint}
+    \label{ssec:neutral-setup}
+
+    We recall the setup of the Admissibility Sub-programme~\cite{Beau2026a1,Beau2026a2}.
+    Let $G$ be a finite group, $S = S^{-1} \subset G$ a symmetric generating set, and
+    $\rho \colon G \to \SU(2)$ an irreducible two-dimensional representation.
+    The \emph{neutrality condition} is
+    \begin{equation}
+      \label{eq:neutrality}
+      \chi_{\rho}(s) := \mathrm{Tr}\,\rho(s) = 0 \quad \forall\, s \in S.
+    \end{equation}
+    This condition is the spectral admissibility constraint under bounded relational flux:
+    it selects the generators that remain compatible with the Born--Infeld capacity
+    bound~\cite{Beau2026a1,Beau2026a2}.
+    By the Pauli tracelessness identity, each $\rho(s)$ satisfying~\eqref{eq:neutrality}
+    can be written
+    \begin{equation}
+      \label{eq:pauli-axis}
+      \rho(s) = \mathrm{i}(\vec{u}_{s} \cdot \vec{\sigma}), \quad
+      \vec{u}_{s} \in S^{2} \subset \mathbb{R}^{3},
+    \end{equation}
+    where $\vec{\sigma} = (\sigma_{x}, \sigma_{y}, \sigma_{z})$ are the Pauli matrices.
+    Each neutral generator therefore determines a unique axis $\pm \vec{u}_{s} \in
+  \mathbb{RP}^{2}$ in the three-sphere~\cite{Beau2026a3}.
+
+  \subsection{Exclusion of abelian realizations}
+    \label{ssec:abelian-exclusion}
+
+    \begin{lemma}[Exclusion of the abelian neutral sector]
+      \label{lem:abelian-exclusion}
+      No abelian group $G$ admits a symmetric generating set $S$ satisfying the neutrality
+      condition~\eqref{eq:neutrality} in a faithful irreducible representation of dimension~$2$.
+    \end{lemma}
+
+    \begin{proof}
+      In a one-dimensional representation, $\chi_{\rho}(s) = \rho(s) \in S^{1}$, so
+      $|\rho(s)| = 1$ implies $\chi_{\rho}(s) \neq 0$.
+      Hence faithfulness in dimension $1$ is incompatible with~\eqref{eq:neutrality}.
+      In dimension $2$, if $G$ is abelian, every irreducible complex representation is
+      one-dimensional by Schur's lemma over $\mathbb{C}$; a faithful two-dimensional
+      representation of an abelian group decomposes into a direct sum of two
+      one-dimensional characters, and the trace of any element $g$ equals
+      $\chi_{1}(g) + \chi_{2}(g)$.
+      Uniform neutrality across a generating set $S$ implies that the trace vanishes on a
+      set generating $G$.
+      For an abelian group, characters are multiplicative homomorphisms $\chi_{i} \colon G
+      \to \mathbb{C}^{\times}$; faithfulness of $\rho = \chi_{1} \oplus \chi_{2}$ requires
+      that for every non-identity $g \in G$ there exists $i$ with $\chi_{i}(g) \neq 1$.
+      The neutrality condition forces $\chi_{1}(s) + \chi_{2}(s) = 0$, i.e.\
+      $\chi_{2}(s) = -\chi_{1}(s)$, for every generator $s \in S$.
+      Since $S$ generates $G$ and characters are multiplicative, this propagates to all of
+      $G$: $\chi_{2} = -\chi_{1}$ on $G$.
+      But $\chi_{2}$ must be a group homomorphism, so $\chi_{2}(gh) = \chi_{2}(g)\chi_{2}(h)$,
+      while $-\chi_{1}(gh) = -\chi_{1}(g)\chi_{1}(h)$.
+      These are equal only if $(-1)^{2} = 1$ holds globally, i.e.\ the sign factor $-1$
+      introduced by neutrality must itself be multiplicative.
+      But a global sign $\chi_{2} = -\chi_{1}$ with $|\chi_{1}(g)| = 1$ for all $g$
+      is incompatible with multiplicativity unless $\chi_{1}$ is trivial, contradicting
+      faithfulness.
+      Therefore no abelian group admits a faithful neutral generating set in dimension~$2$.
+    \end{proof}
+
+    \begin{remark}[Scope of the exclusion]
+      \label{rem:exclusion-scope}
+      Lemma~\ref{lem:abelian-exclusion} excludes all abelian candidates.
+      The remaining candidates are finite non-abelian groups admitting a faithful
+      irreducible two-dimensional representation.
+      By the Klein--Schur classification recalled in~\cite{Beau2026a3}, these are
+      exactly the finite subgroups of $\SU(2)$: the dicyclic groups
+      $\mathrm{Dic}_{n}$ ($n \geq 2$), the binary tetrahedral group $2T$, the binary
+      octahedral group $2O$, and the binary icosahedral group $2I$.
+      The binary tetrahedral group $2T$ is further structurally excluded by
+      SpectralGramRigidity~\cite{Beau2026a3} (its full neutral sector generates
+      only $Q_{8}$, not $2T$).
+      The admissible candidates are therefore $Q_{8}$,
+      $\mathrm{Dic}_{n}$ ($n \geq 3$), $2O$, and $2I$.
+    \end{remark}
+
+  \subsection{Exclusion of octonion-type realizations within the Weil framework}
+    \label{ssec:octonion-exclusion}
+
+    \begin{lemma}[Octonion incompatibility with the Weil realisation]
+      \label{lem:octonion-exclusion}
+      The octonion algebra $\mathbb{O}$ is incompatible with the class of unitary
+      representations used by the O-series: the Weil representation on $\Heis$.
+    \end{lemma}
+
+    \begin{proof}
+      The Weil representation $\rho_{c}$ on $\Heis$ is defined via the cocycle rule
+      \[
+        \rho_{c}(g_{1} g_{2}) = \phi(g_{1}, g_{2})\, \rho_{c}(g_{1})\, \rho_{c}(g_{2}),
+      \]
+      where $\phi$ is a $\mathrm{U}(1)$-valued two-cocycle.
+      Since $\rho_{c}$ acts on a finite-dimensional complex Hilbert space $V$ via linear
+      operators, its representation matrices are elements of $\mathrm{End}(V)$, which is
+      an associative algebra by definition of operator composition.
+      This construction requires that the algebra of representation matrices be
+      \emph{associative}: the cocycle identity forces
+      $(\rho_{c}(g_{1})\, \rho_{c}(g_{2}))\, \rho_{c}(g_{3})
+      = \rho_{c}(g_{1})\,(\rho_{c}(g_{2})\, \rho_{c}(g_{3}))$.
+      The octonion algebra $\mathbb{O}$ is non-associative: there exist
+      $x, y, z \in \mathbb{O}$ with $(xy)z \neq x(yz)$.
+      A representation taking values in $\mathbb{O}$ cannot satisfy the cocycle identity
+      for all triples $(g_{1}, g_{2}, g_{3})$.
+      Hence no Weil-type representation on $\Heis$ can be realized over $\mathbb{O}$.
+    \end{proof}
+
+    \begin{remark}[Scope of the octonion exclusion]
+      \label{rem:octonion-scope}
+      Lemma~\ref{lem:octonion-exclusion} does not assert that $\mathbb{O}$ is excluded from
+      all possible physical frameworks.
+      It asserts only that the specific class of Weil representations used throughout the
+      O-series --- which requires associativity of the representation algebra via the
+      cocycle identity --- is incompatible with an octonionic realization.
+      A broader framework admitting non-associative representations is not excluded in
+      principle; it lies outside the scope of the present programme.
+    \end{remark}
+
+    \begin{corollary}[Residual classification]
+      \label{cor:residual}
+      Within the class of unitary Weil representations on $\Heis$, the admissible neutral
+      sector is realised by finite subgroups of $\SU(2)$ from the set
+      $\{Q_{8},\, \mathrm{Dic}_{n}\ (n \geq 3),\, 2O,\, 2I\}$.
+      The underlying real associative normed division algebra is necessarily $\mathbb{H}$.
+    \end{corollary}
+
+    \begin{proof}
+      By Lemma~\ref{lem:abelian-exclusion} and Remark~\ref{rem:exclusion-scope}, the
+      admissible candidates are finite non-abelian subgroups of $\SU(2)$.
+      By Lemma~\ref{lem:octonion-exclusion}, the algebra of representation matrices must
+      be associative.
+      The Hurwitz theorem~\cite{Hurwitz1898} classifies real associative normed division
+      algebras as $\mathbb{R}$, $\mathbb{C}$, and $\mathbb{H}$.
+      Since $\mathbb{R}$ is one-dimensional (too small for a two-dimensional
+      representation) and $\mathbb{C}$ is commutative (excluded by
+      Lemma~\ref{lem:abelian-exclusion} at the Lie algebra level), the minimal associative
+      non-commutative structure is $\mathbb{H}$.
+    \end{proof}
+
+  \section{Quaternionic Minimality and Three Stable Directions}
+  \label{sec:quaternionic}
+
+  \subsection{The Hurwitz-to-$\mathfrak{su}(2)$ bridge (imported result)}
+    \label{ssec:hurwitz-bridge}
+
+    The following result is Proposition~7.2 of SpectralCapacity~\cite{Beau2026a2},
+    reproduced here for self-containedness.
+
+    \begin{proposition}[Hurwitz-to-$\su(2)$ bridge, {\cite{Beau2026a2}}]
+      \label{prop:hurwitz-bridge}
+      Let $\rho$ be an irreducible two-dimensional complex representation of a finite group
+      $G$, and suppose there exist three \emph{linearly independent}, mutually non-commuting
+      generators $s_{1}, s_{2}, s_{3} \in G$ (and their inverses) such that
+      $\chi_{\rho}(s_{i}) = 0$ for $i = 1, 2, 3$.
+      Then the matrices $\rho(s_{i})$ are traceless elements of $\mathrm{SL}(2, \mathbb{C})$,
+      and the algebra they generate contains a copy of $\su(2)$ as its real form.
+    \end{proposition}
+
+    The proof in~\cite{Beau2026a2} proceeds as follows.
+    Each $\rho(s_{i}) \in \SU(2)$ is traceless, so $\rho(s_{i})^{2} = -I$.
+    Three mutually non-commuting traceless matrices in $\mathrm{SL}(2, \mathbb{C})$
+    satisfying the quaternion relations (which follow from their independence and the
+    structure of $\mathrm{SL}(2, \mathbb{C})$) span the Lie algebra $\su(2) \cong
+  \mathfrak{sp}(1)$ over $\mathbb{R}$.
+    This is the unique associative real structure in real dimension~$3$, by the Hurwitz
+    classification~\cite{Hurwitz1898}: among $\mathbb{R}$, $\mathbb{C}$, $\mathbb{H}$,
+    $\mathbb{O}$, the last case is non-associative.
+
+  \subsection{Neutral directions as axes of $\ImH$}
+    \label{ssec:neutral-as-axes}
+
+    This subsection mediates the identification between ``stable admissible directions''
+    and ``generators of $\su(2)$'', a step that must be explicit to avoid conflating
+    algebraic and geometric senses of the word ``direction''.
+
+    By equation~\eqref{eq:pauli-axis}, each neutral generator $s \in S$ determines an
+    axis $\pm \vec{u}_{s} \in \mathbb{RP}^{2}$.
+    The pairwise character geometry of~\cite{Beau2026a3} encodes these axes
+    in the Gram matrix
+    \begin{equation}
+      \label{eq:gram}
+      G_{st} = \vec{u}_{s} \cdot \vec{u}_{t} = -\tfrac{1}{2}\,\chi_{\rho}(st),
+    \end{equation}
+    which is entirely determined by representation-theoretic data.
+    The rigidity of~\eqref{eq:gram} under admissible deformations means that the
+    relative angles between axes cannot be continuously varied without violating the
+    neutrality condition~\eqref{eq:neutrality}: admissible configurations form discrete
+    families rather than continuous manifolds.
+
+    A \emph{stable admissible direction} is therefore an axis $\pm \vec{u}_{s}$ that
+    belongs to an admissible neutral generating set in the sense of the programme:
+    it is a traceless element of $\SU(2)$ compatible with the Born--Infeld capacity
+    bound.
+    By~\eqref{eq:pauli-axis}, each such axis corresponds to an element of
+    $\ImH \cong \mathbb{R}^{3}$ via $\vec{u}_{s} \mapsto u_{s}^{x}\,\mathbf{i}
+  + u_{s}^{y}\,\mathbf{j} + u_{s}^{z}\,\mathbf{k}$.
+    The number of independent stable admissible directions is thus the rank of the
+    neutral traceless subspace over $\mathbb{R}$, which equals
+    $\dim_{\mathbb{R}} \ImH = 3$.
+
+  \subsection{Main theorem}
+    \label{ssec:main-theorem}
+
+    \begin{theorem}[Three stable directions from quaternionic minimality]
+      \label{thm:three-directions}
+      Let $\Pi \colon \chi \to \mathcal{O}$ be a non-injective projection compatible with
+      the Born--Infeld constraint, admitting a Weil realisation on $\Heis$.
+      The number of independent stable admissible directions --- i.e.\ the rank of the
+      admissible neutral traceless subspace at the fibre level --- is exactly~$3$.
+      Consequently, $\Sigma_{c}(n_{3}) = 3$.
+    \end{theorem}
+
+    \begin{proof}
+      By O18~\cite{Beau2026a22}, the minimal fibre of $\Pi$ is the involution $c \leftrightarrow
+      q - c$ (Theorem~3.3 of O18), derived from the evenness of the Born--Infeld action.
+      By Corollary~\ref{cor:residual}, the admissible neutral sector is realised within
+      $\mathbb{H}$: the algebra of Weil representation matrices is associative and
+      non-commutative, with $\mathbb{H}$ as the minimal such structure.
+      By Proposition~\ref{prop:hurwitz-bridge} (Hurwitz-to-$\su(2)$ bridge), three mutually
+      non-commuting neutral generators in a two-dimensional irreducible representation span
+      a copy of $\su(2)$ as their real form.
+      By Section~\ref{ssec:neutral-as-axes}, the independent stable admissible directions
+      correspond bijectively to independent axes in $\ImH$.
+      Since $\dim_{\mathbb{R}} \ImH = 3$ and this subspace is the maximal subspace of
+      $\mathbb{H}$ orthogonal to $\mathbb{R} \cdot \mathbf{1}$ and closed under the
+      commutator, the rank of the admissible neutral traceless subspace is exactly~$3$.
+      Each independent axis of $\ImH$ contributes one independent neutral mode to the
+      admissible Gram--Schmidt span; saturation occurs when all three independent axes have
+      been realised by the projection.
+      The threshold condition $\Sigma_{c}(n_{3}) = 3$ in O21~\cite{Beau2026a25} records
+      this rank as an observable: the capacity count $\Sigma_{c}$ reaches the value
+      $3$ precisely at the shell $n_{3}$ where all three independent neutral directions
+      have been saturated by the projection.
+    \end{proof}
+
+    \begin{remark}[Conditionality inherited from O18]
+      \label{rem:conditionality}
+      Theorem~\ref{thm:three-directions} inherits the conditionality of O18 Theorem~2.5:
+      the derivation assumes that Born--Infeld parity is the only global effective symmetry
+      of $S_{\mathrm{BI}}[\chi]$ compatible with BI-admissible observables.
+      If the effective action admits additional symmetries (topological, gauge, or other),
+      the fibre could be larger, and additional neutral directions could be present,
+      modifying the count.
+      A general classification of fibres in enriched frameworks is deferred to a subsequent
+      paper following O21, as noted in O18~§4.3.
+    \end{remark}
+
+    \begin{remark}[The ``$3$'' is not the dimension of $\mathbb{H}$]
+      \label{rem:not-four}
+      The integer $3$ derived in Theorem~\ref{thm:three-directions} is $\dim_{\mathbb{R}}
+      \ImH$, not $\dim_{\mathbb{R}} \mathbb{H} = 4$.
+      The full quaternion algebra contributes one additional real dimension ($\mathbb{R}
+      \cdot \mathbf{1}$), which is commutative and plays no role in the neutral traceless
+      sector.
+      The Born--Infeld neutrality condition~\eqref{eq:neutrality} projects out this
+      commutative direction, leaving exactly three independent axes.
+    \end{remark}
+
+    \begin{remark}[Causal direction: $\ImH$ precedes $\su(2)$]
+      \label{rem:causal-order}
+      The coincidence $\dim \su(2) = 3$ is not the origin of the result but a consequence
+      of the quaternionic realisation.
+      The logical order is: Born--Infeld admissibility forces $\mathbb{H}$-minimality;
+      the imaginary subspace $\ImH \cong \mathbb{R}^{3}$ is then the unique neutral
+      traceless subspace; and $\su(2) \cong \ImH$ as real Lie algebras follows from the
+      bracket structure of $\ImH$.
+      Appealing directly to $\dim \su(2) = 3$ without this chain would be circular: it
+      would assume the $\mathbb{H}$-structure rather than deriving it.
+    \end{remark}
+
+  \section{Spectral Realisation and Consistency with the Programme}
+  \label{sec:spectral}
+
+  \subsection{$Q_{8}$ as the minimal isotropic prototype}
+    \label{ssec:q8}
+
+    The quaternion group $Q_{8}$ is the smallest finite subgroup of $\SU(2)$ admitting a
+    neutral generating set, and SpectralGramRigidity~\cite{Beau2026a3} identifies
+    it as the unique admissible group with an orthogonal Gram pattern
+    ($G_{st} = 0$ for all $t \neq s^{\pm 1}$).
+    Its six traceless elements $\{\pm\mathbf{i}, \pm\mathbf{j}, \pm\mathbf{k}\}$
+    pair into three conjugate pairs, each determining one of the three coordinate axes
+    of $\ImH$.
+
+    $Q_{8}$ therefore provides a discrete, exact prototype of the abstract derivation:
+    it realises precisely three independent neutral axes, isotropically distributed, with
+    the second-moment tensor $M \propto I$~\cite{Beau2026a3}.
+    The three neutral axis directions of $Q_{8}$ are the finite-group realisation of the
+    three generators of $\su(2)$, confirming the identification of
+    Section~\ref{ssec:neutral-as-axes} in the simplest admissible case.
+
+  \subsection{Three-level ADE stratigraphic structure}
+    \label{ssec:ade-three-levels}
+
+    For the ADE binary Cayley graphs physically relevant to the Cosmochrony
+    programme --- in particular $2I$ with order-$4$ and order-$5$ generators --- the
+    Cayley eigenvalue formula gives, for each irreducible representation $\rho$ of $G$,
+    \[
+      \lambda_{\rho} = |S| - \frac{1}{d_{\rho}} \sum_{s \in S} \chi_{\rho}(s).
+    \]
+    The character sum $\sum_{s \in S} \chi_{\rho}(s) / d_{\rho}$ takes exactly three
+    distinct values over the non-trivial irreducible representations of $G$, corresponding
+    to three distinct eigenvalue classes $\lambda_{1} < \lambda_{2} < \lambda_{3}$.
+    This produces exactly three non-zero Cayley eigenvalue classes, and hence three
+    stratigraphic levels~\cite{Beau2026a4}.
+
+    Theorem~\ref{thm:three-directions} provides the structural explanation for this
+    observation: the three spectral levels are the spectral realisation of the three
+    independent axes of $\ImH$.
+    The algebraic argument derives the ``$3$'' as necessary; the ADE spectral structure
+    shows how this ``$3$'' is realised concretely in the relevant substrate graphs.
+    The two arguments are complementary and non-circular: the algebra explains why three
+    is necessary; the ADE confirms how three is achieved.
+
+  \subsection{Consistency with $\Sigma_{c}(n_{3}) = 3$ in O21}
+    \label{ssec:o21-consistency}
+
+    O21~\cite{Beau2026a25} defined $n_{3}$ as the BFS shell at which $\Sigma_{c}$ reaches
+    $3$, and O22 showed that projection locking forces saturation onto this shell.
+    Theorem~\ref{thm:three-directions} now closes the logical chain: the value $3$ is the
+    rank of $\ImH$ as the admissible neutral traceless subspace of the Born--Infeld
+    fibre.
+    The full chain of derivation is:
+    \begin{equation}
+      \label{eq:chain}
+      \text{BI parity}
+      \;\Rightarrow\; \text{fibre involution } c \leftrightarrow q-c
+      \;\Rightarrow\; \text{non-abelian admissible support}
+      \;\Rightarrow\; \mathbb{H}\text{-minimality}
+      \;\Rightarrow\; \dim \ImH = 3
+      \;\Rightarrow\; \Sigma_{c}(n_{3}) = 3.
+    \end{equation}
+
+  \section{Discussion}
+  \label{sec:discussion}
+
+  \subsection{What O23 derives and what it does not}
+    \label{ssec:scope-discussion}
+
+    O23 derives the \emph{value} $3$ in the threshold condition $\Sigma_{c}(n_{3}) = 3$
+    as a structural consequence of Born--Infeld fibre admissibility and quaternionic
+    minimality.
+    It does not determine the \emph{location} $n_{3}$ as a function of the pipeline
+    parameters $(c_{\chi}, \lambda_{n}, \text{graph geometry})$.
+    That question requires the extended numerical campaign described in O22~§6.2 and
+    remains open.
+
+    The position of O23 in the O-series is therefore a structural closure of the
+    ``why $3$?'' question, complementary to O22's structural closure of the
+    ``why a shell?'' question.
+    Together, O22 and O23 complete the derivation of the observable $n_{3}$ at the
+    structural level, leaving the quantitative determination of its numerical value as
+    the remaining open task.
+
+  \subsection{Conditional status and possible extensions}
+    \label{ssec:conditional}
+
+    The main result carries the conditionality of O18 Remark~2.6 (recalled in
+    Remark~\ref{rem:conditionality} above).
+    If the Born--Infeld effective action admits additional symmetries beyond parity ---
+    arising, for instance, from topological constraints identified in the Topological
+    Invariants paper~\cite{Beau2026k} or from gauge structure in an enriched framework
+    --- the fibre could be larger and the neutral traceless subspace could have a higher
+    rank.
+    Determining whether such extensions are realised in the Cosmochrony framework, and
+    if so what rank they imply, is deferred to the general fibre classification programme
+    announced in O18~§4.3.
+
+  \section{Conclusion}
+  \label{sec:conclusion}
+
+  We have derived the threshold condition $\Sigma_{c}(n_{3}) = 3$ of
+  O21~\cite{Beau2026a25} from Born--Infeld fibre admissibility and quaternionic
+  minimality.
+  The central result is Theorem~\ref{thm:three-directions}: within the class of Weil
+  representations on $\Heis$ compatible with Born--Infeld parity, the admissible
+  neutral traceless subspace is isomorphic to $\ImH$, and its real dimension is
+  exactly~$3$.
+
+  The derivation rests on three pillars: the exclusion of abelian realizations
+  (Lemma~\ref{lem:abelian-exclusion}); the incompatibility of octonion-type
+  realizations with the Weil cocycle structure (Lemma~\ref{lem:octonion-exclusion});
+  and the Hurwitz-to-$\su(2)$ bridge (Proposition~\ref{prop:hurwitz-bridge},
+  imported from SpectralCapacity~\cite{Beau2026a2}).
+
+  The result is conditional on the absence of additional effective symmetries beyond
+  Born--Infeld parity, in accordance with O18~\cite{Beau2026a22}.
+  Subject to this condition, it closes the last structural open problem of O21: the
+  ``$3$'' in $\Sigma_{c}(n_{3}) = 3$ is not a phenomenological input but
+  \emph{the real dimension of the imaginary quaternions as the minimal admissible
+  non-commutative associative neutral structure forced by Born--Infeld parity}.
+  The emergence of three stable directions is therefore not geometric but algebraic
+  in origin.
+
+  \bigskip
+  \noindent
+  \textbf{Acknowledgements.}
+  This paper is part of the Spectral Admissibility Sub-programme of the Cosmochrony
+  framework~\cite{Cosmochrony}.
+
+  \appendix
+
+  \section{Why Not 2? Why Not 7?}
+  \label{app:not-2-not-7}
+
+  The exclusion argument of Section~\ref{sec:exclusion} can be summarised concisely by
+  examining what happens at the other dimensions allowed by the Hurwitz classification.
+
+  \paragraph{Why not 2 (complex numbers $\mathbb{C}$)?}
+    The algebra $\mathbb{C}$ is a two-dimensional real division algebra, but it is
+    \emph{commutative}.
+    A representation taking values in $\mathbb{C}^{\times}$ is one-dimensional over
+    $\mathbb{C}$, i.e.\ abelian, and is excluded by Lemma~\ref{lem:abelian-exclusion}.
+    In the language of Section~\ref{ssec:neutral-as-axes}, the imaginary subspace
+    $\mathrm{Im}\,\mathbb{C} = \mathrm{i}\mathbb{R}$ has real dimension~$1$: only one
+    neutral axis is available, which is insufficient to carry three independent stable
+    directions.
+
+  \paragraph{Why not 7 (imaginary octonions)?}
+    The imaginary subspace $\mathrm{Im}\,\mathbb{O}$ has real dimension~$7$, which would
+    naively suggest $7$ stable directions.
+    However, $\mathbb{O}$ is non-associative, and Lemma~\ref{lem:octonion-exclusion}
+    shows that this is incompatible with the Weil cocycle structure: no representation
+    of $\Heis$ can take values in $\mathbb{O}$ while satisfying the cocycle identity.
+    The $7$-dimensional imaginary space is therefore inaccessible within the
+    Born--Infeld Weil framework.
+
+  \paragraph{Summary.}
+    The Hurwitz classification $\{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ has
+    exactly one entry that is associative and non-commutative: $\mathbb{H}$.
+    Its imaginary subspace has dimension~$3$.
+    The Born--Infeld neutrality condition selects this unique entry, and the resulting
+    count $\dim_{\mathbb{R}} \ImH = 3$ is forced.
+
+    \clearpage
+    \begin{thebibliography}{99}
+
+      \input{cosmochrony-bibliography}
+
+% Hurwitz original
+      \bibitem{Hurwitz1898}
+      A.~Hurwitz,
+      ``\"{U}ber die Composition der quadratischen Formen von beliebig vielen
+      Variablen,''
+      \textit{Nachrichten von der Gesellschaft der Wissenschaften zu G\"{o}ttingen},
+      Mathematisch-Physikalische Klasse, pp.~309--316, 1898.
+
+    \end{thebibliography}
+
+\end{document}
