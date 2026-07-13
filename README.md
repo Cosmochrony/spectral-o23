@@ -1,6 +1,6 @@
 This repository contains the source of the **O23 Cosmochrony paper**  
-[*Three Stable Directions from Quaternionic Minimality:
-Derivation of $\Sigma_c(n_3) = 3$ from Born–Infeld Fibre Admissibility*](out/SpectralO23.pdf).
+*Three Stable Directions from Quaternionic Minimality:
+Derivation of $\Sigma_c(n_3) = 3$ from Born–Infeld Fibre Admissibility*.
 
 This work extends the **spectral admissibility sub-programme** by resolving
 the second central open problem left by **O21** and isolated by **O22**:
