@@ -5,6 +5,7 @@
 \usepackage{geometry}
 \usepackage{doi}
 \geometry{margin=2.5cm}
+\setlength{\emergencystretch}{2em}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -29,7 +30,7 @@ Derivation of $\Sigma_{c}(n_{3}) = 3$ from Born--Infeld Fibre Admissibility\\
 \author{J\'{e}r\^{o}me Beau\\
 \small Independent Researcher}
 
-\date{2026}
+\date{2026\\[2pt]\small Version 1.0.2}
 
 \begin{document}
 
@@ -78,8 +79,10 @@ Derivation of $\Sigma_{c}(n_{3}) = 3$ from Born--Infeld Fibre Admissibility\\
   \subsection{What O21 established and what it left open}
     \label{ssec:o21-status}
 
-    O21~\cite{Beau2026a25} established the shell-level saturation mechanism and derived
-    the fibre-level transfer $\dpair \to \bstar$.
+    O21~\cite{Beau2026a25} established the shell-level saturation mechanism and formulated
+    a conditional fibre-to-rate prescription involving $\dpair$ and $\bstar$.
+    The threshold result proved here is independent of that prescription, which has no
+    native Heisenberg growth carrier~\cite{Beau2026sgn}.
     A central ingredient was the threshold condition
     \begin{equation}
       \label{eq:threshold}
@@ -289,7 +292,7 @@ Derivation of $\Sigma_{c}(n_{3}) = 3$ from Born--Infeld Fibre Admissibility\\
     The following result is Proposition~7.2 of SpectralCapacity~\cite{Beau2026a2},
     reproduced here for self-containedness.
 
-    \begin{proposition}[Hurwitz-to-$\su(2)$ bridge, {\cite{Beau2026a2}}]
+    \begin{proposition}[Hurwitz-to-$\su(2)$ bridge]
       \label{prop:hurwitz-bridge}
       Let $\rho$ be an irreducible two-dimensional complex representation of a finite group
       $G$, and suppose there exist three \emph{linearly independent}, mutually non-commuting
@@ -464,15 +467,14 @@ Derivation of $\Sigma_{c}(n_{3}) = 3$ from Born--Infeld Fibre Admissibility\\
     rank of $\ImH$ as the admissible neutral traceless subspace of the Born--Infeld
     fibre.
     The full chain of derivation is:
-    \begin{equation}
+    \begin{align}
       \label{eq:chain}
-      \text{BI parity}
-      \;\Rightarrow\; \text{fibre involution } c \leftrightarrow q-c
-      \;\Rightarrow\; \text{non-abelian admissible support}
-      \;\Rightarrow\; \mathbb{H}\text{-minimality}
-      \;\Rightarrow\; \dim \ImH = 3
-      \;\Rightarrow\; \Sigma_{c}(n_{3}) = 3.
-    \end{equation}
+      \text{BI parity} &\Rightarrow \text{fibre involution } c \leftrightarrow q-c
+      \Rightarrow \text{non-abelian support}\notag\\
+      &\Rightarrow \mathbb{H}\text{-minimality}
+      \Rightarrow \dim \ImH = 3
+      \Rightarrow \Sigma_{c}(n_{3}) = 3.
+    \end{align}
 
   \section{Discussion}
   \label{sec:discussion}

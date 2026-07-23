@@ -261,11 +261,10 @@ Study asymptotic behaviour of the admissible structure.
 
 Test extension beyond SU(2) and Heisenberg graphs.
 
-### Full pipeline closure
+### Native growth law
 
-Complete the derivation of  
-$\delta_{\mathrm{pair}} \to \beta^*$  
-without remaining assumptions.
+Any future rate relation must be derived directly on the Heisenberg substrate. The
+three-direction threshold does not close the refuted cross-substrate reciprocal.
 
 ## Status
 
