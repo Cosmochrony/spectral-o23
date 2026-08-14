@@ -68,8 +68,8 @@ The conversion of the adjoint-dimension theorem into a derivation of $\Sigma_c(n
 bridges, both **open**:
 
 1. **Carrier selection**: no result derives $V_\rho \cong \mathbb{C}^2$ from Born–Infeld parity.
-   O18 establishes parity as an equivariant symmetry only; the fibre identification is a typed open
-   classification problem (O18 Problem 2.8).
+   O18 establishes parity as a covariance of the response family only (even-order responses preserved,
+   odd-order reversed); the fibre identification is a typed open classification problem (O18 Problem 2.8).
 2. **Observable identification**: no theorem identifies the cumulative Gram–Schmidt span $\Sigma_c$ with
    $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho)$.
    Since $n_3$ is defined as the shell where $\Sigma_c$ reaches three, the threshold is definitional at
@@ -77,7 +77,7 @@ bridges, both **open**:
 
 The status-typed chain is:
 
-BI parity (equivariant, proved) →(open)→ pair fibre $c \leftrightarrow q{-}c$ →(open)→
+BI parity (covariant, proved) →(open)→ pair fibre $c \leftrightarrow q{-}c$ →(open)→
 $V_\rho \cong \mathbb{C}^2$ →(**proved**)→ $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho) = 3$ →(open)→
 $\Sigma_c(n_3) = 3$.
 
