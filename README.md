@@ -1,23 +1,23 @@
-This repository contains the source of the **O23 Cosmochrony paper**  
-*Three Stable Directions from Quaternionic Minimality:
-Derivation of $\Sigma_c(n_3) = 3$ from Born–Infeld Fibre Admissibility*.
+This repository contains the source of the **O23 Cosmochrony paper**
+*Three Neutral Directions from a Spinor Carrier:
+Conditional Status of the Threefold Admissibility Threshold*.
 
-This work extends the **spectral admissibility sub-programme** by resolving
-the second central open problem left by **O21** and isolated by **O22**:
+This work belongs to the **spectral admissibility sub-programme** and determines the exact status of the
+value three in the threshold condition isolated by **O21** and **O22**:
 
-> Why is the saturation threshold intrinsically three-dimensional,
-> i.e. why $\Sigma_c(n_3) = 3$ rather than 2 or 4?
+> A spinorial neutral sector carries exactly three independent directions;
+> the threshold $\Sigma_c(n_3) = 3$ is a supplied selection rule compatible with that structure, not a derived constant.
 
 ## Context
 
 **O21** established that:
 
-- the physically relevant observable is the canonical fibre-level quantity  
+- the physically relevant observable is the canonical fibre-level quantity
   $\sigma_{\mathrm{pair}}^{\mathrm{can}}(n)$
-- the admissibility criterion can be reformulated intrinsically through the  
+- the admissibility criterion can be reformulated intrinsically through the
   observable rank $n_3^{\mathrm{obs}}$
-- the threshold condition  
-  $\Sigma_c(n_3) = 3$  
+- the threshold condition
+  $\Sigma_c(n_3) = 3$
   defines the physically relevant saturation shell
 
 **O22** proved that:
@@ -25,294 +25,95 @@ the second central open problem left by **O21** and isolated by **O22**:
 - saturation necessarily occurs on a BFS shell (projection locking)
 - shell-alignment is a theorem, not a conjecture
 
-However:
+The value **3** entering the threshold is the object of the present paper.
 
-- the value **3** remained an unexplained structural input
-- the dimensionality of the stable sector was not derived
-- the threshold $\Sigma_c(n_3) = 3$ had no internal justification
+## Core Results
 
-This defines the scope of **O23**.
+### 1. Adjoint-dimension theorem (proved, conditional on the carrier)
 
-## Core Result
+If the admissible neutral sector is carried by an irreducible two-dimensional unitary representation
+$V_\rho \cong \mathbb{C}^2$, then its traceless anti-Hermitian sector is the real Lie algebra
 
-The paper proves that **the value 3 is a structural necessity, not an empirical input**.
+$\mathfrak{su}(V_\rho) \cong \mathfrak{su}(2) \cong \mathrm{Im}\,\mathbb{H}$,
 
-The key mechanism is **quaternionic minimality under Born–Infeld admissibility**:
+of real dimension exactly **3**.
+Every neutral generator image $\rho(s) = \mathrm{i}(\vec{u}_s \cdot \vec{\sigma})$ lies on the unit sphere of
+this three-dimensional space.
+This explains why a spinor-carried admissible sector naturally carries three independent directions.
 
-- the admissible neutral sector must be non-abelian
-- it must be realised within an associative algebra (Weil framework)
-- the Hurwitz classification then forces the minimal structure to be $\mathbb{H}$
+### 2. Non-abelian support (proved)
 
-Central result:
+An irreducible two-dimensional complex representation forces the group to be non-abelian (Schur).
+The neutrality condition alone does **not** exclude abelian groups: $\mathbb{Z}/4$ admits a faithful
+reducible two-dimensional representation with a neutral symmetric generating set.
+The exclusion is carried by the irreducibility of the supplied carrier, not by admissibility.
 
-- the admissible neutral traceless subspace is  
-  $\mathrm{Im}\,\mathbb{H}$
-- its real dimension is exactly 3
+### 3. Associativity does not select $\mathbb{H}$ (delimitation)
 
-Thus:
+The Weil cocycle structure excludes octonionic realisations (associativity), but the representation
+algebra $M_q(\mathbb{C})$ is not a division algebra, so the Hurwitz classification does not apply to it
+and cannot force a quaternionic structure.
+The quaternions enter only through the supplied $\mathrm{SU}(2)$ carrier.
 
-$\Sigma_c(n_3) = 3$
+### 4. Generator axes need not span the three directions (no-go)
 
-is derived as the observable signature of this algebraic structure.
+In the faithful two-dimensional representation of $Q_8$, the symmetric neutral set
+$\{\pm\mathbf{i}, \pm\mathbf{j}\}$ generates the group with only **two** generator axes; the third
+direction arises only under commutator (Lie) closure.
+Counting admissible generator axes therefore cannot replace the module statement of Result 1.
 
-## Main Structural Results
+## The Two Open Bridges
 
-### 1. Exclusion of abelian realisations
+The conversion of the adjoint-dimension theorem into a derivation of $\Sigma_c(n_3) = 3$ requires two
+bridges, both **open**:
 
-The neutrality condition cannot be satisfied by any abelian group in a
-faithful irreducible representation of dimension 2.
+1. **Carrier selection**: no result derives $V_\rho \cong \mathbb{C}^2$ from Born–Infeld parity.
+   O18 establishes parity as an equivariant symmetry only; the fibre identification is a typed open
+   classification problem (O18 Problem 2.8).
+2. **Observable identification**: no theorem identifies the cumulative Gram–Schmidt span $\Sigma_c$ with
+   $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho)$.
+   Since $n_3$ is defined as the shell where $\Sigma_c$ reaches three, the threshold is definitional at
+   the level of O21.
 
-Thus the admissible sector is necessarily non-abelian.
+The status-typed chain is:
 
-### 2. Exclusion of non-associative realisations
+BI parity (equivariant, proved) →(open)→ pair fibre $c \leftrightarrow q{-}c$ →(open)→
+$V_\rho \cong \mathbb{C}^2$ →(**proved**)→ $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho) = 3$ →(open)→
+$\Sigma_c(n_3) = 3$.
 
-The Weil representation acts in $\mathrm{End}(V)$, which is associative.
+## Spectral Observations
 
-Therefore non-associative algebras (e.g. octonions $\mathbb{O}$) are excluded.
-
-### 3. Hurwitz classification constraint
-
-The only real associative normed division algebras are:
-
-$\mathbb{R}, \mathbb{C}, \mathbb{H}$
-
-Among them:
-
-- $\mathbb{R}$ is too small
-- $\mathbb{C}$ is commutative
-- $\mathbb{H}$ is the minimal admissible structure
-
-### 4. Quaternionic minimality theorem
-
-Using the Hurwitz-to-$\mathfrak{su}(2)$ bridge:
-
-- three independent neutral generators span $\mathfrak{su}(2)$
-- $\mathfrak{su}(2) \cong \mathrm{Im}\,\mathbb{H}$
-
-Thus the admissible neutral sector is exactly:
-
-$\mathrm{Im}\,\mathbb{H} \cong \mathbb{R}^3$
-
-### 5. Stable directions and Gram–Schmidt span
-
-Each axis of $\mathrm{Im}\,\mathbb{H}$ corresponds to:
-
-- one independent neutral direction
-- one independent contribution to the admissible span
-
-Saturation occurs when all three directions are realised.
-
-Hence:
-
-$\Sigma_c(n_3) = 3$
-
-### 6. Spectral realisation
-
-The abstract result is realised concretely:
-
-- $Q_8$ provides the minimal discrete prototype (three orthogonal axes)
-- ADE binary graphs exhibit exactly three non-trivial spectral levels
-
-The algebraic derivation and spectral observation are:
-
-- consistent
-- complementary
-- non-circular
-
-## Foundational Chain from the Substrate
-
-The derivation is fully internal:
-
-Born–Infeld parity  
-$\to$ fibre involution  
-$\to$ non-abelian admissible support  
-$\to$ $\mathbb{H}$-minimality  
-$\to$ $\dim \mathrm{Im}\,\mathbb{H} = 3$  
-$\to$ $\Sigma_c(n_3) = 3$
-
-No external parameter is introduced.
-
-## Mathematical Role of O23
-
-**O23** performs the second foundational closure of the fibre-level
-admissibility programme:
-
-- it removes the last unexplained structural integer
-- it derives the dimensionality of the stable sector
-- it connects algebraic minimality to observable capacity
-
-More precisely, the paper:
-
-- excludes abelian admissible sectors
-- excludes non-associative realisations
-- applies Hurwitz classification
-- identifies $\mathbb{H}$ as minimal structure
-- derives $\mathrm{Im}\,\mathbb{H}$ as the neutral sector
-- derives the value 3 as its dimension
-- connects this to $\Sigma_c(n_3)$
-
-## Epistemic Structure of the Paper
-
-### Established input
-
-- canonical observable (**O19–O21**)
-- projection locking (**O22**)
-- fibre structure (**O18**)
-- Born–Infeld admissibility
-- Weil representation framework
-
-### New results
-
-- exclusion lemmas (abelian and octonionic)
-- quaternionic minimality theorem
-- derivation of $\dim \mathrm{Im}\,\mathbb{H} = 3$
-- identification of stable directions
-- derivation of $\Sigma_c(n_3) = 3$
-
-### Remaining open problems
-
-- determine the numerical value of $n_3$
-- extend beyond SU(2)-type structures
-- analyse large-$q$ behaviour
-- explore possible extended symmetry frameworks
-
-## Interpretation of the Result
-
-The conceptual shift is decisive:
-
-- **O21**: the value 3 is observed
-- **O23**: the value 3 is explained
-
-This transforms the programme:
-
-- from empirical threshold
-- to algebraic necessity
-
-- from spectral observation
-- to structural derivation
-
-The key insight is:
-
-> the number of stable directions is fixed by the minimal admissible
-> algebraic structure, not by geometry.
-
-## Structural Role of O23
-
-**O23** continues the sequence:
-
-- **O18**: fibre structure
-- **O19**: canonical normalisation
-- **O20**: persistence criterion
-- **O21**: intrinsic saturation rank
-- **O22**: shell-level locking
-- **O23**: derivation of the threshold dimension
-
-Thus:
-
-- the observable is fixed
-- the amplitude is canonical
-- the shell is derived
-- the threshold value is now explained
-
-This completes the structural closure of the admissibility threshold.
-
-## What O23 Adds
-
-- quaternionic minimality as a structural principle
-- exclusion of competing algebraic structures
-- derivation of stable directions
-- identification of $\mathrm{Im}\,\mathbb{H}$ as neutral sector
-- theorem:  
-  $\Sigma_c(n_3) = \dim \mathrm{Im}\,\mathbb{H} = 3$
-- closure of the second open problem of **O21**
-
-## Outcome
-
-The spectral admissibility framework is now:
-
-- fibre-level grounded (**O18**)
-- amplitude-level canonical (**O19**)
-- saturation-level intrinsic (**O21**)
-- shell-level derived (**O22**)
-- threshold-level explained (**O23**)
-
-The admissibility condition is now:
-
-- fully structural
-- internally derived
-- algebraically constrained
-- theorem-level established
-
-## Residual Open Problems
-
-### Shell selection
-
-Determine which shell $n_3$ is selected as a function of the parameters.
-
-### Beyond quaternionic minimality
-
-Investigate whether extended symmetry structures modify the neutral sector.
-
-### Large-$q$ regime
-
-Study asymptotic behaviour of the admissible structure.
-
-### Universality
-
-Test extension beyond SU(2) and Heisenberg graphs.
-
-### Native growth law
-
-Any future rate relation must be derived directly on the Heisenberg substrate. The
-three-direction threshold does not close the refuted cross-substrate reciprocal.
+- $Q_8$ realises the three directions isotropically through its **full** neutral sector
+  ($M \propto I$), while its two-axis generating subset shows a generating set alone need not.
+- The ADE binary graphs ($2I$ in particular) show exactly three non-trivial Cayley eigenvalue classes.
+  This is retained as a **consistency observation**, compatible with — but not probative of — the
+  threefold structure.
 
 ## Status
 
-The programme is now:
-
-- structurally closed at the threshold level
-- algebraically grounded
-- ready for quantitative shell-selection analysis
+- Adjoint dimension of a supplied spinor carrier: **proved** (Theorem 3.1)
+- $\Sigma_c(n_3) = 3$: **supplied selection rule / open**, awaiting the two bridges
+- Location of $n_3$ as a function of pipeline parameters: open (O22 §6.2 programme)
 
 ## Repository Structure
 
 ```text
-paper/
-├── out/      # Compiled O23 PDF
+o23/
+├── out/      # Compiled O23 PDF (generated by compile.sh, git-ignored)
 ├── tex/      # LaTeX sources
 └── README.md
 ```
-# Citation
 
-If you reference this work, please cite:
+## Citation
 
-J. Beau
-Three Stable Directions from Quaternionic Minimality:
-Derivation of $\Sigma_c(n_3) = 3$ from Born–Infeld Fibre Admissibility
-Zenodo, 2026.
+If you reference this work, please cite via the Zenodo concept DOI:
 
-# Acknowledgements
+J. Beau,
+*Three Neutral Directions from a Spinor Carrier: Conditional Status of the Threefold Admissibility Threshold*,
+Zenodo, 2026. [doi:10.5281/zenodo.19375136](https://doi.org/10.5281/zenodo.19375136)
 
-Portions of the derivations, conceptual synthesis, structural organisation,
-and editorial refinement benefited from iterative interactions with large
-language models used as analytical assistants.
+## Acknowledgements
 
-All theoretical results, computations, and interpretations remain the sole
-responsibility of the author.
-
-# Contributions
-
-This repository is intended as a research reference.
-
-Critical feedback, independent verification, and further analysis of:
-
-- quaternionic minimality
-- fibre admissibility
-- stable directions
-- spectral threshold derivation
-- algebraic constraints on admissibility
-
-are welcome.
-
-Please open an issue to discuss conceptual points, technical details, or
-possible extensions.
+Portions of the derivations, conceptual synthesis, and editorial refinement benefited from iterative
+interactions with large language models used as analytical assistants.
+All theoretical results, computations, and interpretations remain the sole responsibility of the author.
