@@ -31,8 +31,8 @@ The value **3** entering the threshold is the object of the present paper.
 
 ### 1. Adjoint-dimension theorem (proved, conditional on the carrier)
 
-If the admissible neutral sector is carried by an irreducible two-dimensional unitary representation
-$V_\rho \cong \mathbb{C}^2$, then its traceless anti-Hermitian sector is the real Lie algebra
+If the admissible neutral sector is carried by an irreducible two-dimensional $\mathrm{SU}(2)$-valued
+representation $V_\rho \cong \mathbb{C}^2$, then its traceless anti-Hermitian sector is the real Lie algebra
 
 $\mathfrak{su}(V_\rho) \cong \mathfrak{su}(2) \cong \mathrm{Im}\,\mathbb{H}$,
 
