@@ -1,18 +1,18 @@
 cff-version: 1.2.0
 message: "If you cite this work, please use the metadata from this file."
-title: "Three Stable Directions from Quaternionic Minimality: Derivation of \Sigma_c(n_3) = 3 from Born–Infeld Fibre Admissibility O23 — Spectral Admissibility Sub-programme"
+title: "Three Neutral Directions from a Spinor Carrier: Conditional Status of the Threefold Admissibility Threshold O23 — Spectral Admissibility Sub-programme"
 type: software
 authors:
   - family-names: "Beau"
     given-names: "Jérôme"
 repository-code: "https://github.com/Cosmochrony/spectral-o23"
 url: "https://cosmochrony.org/science/spectral/program/o23/"
-version: "1.0.2"
+version: "2.0"
 doi: "10.5281/zenodo.19375136"
 license: "CC-BY-4.0"
 preferred-citation:
   type: article
-  title: "Three Stable Directions from Quaternionic Minimality: Derivation of \Sigma_c(n_3) = 3 from Born–Infeld Fibre Admissibility O23 — Spectral Admissibility Sub-programme"
+  title: "Three Neutral Directions from a Spinor Carrier: Conditional Status of the Threefold Admissibility Threshold O23 — Spectral Admissibility Sub-programme"
   authors:
     - family-names: "Beau"
       given-names: "Jérôme"
