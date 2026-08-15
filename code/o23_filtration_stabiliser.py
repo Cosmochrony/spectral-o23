@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Exact stabiliser of the deposited O12 filtration inside the Weil image.
 
-Reproduction code for O23 v2.1, Section 4.4: Lemma 4.1 (pure Fourier modes), Theorem 4.2
-(Stab(W_<n) = U >< M_n, contained in the Borel B(L)), Corollary 4.3 (no binary polyhedral
-group is selected) and Remark 4.4 (measured multiplier groups).  Self-contained: every path
+Reproduction code for O23 v2.1, subsection "A proved obstruction on Bridge 1": the
+pure-Fourier lemma, the exact level stabiliser Stab(W_<n) = U >< M_n contained in the Borel
+B(L), the exclusion of the EXCEPTIONAL binary polyhedral groups 2T/2O/2I only, and the
+measured multiplier groups.  The exclusion does NOT extend to dicyclic groups: see
+o23_dicyclic_decomposition.py.  Self-contained: every path
 it reads or writes lies inside this repository.
 
 Question. The O12 construction produces a filtration W_{<n} of subspaces of C^q.  The Weil

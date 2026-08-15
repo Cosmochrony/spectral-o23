@@ -1,7 +1,11 @@
 \documentclass[11pt,a4paper]{article}
 
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
 \usepackage{amsmath,amssymb,amsthm}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{geometry}
 \usepackage{doi}
 \geometry{margin=2.5cm}
@@ -48,7 +52,7 @@ Conditional Status of the Threefold Admissibility Threshold\\
   \maketitle
 
   \begin{abstract}
-    O21~\cite{Beau2026a25} defined the observable shell $n_{3}$ via the threshold condition
+    O21 defined the observable shell $n_{3}$ via the threshold condition
     $\Sigma_{c}(n_{3}) = 3$ and used it as structural input for the fibre-level transfer
     $\dpair \to \bstar$.
     The present paper determines the exact status of the value three in that threshold.
@@ -56,47 +60,36 @@ Conditional Status of the Threefold Admissibility Threshold\\
     irreducible two-dimensional $\SU(2)$-valued representation $V_{\rho} \cong \mathbb{C}^{2}$,
     then its traceless neutral sector is the real Lie algebra $\su(2) \cong \ImH$, of real
     dimension exactly three.
-    This is a representation-theoretic theorem about the supplied carrier, and it
-    explains why a spinorial neutral sector carries three independent directions.
-    Two bridges required to convert this theorem into a derivation of
-    $\Sigma_{c}(n_{3}) = 3$ are open and are stated here explicitly.
-    On the first of them a second, unconditional theorem closes one candidate source exactly.
-    The fingerprint vectors of the O12 shell-span filtration are pure Fourier modes, so every
-    proper shell span is a coordinate subspace whose Weyl support is a single line, and its
-    exact stabiliser in the Weil image of $\SL(2,\mathbb{Z}/q\mathbb{Z})$ is the metacyclic
-    group $U \rtimes M_{n}$ inside the corresponding Borel subgroup.
-    Because no binary polyhedral group embeds in a metacyclic Borel, that filtration selects
-    none of $2T$, $2O$, $2I$, and therefore supplies no two-dimensional spinor carrier, for
-    every odd prime, every generic block and every proper level --- including the primes
-    $q \equiv \pm 1 \pmod 5$ where $2I$ is genuinely available.
-    This closes one source of the carrier, not the carrier itself, and is not a no-go on the
-    value three.
-    First, the carrier selection: no result of the programme derives
-    $V_{\rho} \cong \mathbb{C}^{2}$ from Born--Infeld parity; the parity input of
-    O18~\cite{Beau2026a22} is a covariance of the response family and does not force the
-    fibre structure, so the spinor carrier is a supplied input.
-    One candidate source for that selection is now closed exactly.
-    The fingerprint vectors of the O12 shell-span filtration are pure Fourier modes, so each
-    proper shell span is a coordinate subspace whose Weyl support is a single line; its exact
-    stabiliser in the Weil image is $U \rtimes M_{n}$, contained in the corresponding Borel
-    subgroup.
-    Since no binary polyhedral group embeds in a metacyclic Borel, that filtration selects
-    neither a two-dimensional spinor carrier nor any of $2T$, $2O$, $2I$, for every odd prime,
-    every generic block and every proper nonzero level.
-    This closes one source of the carrier, not the carrier itself, and is not a no-go on the
-    value three.
-    Second, the observable identification: no theorem identifies the cumulative
-    Gram--Schmidt span $\Sigma_{c}$ of O21 with the dimension of the neutral traceless
-    module; since $n_{3}$ is defined as the shell where $\Sigma_{c}$ reaches three, the
-    threshold is a supplied selection rule, not a derived quantity.
-    A structural caution accompanies the positive result: a symmetric neutral generating
-    set need not span three axes.
-    In the faithful two-dimensional representation of $Q_{8}$, the set
-    $\{\pm\mathbf{i}, \pm\mathbf{j}\}$ generates the group with only two generator axes;
-    the third direction arises only under commutator closure, an operation not supplied by
-    admissibility.
-    The ADE spectral observation of three non-trivial eigenvalue classes is retained as a
-    consistency check compatible with, but not probative of, the threefold structure.
+    This is a representation-theoretic theorem about the supplied carrier, and it explains why a
+    spinorial neutral sector carries three independent directions.
+    Two bridges separate it from a derivation of $\Sigma_{c}(n_{3}) = 3$, and both are open.
+
+    The first is carrier selection, and the paper determines exactly what one candidate source
+    supplies.
+    The fingerprint vectors of the deposited O12 shell-span filtration are pure Fourier modes,
+    so every proper level is a coordinate subspace whose Weyl support is a single line, and the
+    exact stabiliser of that level in the Weil image of $\SL(2,\mathbb{Z}/q\mathbb{Z})$ is the
+    metacyclic group $U \rtimes M_{n}$ inside the corresponding Borel subgroup.
+    This excludes the exceptional binary polyhedral groups $2T$, $2O$ and $2I$ at every proper
+    level, including at the primes where they exist in the ambient group.
+    It does not exclude a spinor carrier.
+    Dicyclic groups are metacyclic, and at explicit generic levels at $q = 53$ and $q = 101$ the
+    stabiliser is $\mathrm{Dic}_{q}$, whose restricted Weil module decomposes multiplicity-freely
+    as one character together with four pairwise inequivalent two-dimensional irreducible
+    representations.
+    That source therefore supplies genuine spinorial content and no distinguished carrier, so
+    the residual obstruction is the absence of a canonical selector among four components rather
+    than the non-existence of a two-dimensional module.
+
+    The second bridge is observable identification: no theorem identifies the cumulative
+    Gram--Schmidt span $\Sigma_{c}$ of O21 with the dimension of the neutral traceless module,
+    and since $n_{3}$ is defined as the shell where $\Sigma_{c}$ reaches three, the threshold
+    remains a supplied selection rule.
+    A structural caution accompanies the positive result: in the faithful two-dimensional
+    representation of $Q_{8}$ the set $\{\pm\mathbf{i}, \pm\mathbf{j}\}$ generates the group
+    with only two generator axes, the third direction arising only under commutator closure.
+    The ADE observation of three non-trivial eigenvalue classes is retained as a consistency
+    check compatible with, but not probative of, the threefold structure.
   \end{abstract}
 
   \paragraph{Keywords.}
@@ -358,8 +351,14 @@ Conditional Status of the Threefold Admissibility Threshold\\
       \label{rem:what-carries-three}
       Theorem~\ref{thm:adjoint-dimension} is a statement about the supplied carrier.
       The integer three is the real dimension of the adjoint (traceless) module of
-      $\mathbb{C}^{2}$; equivalently $\su(2) \cong \operatorname{Sym}^{2}(V_{\rho})$ as
-      real/adjoint modules.
+      $\mathbb{C}^{2}$.
+      The relation to the symmetric square requires its real form to be stated: multiplication
+      by $\mathrm{i}$ identifies $\operatorname{Herm}_{0}(V_{\rho})$ with $\su(2)$ as real
+      adjoint modules, both of real dimension three, and their complexification is isomorphic
+      to $\operatorname{Sym}^{2}(V_{\rho})$, which has complex dimension three and underlying
+      real dimension six.
+      Writing $\su(2) \cong \operatorname{Sym}^{2}(V_{\rho})$ without that qualification
+      conflates a real with a complex dimension.
       Nothing in the theorem derives the carrier itself: the selection of
       $V_{\rho} \cong \mathbb{C}^{2}$ from Born--Infeld admissibility is
       Bridge~1 of Section~\ref{sec:bridges} and is open.
@@ -466,19 +465,20 @@ Conditional Status of the Threefold Admissibility Threshold\\
     The status-typed chain replacing the former derivation claim is:
     \begin{align}
       \label{eq:chain}
-      &\text{BI parity (covariant, proved)}
-      \;\xrightarrow{\ \text{open: O18 Problem 2.8}\ }\;
+      \text{BI parity (covariant, proved)}
+      &\;\xrightarrow{\ \text{open: O18 Problem 2.8}\ }\;
       \text{pair fibre } c \leftrightarrow q-c \notag\\
-      &\;\xrightarrow{\ \text{open: Bridge 1, not from the O12 filtration (Cor.~\ref{cor:no-binary-polyhedral})}\ }\;
-      V_{\rho} \cong \mathbb{C}^{2}
-      \;\xrightarrow{\ \text{proved: Thm~\ref{thm:adjoint-dimension}}\ }\;
-      \dim_{\mathbb{R}} \su(V_{\rho}) = 3
-      \;\xrightarrow{\ \text{open: Bridge 2}\ }\;
+      &\;\xrightarrow{\ \text{open: Bridge 1}\ }\;
+      V_{\rho} \cong \mathbb{C}^{2} \notag\\
+      &\;\xrightarrow{\ \text{proved: Thm~\ref{thm:adjoint-dimension}}\ }\;
+      \dim_{\mathbb{R}} \su(V_{\rho}) = 3 \notag\\
+      &\;\xrightarrow{\ \text{open: Bridge 2}\ }\;
       \Sigma_{c}(n_{3}) = 3.
     \end{align}
     Only the third arrow is a theorem.
-    Subsection~\ref{ssec:o12-obstruction} proves that one candidate source for the second
-    arrow, the deposited O12 shell-span filtration, cannot supply it.
+    Subsection~\ref{ssec:o12-obstruction} analyses the second arrow for one candidate source,
+    the deposited O12 shell-span filtration, and refines it into an existence part that the
+    source does supply and a selection part that it does not.
 
   \subsection{A proved obstruction on Bridge 1: the O12 filtration cannot supply the carrier}
     \label{ssec:o12-obstruction}
@@ -494,13 +494,42 @@ Conditional Status of the Threefold Admissibility Threshold\\
 
     Fix an odd prime $q$ and a generic block $c = (c_{1}, c_{2}, c_{3})$ in the sense of O12,
     that is $c_{i} \not\equiv 0$ and $\sum_{i} c_{i} \not\equiv 0 \pmod{q}$.
+    The block is a triple, whereas the Heisenberg and Weil actions on $\mathbb{C}^{q}$ depend on
+    a single central character; the relevant scalar is
+    \[
+      c_{\Sigma} = c_{1} + c_{2} + c_{3} \bmod q,
+    \]
+    which the genericity condition makes nonzero, and which is the character under which a
+    $k = 3$ fingerprint vector transforms.
+    All representations below are taken at $c_{\Sigma}$ and written $\rho_{c_{\Sigma}}$ and
+    $W_{c_{\Sigma}}$.
+
     Let $W_{<n} \subset \mathbb{C}^{q}$ denote the span of the $k = 3$ fingerprint vectors of
     the BFS shells of depth less than $n$, and let $P_{n}$ be the orthogonal projector onto
     $W_{<n}$.
-    The Weil representation $\rho_{c}$ of $\SL(2,\mathbb{Z}/q\mathbb{Z})$ acts on the same
-    $\mathbb{C}^{q}$ and normalises the Heisenberg action~\cite{Weil1964,Gerardin1977}.
-    Write $W_{c}(v)$, $v \in \mathbb{F}_{q}^{2}$, for the symmetrised Weyl operators, so that
-    $\rho_{c}(g) W_{c}(v) \rho_{c}(g)^{-1} = W_{c}(gv)$.
+    The symmetrised Weyl operators are
+    \[
+      \big(W_{c_{\Sigma}}(a,b) f\big)(x)
+      = e_{q}\!\big(c_{\Sigma} b (x - a/2)\big)\, f(x-a),
+      \qquad e_{q}(t) = \exp(2\pi \mathrm{i} t / q),
+    \]
+    with $a/2$ read in $\mathbb{F}_{q}$, and they form an orthogonal basis of
+    $\mathrm{End}(\mathbb{C}^{q})$.
+    The Weil representation $\rho_{c_{\Sigma}}$ of $\SL(2,\mathbb{Z}/q\mathbb{Z})$ acts on the
+    same $\mathbb{C}^{q}$, exists as a genuine linear representation because $q$ is an odd
+    prime~\cite{Weil1964,Gerardin1977}, and normalises the Heisenberg action.
+    In this symmetrised normalisation the intertwining relation holds on the nose,
+    \begin{equation}
+      \label{eq:intertwining}
+      \rho_{c_{\Sigma}}(g)\, W_{c_{\Sigma}}(v)\, \rho_{c_{\Sigma}}(g)^{-1}
+      = W_{c_{\Sigma}}(gv),
+      \qquad g \in \SL(2,\mathbb{Z}/q\mathbb{Z}),\ v \in \mathbb{F}_{q}^{2},
+    \end{equation}
+    with no residual phase; this is the defining property of the Weil representation in
+    Gérardin's construction~\cite[\S1--2]{Gerardin1977} and is what licenses the argument
+    below.
+    A projective lift would satisfy~\eqref{eq:intertwining} equally, since conjugation cancels
+    scalars, so the argument does not depend on which lift is used.
 
     \begin{lemma}[Fingerprint vectors are pure Fourier modes]
       \label{lem:pure-fourier}
@@ -530,7 +559,7 @@ Conditional Status of the Threefold Admissibility Threshold\\
       M_{n} = \{ s \in \mathbb{F}_{q}^{\times} : s F_{n} = F_{n} \}.
     \]
 
-    \begin{theorem}[Exact stabiliser of the O12 filtration]
+    \begin{theorem}[Exact stabiliser of an O12 filtration level]
       \label{thm:o12-stabiliser}
       For every proper nonzero level, that is whenever $0 < |F_{n}| < q$,
       \[
@@ -542,16 +571,30 @@ Conditional Status of the Threefold Admissibility Threshold\\
     \end{theorem}
 
     \begin{proof}
-      Expand $P_{n} = q^{-1} \sum_{v} p_{n}(v) W_{c}(v)$ in the Weyl operator basis of
-      $\mathrm{End}(\mathbb{C}^{q})$, with $p_{n}(v) = \mathrm{tr}(P_{n} W_{c}(v)^{\dagger})$.
-      Since $\rho_{c}(g)$ is unitary, $\rho_{c}(g) W_{<n} = W_{<n}$ is equivalent to
-      $\rho_{c}(g) P_{n} \rho_{c}(g)^{\dagger} = P_{n}$, and by the intertwining relation this
-      holds if and only if $p_{n} \circ g^{-1} = p_{n}$ on $\mathbb{F}_{q}^{2}$.
-      By Lemma~\ref{lem:pure-fourier}, $P_{n}$ is diagonal in the Fourier basis, so $p_{n}$ is
-      supported on $L$.
-      Any $g$ preserving $p_{n}$ preserves its support, hence preserves $L$, so
-      $\mathrm{Stab}(W_{<n}) \subseteq B(L)$; the hypothesis $|F_{n}| < q$ is what makes $p_{n}$
-      non-constant off the origin, and $|F_{n}| > 0$ excludes the zero projector.
+      Expand $P_{n} = q^{-1} \sum_{v} p_{n}(v) W_{c_{\Sigma}}(v)$ in the Weyl operator basis of
+      $\mathrm{End}(\mathbb{C}^{q})$, with
+      $p_{n}(v) = \mathrm{tr}(P_{n} W_{c_{\Sigma}}(v)^{\dagger})$.
+      Since $\rho_{c_{\Sigma}}(g)$ is unitary, $\rho_{c_{\Sigma}}(g) W_{<n} = W_{<n}$ is
+      equivalent to
+      $\rho_{c_{\Sigma}}(g) P_{n} \rho_{c_{\Sigma}}(g)^{\dagger} = P_{n}$, and
+      by~\eqref{eq:intertwining} this holds if and only if $p_{n} \circ g^{-1} = p_{n}$ on
+      $\mathbb{F}_{q}^{2}$.
+      By Lemma~\ref{lem:pure-fourier}, $P_{n}$ is diagonal in the Fourier basis, so $p_{n}$
+      vanishes off $L$.
+      Containment of the support in $L$ does not by itself force a stabilising $g$ to preserve
+      $L$, so the argument is completed as follows.
+      In the Fourier basis $P_{n}$ is the diagonal indicator of $F_{n}$, and for $v = (a,0)$ the
+      coefficient $p_{n}(a,0)$ is, up to a fixed phase, the discrete Fourier transform of that
+      indicator evaluated at $a$.
+      If $p_{n}(a,0)$ vanished for every $a \neq 0$, the indicator of $F_{n}$ would have a flat
+      transform and would therefore be constant, forcing $|F_{n}| \in \{0, q\}$, which the
+      hypothesis $0 < |F_{n}| < q$ excludes.
+      Hence some $v_{0} = (a_{0},0)$ with $a_{0} \neq 0$ has $p_{n}(v_{0}) \neq 0$, and since
+      $q$ is prime that single nonzero vector spans $L$.
+      A stabilising $g$ preserves the whole coefficient function, hence maps the nonempty set
+      $\{v \neq 0 : p_{n}(v) \neq 0\} \subseteq L \setminus \{0\}$ to itself, hence preserves
+      the line spanned by any of its elements, which is $L$.
+      Therefore $\mathrm{Stab}(W_{<n}) \subseteq B(L)$.
       Within $B(L)$, write $g$ as a product of a unipotent and a torus element.
       The unipotent $U$ is diagonal in the Fourier basis, hence preserves every coordinate
       subspace and lies in the stabiliser unconditionally.
@@ -559,14 +602,11 @@ Conditional Status of the Threefold Admissibility Threshold\\
       $W_{<n}$ if and only if $s F_{n} = F_{n}$, that is $s \in M_{n}$.
     \end{proof}
 
-    \begin{corollary}[No binary polyhedral carrier is selected]
+    \begin{corollary}[No exceptional binary polyhedral group is selected]
       \label{cor:no-binary-polyhedral}
       For every odd prime $q$, every generic block and every proper nonzero level, the
       stabiliser of $W_{<n}$ contains no subgroup isomorphic to $2T \cong \SL(2,3)$,
       $2O$ or $2I \cong \SL(2,5)$, and is not itself isomorphic to any of them.
-      In particular the O12 shell-span filtration does not select an irreducible
-      two-dimensional carrier $V_{\rho} \cong \mathbb{C}^{2}$, and the choice of such a carrier
-      by restriction to a binary polyhedral subgroup remains supplied structure.
     \end{corollary}
 
     \begin{proof}
@@ -583,12 +623,106 @@ Conditional Status of the Threefold Admissibility Threshold\\
       selects.
     \end{proof}
 
+    \begin{remark}[The exclusion does not extend to dicyclic groups]
+      \label{rem:dicyclic-not-excluded}
+      Corollary~\ref{cor:no-binary-polyhedral} concerns the \emph{exceptional} binary polyhedral
+      groups only, and no inference to ``no two-dimensional carrier'' is available from it.
+      The finite subgroups of $\SU(2)$ also include the dicyclic (binary dihedral) family
+      $\mathrm{Dic}_{m}$, listed among the admissible candidates in
+      Remark~\ref{rem:exclusion-scope}, and those groups \emph{are} metacyclic: $\mathrm{Dic}_{m}$
+      has a cyclic normal subgroup of order $2m$ with quotient of order two.
+      They therefore embed in a Borel subgroup, and they carry faithful irreducible complex
+      representations of dimension two.
+      Proposition~\ref{prop:dicyclic-witnesses} shows that this is not a hypothetical gap:
+      the exact formula of Theorem~\ref{thm:o12-stabiliser} produces dicyclic stabilisers at
+      genuine levels of the deposited construction.
+    \end{remark}
+
+    \begin{proposition}[Two exact dicyclic witnesses with multiplicity-free spinorial content]
+      \label{prop:dicyclic-witnesses}
+      Let $(q, c, n)$ be either $(53, (47,21,32), 1)$ or $(101, (41,95,6), 1)$; both blocks are
+      generic in the sense of O12.
+      At these levels $\dim W_{<1} = 9$, the multiplier group is
+      $M_{1} = \{1, s, s^{-1}, -1\}$ with $s^{2} = -1$, and
+      \[
+        \mathrm{Stab}(W_{<1}) = U \rtimes M_{1} \cong \mathrm{Dic}_{q},
+        \qquad |\mathrm{Stab}(W_{<1})| = 4q,
+      \]
+      with the standard presentation realised by $a = (-\mathbb 1)u$ of order $2q$ and
+      $x = \mathrm{diag}(s,s^{-1})$ of order four, satisfying $x^{2} = -\mathbb 1 = a^{q}$ and
+      $x^{-1} a x = a^{-1}$.
+      Restricted to this stabiliser, $W_{<1}$ decomposes multiplicity-freely as
+      \[
+        W_{<1} \;\cong\; \mathbf{1}' \oplus V_{1} \oplus V_{2} \oplus V_{3} \oplus V_{4},
+        \qquad \dim_{\mathbb{C}} V_{i} = 2,
+      \]
+      with $\mathbf{1}'$ a one-dimensional character, the $V_{i}$ pairwise inequivalent
+      two-dimensional irreducible representations of $\mathrm{Dic}_{q}$, every multiplicity
+      equal to one, and $1 + 4 \times 2 = 9$.
+    \end{proposition}
+
+    \begin{proof}[Verification]
+      The group-theoretic statements are exact modular arithmetic on the sets $F_{1}$ and
+      $M_{1}$ and are reproduced by the committed code.
+      The decomposition is obtained from the character
+      $\chi(g) = \mathrm{tr}\big(\rho_{c_{\Sigma}}(g)|_{W_{<1}}\big)$ against the character
+      table of $\mathrm{Dic}_{q}$, giving $\langle \chi, \chi \rangle = 5$ with five distinct
+      constituents, and is confirmed by constructing the isotypic projectors: each is idempotent
+      to $2 \times 10^{-14}$, has rank $\dim_{\mathbb{C}} V_{i} \cdot m_{i}$ as predicted, and
+      they sum to the identity on $W_{<1}$ to the same order.
+      Invariance of $W_{<1}$ under the whole stabiliser holds to $6 \times 10^{-14}$.
+    \end{proof}
+
+    \begin{remark}[Status of Proposition~\ref{prop:dicyclic-witnesses} and of the lift]
+      \label{rem:witness-status}
+      Proposition~\ref{prop:dicyclic-witnesses} is a computational result on two explicit
+      witnesses, stated with its blocks and levels inscribed in the statement.
+      It is not a universal claim: it is not asserted here that every dicyclic level decomposes
+      this way, nor that dicyclic levels occur for every prime.
+      The group-theoretic part is exact integer arithmetic; the decomposition is computed in
+      floating point with the thresholds recorded in the repository.
+
+      One further qualification concerns the representation used.
+      A genuine linear Weil representation exists for $q$ an odd
+      prime~\cite{Weil1964,Gerardin1977}; the implementation builds it from Bruhat words in
+      fixed generators, and that this particular lift is the genuine one rather than a
+      projective twist is verified numerically --- the homomorphism defect vanishes to
+      $10^{-14}$ over all ordered pairs of the stabiliser --- and is not proved here.
+      The conclusion is nevertheless insensitive to that gap.
+      Two lifts of a projective representation differ by a linear character of the group, and
+      tensoring by a linear character permutes the irreducible constituents while preserving
+      their dimensions and the multiplicity-free property.
+      The shape $1 + 4 \times 2$ and the multiplicity-freeness are therefore independent of the
+      choice of lift; only the labels of the four two-dimensional components depend on it.
+    \end{remark}
+
+    \begin{corollary}[The obstruction is selection, not existence]
+      \label{cor:selection-not-existence}
+      At the levels of Proposition~\ref{prop:dicyclic-witnesses} the O12 filtration selects a
+      subgroup carrying genuine two-dimensional spinorial content, so Borel confinement does not
+      by itself obstruct a spinor carrier.
+      It does not, however, select \emph{a} carrier: the spinorial part of $W_{<1}$ is
+      multiplicity-free with four pairwise inequivalent two-dimensional components, and nothing
+      in the construction distinguishes one of them.
+      Bridge~1 is therefore displaced rather than closed: what is missing is not the existence
+      of a two-dimensional module but a canonical selector
+      \[
+        \{V_{1}, V_{2}, V_{3}, V_{4}\} \longrightarrow V_{\rho}.
+      \]
+    \end{corollary}
+
     \begin{remark}[What is universal, what is measured, and what is not established]
       \label{rem:o12-status}
-      Three statements of different epistemic strength must be kept apart.
+      Statements of four different strengths must be kept apart, and the distinction between a
+      single \emph{level} and the \emph{full filtration} matters throughout.
       Theorem~\ref{thm:o12-stabiliser} and Corollary~\ref{cor:no-binary-polyhedral} are
-      universal: they hold for every odd prime, every generic block and every proper nonzero
-      level, and they carry the whole negative conclusion.
+      universal statements about one proper nonzero level: they hold for every odd prime, every
+      generic block and every such level.
+      Proposition~\ref{prop:dicyclic-witnesses} is a computational result on two named levels.
+      Neither of the stronger claims ``every full O12 filtration has a dicyclic stabiliser'' nor
+      ``no full O12 filtration can have one'' is established here; the full-filtration
+      stabiliser is $\bigcap_{n} \mathrm{Stab}(W_{<n})$ and is a different object, always
+      contained in each level stabiliser.
       The \emph{value} of $M_{n}$ is not universal.
       On the documented sampled blocks at $q = 53, 101, 211$ the exact multiplier groups are
       $M_{n} = \{\pm 1\}$ at every proper level, so that $\mathrm{Stab}(W_{<n}) \cong C_{2q}$
@@ -599,27 +733,34 @@ Conditional Status of the Threefold Admissibility Threshold\\
       was $25/2000$, $7/2000$, $1/2000$ and $26/2000$, $4/2000$, $0/2000$ at
       $q = 53, 101, 211$ respectively.
       That the intersection over levels is $\{\pm 1\}$ for \emph{all} generic blocks is
-      \emph{not established}: it held in every one of the $12\,008$ draws performed, and no
-      proof is offered.
-      The negative conclusion of Corollary~\ref{cor:no-binary-polyhedral} does not depend on
-      any of these measurements.
+      \emph{not established}: it held in every one of the $12\,008$ draws performed --- draws
+      with replacement, not necessarily distinct triples --- and no proof is offered.
+      The universal statements do not depend on any of these measurements; the excess
+      multipliers are precisely what produces the dicyclic levels of
+      Proposition~\ref{prop:dicyclic-witnesses}, so they are read here as a positive lead rather
+      than as sampling noise.
     \end{remark}
 
     \begin{remark}[Scope of the obstruction]
       \label{rem:o12-scope}
-      Corollary~\ref{cor:no-binary-polyhedral} rules out one \emph{source} for the carrier, not
-      the carrier itself, and it is not a no-go on the value three.
-      Bridge~1 remains open: nothing here proves that no admissible construction selects a
-      spinor carrier, only that this filtration does not.
-      Two consequences are worth recording for future attempts.
-      First, enriching the object cannot help: if $g$ fixes a set of vectors, a labelled shell
-      family, or a configuration carrying the BFS metric, then it fixes their linear span, so
-      the stabiliser of any such configuration is contained in $\mathrm{Stab}(W_{<n})$ and
-      therefore in $B(L)$.
-      Second, the obstruction is exactly the one-dimensionality of the Weyl support, so a
-      replacement construction must produce a proper nonzero projector whose Weyl support spans
-      at least two distinct lines through the origin.
-      That condition is necessary, not sufficient.
+      Corollary~\ref{cor:no-binary-polyhedral} rules out the exceptional groups only, and it is
+      not a no-go on the value three.
+      Bridge~1 remains open, now in a sharper form: by
+      Corollary~\ref{cor:selection-not-existence} the missing object is a selector among
+      inequivalent two-dimensional components, not a two-dimensional module.
+      Two structural consequences are worth recording for future attempts.
+      First, enriching the object cannot enlarge the stabiliser: if $g$ fixes a set of vectors,
+      a labelled shell family, or a configuration carrying the BFS metric, then it fixes their
+      linear span, so the stabiliser of any such configuration is contained in
+      $\mathrm{Stab}(W_{<n})$.
+      Second, the four two-dimensional components are individually well defined --- the
+      decomposition is multiplicity-free, so each isotypic component is a canonical subspace of
+      $W_{<1}$ --- but nothing exhibited here distinguishes one of them from the others.
+      Whether a canonical selector exists is open, and is not settled either way by this paper.
+      The natural next test is whether the normaliser of the stabiliser permutes the four
+      components transitively, since a transitive action would show that no selector can be
+      definable from the level and its stabiliser alone, while a non-transitive one would
+      identify invariantly distinguishable candidates.
     \end{remark}
 
     \paragraph{Reproduction.}
@@ -678,10 +819,12 @@ Conditional Status of the Threefold Admissibility Threshold\\
     independent directions (Theorem~\ref{thm:adjoint-dimension}), and that generator-axis
     counting cannot replace this module statement
     (Proposition~\ref{prop:q8-two-axes}).
-    It establishes further, and unconditionally, the exact stabiliser of the O12 shell-span
-    filtration in the Weil image (Theorem~\ref{thm:o12-stabiliser}) and the resulting exclusion
-    of every binary polyhedral group as a selected stabiliser
-    (Corollary~\ref{cor:no-binary-polyhedral}).
+    It establishes further, and unconditionally, the exact stabiliser of every proper nonzero
+    level of the O12 shell-span filtration in the Weil image
+    (Theorem~\ref{thm:o12-stabiliser}) and the resulting exclusion of the exceptional binary
+    polyhedral groups (Corollary~\ref{cor:no-binary-polyhedral}), and it exhibits two explicit
+    levels whose stabiliser is dicyclic and whose restricted Weil module is multiplicity-free
+    with four two-dimensional constituents (Proposition~\ref{prop:dicyclic-witnesses}).
     It does not derive the carrier, does not identify $\Sigma_{c}$ with the module
     dimension, and therefore does not derive $\Sigma_{c}(n_{3}) = 3$.
     The threshold retains the status of a supplied selection rule.
@@ -691,10 +834,12 @@ Conditional Status of the Threefold Admissibility Threshold\\
     projection structure, and an observable-identification theorem for $\Sigma_{c}$.
     Both are open problems of the programme, and the second requires in addition a rank
     measurement protocol that does not fix the target dimension in advance.
-    What Corollary~\ref{cor:no-binary-polyhedral} contributes to the first is a proved
-    restriction on where the carrier may come from, and a concrete invariant criterion --- a
-    Weyl support spanning at least two lines --- that any replacement construction must satisfy
-    before it is worth testing.
+    What Section~\ref{ssec:o12-obstruction} contributes to the first is a change in its type.
+    Before, Bridge~1 asked for a two-dimensional carrier and no source was known to produce one.
+    Now a source is known to produce four, canonically defined and pairwise inequivalent, at
+    explicit levels; the bridge asks for a selector among them.
+    That is a strictly smaller gap, and a testable one: a candidate selector can be checked
+    against the four components directly.
 
   \subsection{Relation to O21--O22}
     \label{ssec:conditional}
@@ -725,28 +870,33 @@ Conditional Status of the Threefold Admissibility Threshold\\
   motivated by the spinorial structure, and the closure of either bridge is a
   well-defined open problem of the programme.
 
-  On the first bridge, one candidate source is now excluded by an exact theorem.
-  The O12 shell-span filtration has stabiliser $U \rtimes M_{n}$ inside a Borel subgroup of
-  $\SL(2,\mathbb{Z}/q\mathbb{Z})$ for every proper level, every generic block and every odd
-  prime (Theorem~\ref{thm:o12-stabiliser}), and no binary polyhedral group embeds in a
-  metacyclic Borel, so that filtration selects no spinor carrier
+  On the first bridge, one candidate source is now analysed exactly.
+  Every proper nonzero level of the O12 shell-span filtration has stabiliser $U \rtimes M_{n}$
+  inside a Borel subgroup of $\SL(2,\mathbb{Z}/q\mathbb{Z})$
+  (Theorem~\ref{thm:o12-stabiliser}), which excludes the exceptional binary polyhedral groups
+  $2T$, $2O$, $2I$ even at the primes where they exist in the ambient group
   (Corollary~\ref{cor:no-binary-polyhedral}).
-  The exclusion is sharpest where the groups are available: for $q \equiv \pm 1 \pmod 5$ the
-  group $2I$ does sit inside $\SL(2,\mathbb{Z}/q\mathbb{Z})$, and the filtration still does not
-  select it.
+  It does not exclude a spinor carrier.
+  Dicyclic groups are metacyclic, and at explicit generic levels at $q = 53$ and $q = 101$ the
+  stabiliser is $\mathrm{Dic}_{q}$, whose restricted Weil module is one character plus four
+  pairwise inequivalent two-dimensional irreducible representations, each of multiplicity one
+  (Proposition~\ref{prop:dicyclic-witnesses}).
+  The filtration therefore supplies genuine spinorial content and no distinguished carrier, so
+  the residual obstruction on this bridge is a selection problem rather than an existence
+  problem (Corollary~\ref{cor:selection-not-existence}).
 
   \paragraph{Interpretive outlook (interpretation, not a result).}
-    Read structurally, this says that the admissible filtration studied so far is too
-    ``one-directional'' to carry a spin degree of freedom: its entire Weyl content lies along a
-    single line of the phase-space plane, and a spinor needs at least two independent
-    directions to exist.
-    If the three neutral directions of Theorem~\ref{thm:adjoint-dimension} are to be more than
-    a supplied convenience --- if they are eventually to explain why observable structure comes
-    in threes --- then the object carrying them must be built from something with a genuinely
-    two-dimensional support.
-    This reading is offered as orientation for where to look next, not as an established
-    consequence: the present paper proves where the carrier does \emph{not} come from, and says
-    nothing about where it does.
+    Read structurally, the admissible filtration turns out to be neither silent nor decisive
+    about spin.
+    It does produce, at some levels, a group of exactly the kind that can carry a spinor, and
+    genuine two-dimensional content inside the admissible level itself; what it does not
+    produce is a reason to prefer one of the four available spinor directions over the others.
+    If the three neutral directions of Theorem~\ref{thm:adjoint-dimension} are eventually to
+    explain why observable structure comes in threes, the missing ingredient is now visible and
+    much smaller than before: a principle that breaks a fourfold degeneracy, rather than a
+    construction of the carrier from nothing.
+    This reading is offered as orientation, not as an established consequence: the paper locates
+    the remaining gap, and does not close it.
 
   \bigskip
   \noindent

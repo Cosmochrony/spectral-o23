@@ -1,0 +1,186 @@
+[
+  {
+    "q": 53,
+    "block": [
+      47,
+      21,
+      32
+    ],
+    "level": 1,
+    "c_sigma": 47,
+    "dim_W": 9,
+    "multiplier_group": [
+      1,
+      23,
+      30,
+      52
+    ],
+    "stabiliser_order": 212,
+    "dicyclic": {
+      "order": 212,
+      "expected_4q": 212,
+      "multiplier_order": 4,
+      "sqrt_minus_one_in_M": [
+        23,
+        30
+      ],
+      "order_a": 106,
+      "order_x": 4,
+      "x2_is_minus_I": true,
+      "x_inverts_a": true,
+      "generated_by_a_x": true,
+      "is_dicyclic": true
+    },
+    "invariance_defect": 3.510732055855531e-14,
+    "homomorphism_defect": 7.832765383458872e-15,
+    "chi_norm": 5.000000000000001,
+    "constituents": [
+      {
+        "irrep": "lin0",
+        "dim": 1,
+        "multiplicity": 1.0,
+        "idempotence_defect": 1.5568635565367991e-16,
+        "rank": 1,
+        "expected_rank": 1
+      },
+      {
+        "irrep": "two6",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 1.7215205950236174e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two11",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 8.316241381233134e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two42",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 4.621482892263077e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two47",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 9.940134095643958e-15,
+        "rank": 2,
+        "expected_rank": 2
+      }
+    ],
+    "isotypic_completeness_defect": 1.8235228072981713e-14,
+    "dimension_check": {
+      "sum_d_times_m": 9.0,
+      "dim_W": 9,
+      "ok": true
+    },
+    "multiplicity_free": true,
+    "thresholds": {
+      "invariance": 1e-08,
+      "homomorphism": 1e-08,
+      "multiplicity": 1e-06,
+      "projector": 1e-08
+    },
+    "all_checks_passed": true
+  },
+  {
+    "q": 101,
+    "block": [
+      41,
+      95,
+      6
+    ],
+    "level": 1,
+    "c_sigma": 41,
+    "dim_W": 9,
+    "multiplier_group": [
+      1,
+      10,
+      91,
+      100
+    ],
+    "stabiliser_order": 404,
+    "dicyclic": {
+      "order": 404,
+      "expected_4q": 404,
+      "multiplier_order": 4,
+      "sqrt_minus_one_in_M": [
+        10,
+        91
+      ],
+      "order_a": 202,
+      "order_x": 4,
+      "x2_is_minus_I": true,
+      "x_inverts_a": true,
+      "generated_by_a_x": true,
+      "is_dicyclic": true
+    },
+    "invariance_defect": 5.955748205790393e-14,
+    "homomorphism_defect": 9.634481025213757e-15,
+    "chi_norm": 5.000000000000002,
+    "constituents": [
+      {
+        "irrep": "lin0",
+        "dim": 1,
+        "multiplicity": 1.0,
+        "idempotence_defect": 2.3195820531739365e-16,
+        "rank": 1,
+        "expected_rank": 1
+      },
+      {
+        "irrep": "two12",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 3.4454347749707956e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two41",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 2.279075450248252e-14,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two60",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 3.08851633135979e-14,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two89",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 1.0107202645952627e-14,
+        "rank": 2,
+        "expected_rank": 2
+      }
+    ],
+    "isotypic_completeness_defect": 4.20901758976013e-14,
+    "dimension_check": {
+      "sum_d_times_m": 9.0,
+      "dim_W": 9,
+      "ok": true
+    },
+    "multiplicity_free": true,
+    "thresholds": {
+      "invariance": 1e-08,
+      "homomorphism": 1e-08,
+      "multiplicity": 1e-06,
+      "projector": 1e-08
+    },
+    "all_checks_passed": true
+  }
+]

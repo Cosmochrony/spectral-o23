@@ -62,30 +62,38 @@ $\{\pm\mathbf{i}, \pm\mathbf{j}\}$ generates the group with only **two** generat
 direction arises only under commutator (Lie) closure.
 Counting admissible generator axes therefore cannot replace the module statement of Result 1.
 
-### 5. The O12 filtration cannot supply the carrier (proved, unconditional)
+### 5. What the O12 filtration does and does not supply (proved / computational)
 
 Every $k=3$ fingerprint vector of the O12 shell-span construction is a **pure Fourier mode**, of frequency
-$f = \sum_i c_i b_i \bmod q$ (Lemma 4.1). Each shell span $W_{<n}$ is therefore a coordinate subspace in the
-Fourier basis, its projector is Fourier-diagonal, and its Weyl support is a **single line** $L$. Consequently,
-for every odd prime $q$, every generic block and every proper nonzero level,
+$f = \sum_i c_i b_i \bmod q$. Each **level** $W_{<n}$ is therefore a coordinate subspace in the Fourier
+basis, its projector is Fourier-diagonal, and its Weyl support is a **single line** $L$. Consequently, for
+every odd prime $q$, every generic block and every proper nonzero level,
 
 $\mathrm{Stab}(W_{<n}) = U \rtimes M_n \subseteq B(L)$,   $M_n = \{s \in \mathbb{F}_q^\times : sF_n = F_n\}$
 
-where $B(L)$ is the Borel subgroup of $\mathrm{SL}(2,\mathbb{Z}/q\mathbb{Z})$ stabilising $L$ and $U$ its
-unipotent radical (Theorem 4.2). Since $B(L)$ is metacyclic and no binary polyhedral group is, **none of
-$2T \cong \mathrm{SL}(2,3)$, $2O$, $2I \cong \mathrm{SL}(2,5)$ is selected**, so this filtration supplies no
-two-dimensional spinor carrier (Corollary 4.3).
+where $B(L)$ is the Borel subgroup stabilising $L$ and $U$ its unipotent radical. This is a statement about
+one **level**; the full-filtration stabiliser $\bigcap_n \mathrm{Stab}(W_{<n})$ is a different, smaller
+object.
 
-The exclusion is sharpest where the groups are available: by Dickson's classification $2I$ does sit inside
-$\mathrm{SL}(2,\mathbb{Z}/q\mathbb{Z})$ whenever $q \equiv \pm 1 \pmod 5$, and the filtration still does not
-select it. This closes one **source** of the carrier, not the carrier itself, and is **not** a no-go on the
-value three.
+**Excluded (proved, unconditional):** the **exceptional** binary polyhedral groups
+$2T \cong \mathrm{SL}(2,3)$, $2O$, $2I \cong \mathrm{SL}(2,5)$, since $B(L)$ is metacyclic and none of them
+is. This holds even at the primes where they exist in the ambient group, e.g. $2I$ for $q \equiv \pm1 \pmod 5$.
 
-Measured separately and kept apart from the theorem (Remark 4.4): on the documented sampled blocks at
-$q = 53, 101, 211$ the multiplier groups are $M_n = \{\pm 1\}$, giving $\mathrm{Stab}(W_{<n}) \cong C_{2q}$
-with normaliser $B(L)$ — but genericity does **not** force this, and generic blocks with $|M_n| \in \{4,6\}$
-at some depth exist. That the intersection over levels is $\{\pm 1\}$ for *all* generic blocks is **not
-established**.
+**Not excluded, and realised:** dicyclic (binary dihedral) groups *are* metacyclic and do carry faithful
+two-dimensional spinor representations. At the explicit generic levels $(q,c,n) = (53,(47,21,32),1)$ and
+$(101,(41,95,6),1)$ the stabiliser is $\mathrm{Dic}_q$ of order $4q$, and the level decomposes
+multiplicity-freely under it as
+
+$W_{<1} \cong \mathbf{1}' \oplus V_1 \oplus V_2 \oplus V_3 \oplus V_4$,   $\dim_{\mathbb{C}} V_i = 2$,   $1 + 4\times 2 = 9$
+
+with $\langle\chi,\chi\rangle = 5$ and every multiplicity equal to one. This is a **computational result on
+two named witnesses**, not a universal claim about dicyclic levels.
+
+**Consequence.** The filtration supplies a spinorial group and genuine two-dimensional content, but no
+distinguished carrier: nothing exhibited selects one of the four inequivalent components. Bridge 1 is
+therefore **displaced, not closed** — the missing object is a canonical selector
+$\{V_1,V_2,V_3,V_4\} \to V_\rho$, not the existence of a two-dimensional module. Whether such a selector
+exists is open.
 
 ## The Two Open Bridges
 
@@ -95,11 +103,11 @@ bridges, both **open**:
 1. **Carrier selection**: no result derives $V_\rho \cong \mathbb{C}^2$ from Born–Infeld parity.
    O18 establishes parity as a covariance of the response family only (even-order responses preserved,
    odd-order reversed); the fibre identification is a typed open classification problem (O18 Problem 2.8).
-   One candidate source is now **closed exactly**: the O12 shell-span filtration selects no spinor carrier
-   (Result 5). The bridge itself remains open — nothing proves that no admissible construction selects one.
-   Any replacement must first satisfy the invariant criterion that a proper nonzero projector's Weyl support
-   span at least **two distinct lines** (necessary, not sufficient), and enriching the object with shell
-   labels or the BFS metric cannot help, since fixing a set of vectors fixes their span.
+   One candidate source is now analysed exactly (Result 5): it excludes the exceptional binary polyhedral
+   groups, but it *does* select a dicyclic stabiliser carrying multiplicity-free two-dimensional content at
+   explicit levels. The bridge is therefore sharpened rather than closed — what is missing is a canonical
+   selector among four inequivalent components. Enriching the object with shell labels or the BFS metric
+   cannot enlarge the stabiliser, since fixing a set of vectors fixes their span.
 2. **Observable identification**: no theorem identifies the cumulative Gram–Schmidt span $\Sigma_c$ with
    $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho)$.
    Since $n_3$ is defined as the shell where $\Sigma_c$ reaches three, the threshold is definitional at
@@ -107,9 +115,9 @@ bridges, both **open**:
 
 The status-typed chain is:
 
-BI parity (covariant, proved) →(open)→ pair fibre $c \leftrightarrow q{-}c$ →(open; **not from the O12
-filtration**, Result 5)→ $V_\rho \cong \mathbb{C}^2$ →(**proved**)→
-$\dim_{\mathbb{R}} \mathfrak{su}(V_\rho) = 3$ →(open)→ $\Sigma_c(n_3) = 3$.
+BI parity (covariant, proved) →(open)→ pair fibre $c \leftrightarrow q{-}c$ →(open; refined by Result 5 into an
+existence part supplied and a selection part missing)→ $V_\rho \cong \mathbb{C}^2$ →(**proved**)→ $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho) = 3$ →(open)→
+$\Sigma_c(n_3) = 3$.
 
 ## Spectral Observations
 
@@ -122,8 +130,10 @@ $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho) = 3$ →(open)→ $\Sigma_c(n_3) = 3$.
 ## Status
 
 - Adjoint dimension of a supplied spinor carrier: **proved** (Theorem 3.1)
-- Exact stabiliser of the O12 filtration, $U \rtimes M_n \subseteq B(L)$: **proved, unconditional** (Theorem 4.2)
-- No binary polyhedral group selected by that filtration: **proved, unconditional** (Corollary 4.3)
+- Exact stabiliser of each O12 **level**, $U \rtimes M_n \subseteq B(L)$: **proved, unconditional**
+- No **exceptional** binary polyhedral group ($2T$, $2O$, $2I$) selected: **proved, unconditional**
+- Dicyclic stabiliser with multiplicity-free spinorial content: **computational, two named witnesses**
+- A canonical selector among the four two-dimensional components: **open**
 - $\mathrm{Stab}(W_{<n}) \cong C_{2q}$: **measured on the sampled blocks**, not a theorem (Remark 4.4)
 - Filtration intersection $\{\pm 1\}$ for all generic blocks: **not established** (Remark 4.4)
 - $\Sigma_c(n_3) = 3$: **supplied selection rule / open**, awaiting the two bridges
