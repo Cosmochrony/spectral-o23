@@ -38,7 +38,7 @@ $\mathfrak{su}(V_\rho) \cong \mathfrak{su}(2) \cong \mathrm{Im}\,\mathbb{H}$,
 
 of real dimension exactly **3**.
 Every neutral generator image $\rho(s) = \mathrm{i}(\vec{u}_s \cdot \vec{\sigma})$ lies on the unit sphere of
-this three-dimensional space.
+this three-dimensional space, for the inner product $\langle A, B\rangle = \tfrac12\mathrm{Tr}(A^\dagger B)$.
 This explains why a spinor-carried admissible sector naturally carries three independent directions.
 
 ### 2. Non-abelian support (proved)
