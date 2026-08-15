@@ -103,13 +103,19 @@ A candidate selector is identified, and the paper is careful about which form of
 - the **oriented** rule "$j = c_\Sigma$" **fails** — at $q=53$ with block $(10,35,18)$, $c_\Sigma = 10$ is a
   constituent but is even, hence not faithful (6/14 on the audited levels);
 - the **sign-completed** rule "take the unique odd member of $\{c_\Sigma,\, q-c_\Sigma\}$" **does not
-  fail**: it selects an admissible carrier in **17 of 17** dicyclic levels examined (three with deposited
-  decompositions, fourteen more in the deposited selector sweep).
+  fail**: it selects an admissible carrier in **13 of 13 distinct** dicyclic levels examined. The count is in
+  distinct exact subspaces $W_{<1}$, not runs: the 14 sweep rows realise 11 distinct subspaces, of which 10
+  are new relative to the three deposited witnesses.
 
 Two ingredients are immediate: exactly one of $c_\Sigma$, $q-c_\Sigma$ is odd because $q$ is odd, and both
 $\pm c_\Sigma$ always lie in $F_1$ since the frequency is $\sum_i c_i b_i$ and the word with
 $b_1=b_2=b_3=\pm1$ exists in the generating set. The remaining step — that this pair appears among the
 constituent labels — is **observed, not proved**. No claim of an irreducible ambiguity is made.
+
+**Scope.** This rule operates *inside* a level already known to be dicyclic: it presupposes a choice of $q$,
+of generic block, and of level. Nothing here selects those data within the generic filtration, where dicyclic
+levels are sparse. Bridge 1 therefore retains **two** open steps — selecting an admissible level, and proving
+the observed step inside it — and only the second is a well-posed proof obligation.
 
 ## The Two Open Bridges
 
@@ -151,8 +157,9 @@ $\Sigma_c(n_3) = 3$.
 - Dicyclic stabiliser with multiplicity-free spinorial content: **computational, two named witnesses**
 - Exactly two of the four constituents faithful (admissible carriers): **proved from the central character**
 - A **proved** selector between the two admissible carriers: **open**; the oriented candidate
-  "$j = c_\Sigma$" is refuted, its sign-completed form survives 17/17 audited levels with one
+  "$j = c_\Sigma$" is refuted, its sign-completed form survives 13/13 distinct audited levels with one
   unproved step
+- Selecting which prime, block and level of the generic filtration is the relevant dicyclic one: **open**
 - $\mathrm{Stab}(W_{<n}) \cong C_{2q}$: **measured on the sampled blocks**, not a theorem (Remark 4.4)
 - Filtration intersection $\{\pm 1\}$ for all generic blocks: **not established** (Remark 4.4)
 - $\Sigma_c(n_3) = 3$: **supplied selection rule / open**, awaiting the two bridges

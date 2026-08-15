@@ -39,12 +39,24 @@ now a deposited witness covered by the kill-switch.
 The sign-completed rule is audited separately and its evidence deposited:
 
 ```bash
-python3 o23_dicyclic_decomposition.py --selector-sweep 8     # 8 dicyclic levels per prime
+python3 o23_dicyclic_decomposition.py --selector-sweep 8     # up to 8 dicyclic levels per prime
 ```
 
-This writes `checkpoints/selector_rule_sweep_8.json` and exits non-zero if any level fails. Deposited
-result: sign-completed rule 14/14, oriented rule 6/14. With the three deposited decompositions this gives
-17/17 for the sign-completed rule.
+This writes `checkpoints/selector_rule_sweep_8_seed99.json`, whose manifest records the sweep seed, the
+quota, the primes and the thresholds. **Seeds differ per script and are not interchangeable**:
+`o23_filtration_stabiliser.py` defaults to `--seed 12345`, the selector sweep to `--sweep-seed 99`; each is
+recorded in its own checkpoint.
+
+The sweep exits non-zero (status 6) if any row fails the sign-completed rule **or** fails its own
+decomposition checks. That second condition was added after an audit showed the guard was vacuous: with
+`TOL_HOM` forced to zero every row failed its checks while the sweep still reported full success and exited
+0. Verified: tampered run now exits 6, untampered exits 0.
+
+Deposited result: sign-completed rule 14/14 rows, oriented rule 6/14. Counting **distinct exact subspaces**
+rather than rows, the 14 rows realise 11 distinct $W_{<1}$, of which 10 are new relative to the three
+deposited witnesses, giving 13 distinct levels in total. The run reports rows per prime, the distinct count,
+and warns when the search exhausts the available blocks before reaching its quota (it does at $q=101$, where
+only 6 of the requested 8 exist under this seed).
 
 Multiplicities are computed as complex numbers; the run reports the worst imaginary part and the worst
 distance to the nearest integer, and fails if either exceeds `TOL_MULT`, so no failure of the character

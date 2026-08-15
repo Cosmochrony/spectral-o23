@@ -1,9 +1,35 @@
 {
+  "manifest": {
+    "per_prime_requested": 8,
+    "primes": [
+      53,
+      101
+    ],
+    "seed": 99,
+    "max_draws": 20000,
+    "level": 1,
+    "thresholds": {
+      "invariance": 1e-08,
+      "homomorphism": 1e-08,
+      "multiplicity": 1e-06,
+      "projector": 1e-08
+    }
+  },
   "primes": [
     53,
     101
   ],
   "levels": 14,
+  "levels_per_prime": {
+    "53": 8,
+    "101": 6
+  },
+  "search_exhausted_before_quota": {
+    "53": false,
+    "101": true
+  },
+  "distinct_exact_subspaces": 11,
+  "rows_failing_own_checks": 0,
   "successes": 14,
   "oriented_successes": 6,
   "rows": [

@@ -323,7 +323,7 @@ def decompose(q, block, level, verbose=True):
     return result
 
 
-def selector_sweep(per_prime, primes=(53, 101), seed=99):
+def selector_sweep(per_prime, primes=(53, 101), seed=99, max_draws=20000):
     """Audit the sign-completed selector rule on dicyclic level-1 blocks.
 
     Oriented rule:        j = c_Sigma.
@@ -332,14 +332,16 @@ def selector_sweep(per_prime, primes=(53, 101), seed=99):
     oriented rule and the survival of the sign-completed one are both traceable.
     """
     from o23_filtration_stabiliser import bfs_shells as _bfs
-    rows, ok, ok_oriented = [], 0, 0
+    rows, ok, ok_oriented, failed_checks = [], 0, 0, 0
+    per_prime_found, exhausted = {}, {}
+    distinct = set()
     for q in primes:
         rng = np.random.default_rng(seed)
         gens = build_generators(q)
         gens_arr = np.array(gens, dtype=np.int64)
         shells = _bfs(gens, q, min(int(0.30 * q ** 3), 400_000))
         seen = set()
-        for _ in range(20000):
+        for _ in range(max_draws):
             c = tuple(int(v) for v in rng.integers(1, q, size=3))
             if sum(c) % q == 0 or c in seen:
                 continue
@@ -351,6 +353,7 @@ def selector_sweep(per_prime, primes=(53, 101), seed=99):
             if len(M) != 4 or not any((s * s) % q == q - 1 for s in M):
                 continue
             seen.add(c)
+            distinct.add((q, frozenset(int(f) for f in F)))
             r = decompose(q, c, 1, verbose=False)
             rows.append({k: r[k] for k in
                          ("q", "block", "c_sigma", "two_dim_j", "faithful_j", "sign_pair",
@@ -358,13 +361,31 @@ def selector_sweep(per_prime, primes=(53, 101), seed=99):
                           "sign_completed_rule_selects_an_admissible_carrier",
                           "c_sigma_is_an_admissible_carrier", "multiplicity_free",
                           "all_checks_passed")})
+            # A row only counts as a success if the decomposition it rests on passed ITS OWN
+            # checks.  Counting the rule alone made the guard vacuous: with a threshold forced
+            # to zero every row failed while the sweep still reported full success.
+            if not r["all_checks_passed"]:
+                failed_checks += 1
             ok += bool(r["sign_completed_rule_selects_an_admissible_carrier"]
-                       and r["sign_pair_are_constituents"])
-            ok_oriented += bool(r["c_sigma_is_an_admissible_carrier"])
+                       and r["sign_pair_are_constituents"]
+                       and r["all_checks_passed"])
+            ok_oriented += bool(r["c_sigma_is_an_admissible_carrier"]
+                                and r["all_checks_passed"])
             if len(seen) >= per_prime:
                 break
-    return {"primes": list(primes), "levels": len(rows), "successes": ok,
-            "oriented_successes": ok_oriented, "rows": rows}
+        per_prime_found[q] = len(seen)
+        exhausted[q] = len(seen) < per_prime
+    return {
+        "manifest": {"per_prime_requested": per_prime, "primes": list(primes), "seed": seed,
+                     "max_draws": max_draws, "level": 1,
+                     "thresholds": {"invariance": TOL_INVARIANCE, "homomorphism": TOL_HOM,
+                                    "multiplicity": TOL_MULT, "projector": TOL_PROJ}},
+        "primes": list(primes), "levels": len(rows),
+        "levels_per_prime": per_prime_found,
+        "search_exhausted_before_quota": exhausted,
+        "distinct_exact_subspaces": len(distinct),
+        "rows_failing_own_checks": failed_checks,
+        "successes": ok, "oriented_successes": ok_oriented, "rows": rows}
 
 
 def main():
@@ -376,6 +397,9 @@ def main():
     ap.add_argument("--selector-sweep", type=int, default=0, dest="sweep",
                     help="audit the sign-completed selector rule on this many further "
                          "dicyclic level-1 blocks per prime, and deposit the evidence")
+    ap.add_argument("--sweep-seed", type=int, default=99, dest="sweep_seed",
+                    help="seed for the selector sweep (recorded in its manifest); the other "
+                         "script's runs use their own --seed, default 12345")
     args = ap.parse_args()
 
     if args.q and args.block:
@@ -388,15 +412,23 @@ def main():
         out = OUT
 
     if args.sweep:
-        out = CKPT_DIR / f"selector_rule_sweep_{args.sweep}.json"
-        sweep = selector_sweep(args.sweep)
+        out = CKPT_DIR / f"selector_rule_sweep_{args.sweep}_seed{args.sweep_seed}.json"
+        sweep = selector_sweep(args.sweep, seed=args.sweep_seed)
         CKPT_DIR.mkdir(exist_ok=True)
         out.write_text(json.dumps(sweep, indent=2, default=str))
-        print(f"\nsign-completed rule: {sweep['successes']}/{sweep['levels']} levels "
+        print(f"\nsign-completed rule: {sweep['successes']}/{sweep['levels']} rows "
               f"({sweep['primes']}); oriented rule j = c_Sigma: "
               f"{sweep['oriented_successes']}/{sweep['levels']}")
+        print(f"rows per prime: {sweep['levels_per_prime']}; distinct exact W_<1 subspaces: "
+              f"{sweep['distinct_exact_subspaces']}; rows failing their own checks: "
+              f"{sweep['rows_failing_own_checks']}")
+        for q_, ex in sweep["search_exhausted_before_quota"].items():
+            if ex:
+                print(f"  WARNING: search exhausted at q={q_} before reaching the quota "
+                      f"({sweep['levels_per_prime'][q_]} of {args.sweep} found)")
         print(f"evidence written to {out.name}")
-        raise SystemExit(0 if sweep["successes"] == sweep["levels"] else 6)
+        raise SystemExit(0 if (sweep["successes"] == sweep["levels"]
+                               and sweep["rows_failing_own_checks"] == 0) else 6)
 
     results = [decompose(q, c, n) for q, c, n in cases]
     CKPT_DIR.mkdir(exist_ok=True)

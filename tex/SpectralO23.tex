@@ -83,11 +83,14 @@ Conditional Status of the Threefold Admissibility Threshold\\
     A structurally motivated candidate is available and survives every audit performed: take the
     unique odd member of the pair $\{c_{\Sigma},\, q - c_{\Sigma}\}$ formed from the ambient
     central character.
-    It selects an admissible carrier in all seventeen dicyclic levels examined, and one step of
-    its justification remains unproved.
-    The residual obstruction on this bridge is therefore a single missing proof step inside a
-    specific candidate rule, not the non-existence of a two-dimensional module and not an
-    irreducible ambiguity.
+    It selects an admissible carrier in all thirteen distinct dicyclic levels examined, and one
+    step of its justification remains unproved.
+    That candidate operates inside a level already known to be dicyclic, so the bridge as a whole
+    is not reduced to it: selecting which prime, block and level the projection should single out
+    within the generic filtration remains a separate open step.
+    What the analysis removes is the non-existence reading: the source does supply
+    two-dimensional modules, and the residual difficulty is selection at two distinct levels of
+    the construction.
 
     The second bridge is observable identification: no theorem identifies the cumulative
     Gram--Schmidt span $\Sigma_{c}$ of O21 with the dimension of the neutral traceless module,
@@ -575,7 +578,7 @@ Conditional Status of the Threefold Admissibility Threshold\\
       For every proper nonzero level, that is whenever $0 < |F_{n}| < q$,
       \[
         \mathrm{Stab}(W_{<n})
-        = \{ g \in \SL(2,\mathbb{Z}/q\mathbb{Z}) : \rho_{c}(g) W_{<n} = W_{<n} \}
+        = \{ g \in \SL(2,\mathbb{Z}/q\mathbb{Z}) : \rho_{c_{\Sigma}}(g) W_{<n} = W_{<n} \}
         = U \rtimes M_{n}
         \subseteq B(L).
       \]
@@ -609,8 +612,10 @@ Conditional Status of the Threefold Admissibility Threshold\\
       Within $B(L)$, write $g$ as a product of a unipotent and a torus element.
       The unipotent $U$ is diagonal in the Fourier basis, hence preserves every coordinate
       subspace and lies in the stabiliser unconditionally.
-      The torus element $\mathrm{diag}(s, s^{-1})$ sends $e_{f}$ to $e_{sf}$, hence preserves
-      $W_{<n}$ if and only if $s F_{n} = F_{n}$, that is $s \in M_{n}$.
+      In the deposited normalisation the torus element $\mathrm{diag}(s, s^{-1})$ acts by
+      $f \mapsto f(s^{-1} \cdot)$, hence sends $e_{f}$ to $e_{s^{-1} f}$.
+      It therefore preserves $W_{<n}$ if and only if $s^{-1} F_{n} = F_{n}$, which, $M_{n}$
+      being a group, is the same condition as $s F_{n} = F_{n}$, that is $s \in M_{n}$.
     \end{proof}
 
     \begin{corollary}[No exceptional binary polyhedral group is selected]
@@ -642,8 +647,14 @@ Conditional Status of the Threefold Admissibility Threshold\\
       $\mathrm{Dic}_{m}$, listed among the admissible candidates in
       Remark~\ref{rem:exclusion-scope}, and those groups \emph{are} metacyclic: $\mathrm{Dic}_{m}$
       has a cyclic normal subgroup of order $2m$ with quotient of order two.
-      They therefore embed in a Borel subgroup, and they carry faithful irreducible complex
-      representations of dimension two.
+      Metacyclicity is only the removal of the obstruction, not an embedding: being metacyclic
+      does not by itself place a group inside $B(L)$, and no such general implication is used
+      here.
+      What establishes the point is explicit realisation.
+      Proposition~\ref{prop:dicyclic-witnesses} exhibits levels at which
+      $\mathrm{Stab}(W_{<n})$ \emph{is} dicyclic, produced by the exact formula of
+      Theorem~\ref{thm:o12-stabiliser} itself, and those groups carry faithful irreducible
+      complex representations of dimension two.
       Proposition~\ref{prop:dicyclic-witnesses} shows that this is not a hypothetical gap:
       the exact formula of Theorem~\ref{thm:o12-stabiliser} produces dicyclic stabilisers at
       genuine levels of the deposited construction.
@@ -813,17 +824,30 @@ Conditional Status of the Threefold Admissibility Threshold\\
       $b_{1} = b_{2} = b_{3} = \pm 1$ is available in the deposited generating set.
       The remaining step, that the pair $\{c_{\Sigma}, q - c_{\Sigma}\}$ appears among the
       labels of the two-dimensional constituents, is observed and not proved.
-      It held, together with the selection of an admissible carrier, in every level audited:
-      the three levels with deposited decompositions and a further fourteen dicyclic levels at
-      $q = 53$ and $q = 101$, hence $17$ of $17$.
+      It held, together with the selection of an admissible carrier, in every level audited.
+      The count is stated in distinct exact subspaces rather than in runs: the three levels with
+      deposited decompositions and the deposited selector sweep together comprise $13$ distinct
+      subspaces $W_{<1}$ ($14$ sweep rows realise $11$ distinct subspaces, of which $10$ are new
+      relative to the three witnesses), and the rule succeeded on all $13$.
+      The sweep also exhausted the available blocks at $q = 101$ before reaching its quota,
+      which the run reports.
 
       Consequently no claim of an irreducible twofold ambiguity is made.
       What is established is that two admissible carriers are present and that a structurally
       motivated candidate selector --- structural because $c_{\Sigma}$ is the ambient central
       character of the construction, not a free parameter --- is consistent with every level
       examined.
-      Promoting it to a selector requires proving the observed step; that is a well-posed open
-      problem, and it is the natural continuation of this work.
+
+      The scope of that statement must be read strictly, and it does not reduce Bridge~1 as a
+      whole.
+      The rule operates \emph{inside} a level that has already been shown to be dicyclic; it
+      presupposes a choice of prime $q$, of generic block $c$, and of level $n$.
+      No result of this paper selects those data within the generic filtration: dicyclic levels
+      are a sparse phenomenon among generic blocks, and nothing here says which level of which
+      block the projection is supposed to single out.
+      Bridge~1 therefore retains at least two open steps --- the selection of an admissible
+      level, and the proof of the observed step inside it --- and only the second is reduced to
+      a well-posed proof obligation.
 
       A test that does \emph{not} settle the question should also be recorded, since it is the
       first that comes to mind.
@@ -955,10 +979,13 @@ Conditional Status of the Threefold Admissibility Threshold\\
   Each component is canonical, the decomposition being multiplicity-free.
   What has not been \emph{proved} is the rule selecting one of the two admissible carriers, for
   which a structurally motivated candidate --- the unique odd member of
-  $\{c_{\Sigma}, q - c_{\Sigma}\}$ --- succeeds on every level examined
+  $\{c_{\Sigma}, q - c_{\Sigma}\}$ --- succeeds on all thirteen distinct levels examined
   (Corollary~\ref{cor:selection-not-existence}, Remark~\ref{rem:o12-scope}).
-  The residual obstruction on this bridge is thus one open proof step, not an existence
-  problem.
+  That candidate presupposes a level already known to be dicyclic, and no result here selects
+  the prime, block and level within the generic filtration, so Bridge~1 retains two open steps
+  rather than one.
+  What the analysis removes is the reading in which the source supplies no two-dimensional
+  module at all.
 
   \paragraph{Interpretive outlook (interpretation, not a result).}
     Read structurally, the admissible filtration turns out to be neither silent nor decisive
@@ -969,8 +996,9 @@ Conditional Status of the Threefold Admissibility Threshold\\
     candidate reading it off the ambient central character works in every case examined.
     If the three neutral directions of Theorem~\ref{thm:adjoint-dimension} are eventually to
     explain why observable structure comes in threes, the missing ingredient is now visible and
-    much smaller than before: one proof step inside an identified candidate rule, rather than a
-    construction of the carrier from nothing.
+    smaller and better localised than before: selecting an admissible level, and one proof step
+    inside an identified candidate rule, rather than a construction of the carrier from
+    nothing.
     This reading is offered as orientation, not as an established consequence: the paper locates
     the remaining gap, and does not close it.
 
