@@ -1,0 +1,314 @@
+{
+  "manifest": {
+    "q": 211,
+    "seed": 777,
+    "central": "sum",
+    "blocks": 1,
+    "n_max": 6,
+    "bfs_frac": 0.3,
+    "max_nodes": 400000,
+    "chunk": 1500,
+    "sweep": 2000,
+    "sweep_seed": 778,
+    "thresholds": {
+      "rank": 1e-09,
+      "support": 1e-08,
+      "member": 1e-08,
+      "verify": 1e-08
+    }
+  },
+  "blocks": {
+    "block0": {
+      "c_block": [
+        191,
+        129,
+        75
+      ],
+      "c_ambient": 184,
+      "kernels": {
+        "centre_of_SL2": [
+          "+1",
+          "-1"
+        ],
+        "rho(-1)_is_scalar": false,
+        "rho(-1)_scalar_defect": 14.525675910728118,
+        "rho(-1)_is_parity_up_to_phase": true,
+        "projective_kernel": [
+          "+1"
+        ]
+      },
+      "levels": [
+        {
+          "n": 1,
+          "dim": 25,
+          "exact_dim": 25,
+          "dim_match": true,
+          "gap": 13951013338716.387,
+          "stab_order": 422,
+          "predicted_order": 422,
+          "multiplier_group": [
+            1,
+            210
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 210,
+            "classes": 105,
+            "rarest": 2,
+            "candidates": 422
+          },
+          "cross_check": 1.1059407254918726e-13
+        },
+        {
+          "n": 2,
+          "dim": 39,
+          "exact_dim": 39,
+          "dim_match": true,
+          "gap": 6899908823443.081,
+          "stab_order": 422,
+          "predicted_order": 422,
+          "multiplier_group": [
+            1,
+            210
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 210,
+            "classes": 105,
+            "rarest": 2,
+            "candidates": 422
+          },
+          "cross_check": 1.013196480643524e-13
+        },
+        {
+          "n": 3,
+          "dim": 53,
+          "exact_dim": 53,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 422,
+          "predicted_order": 422,
+          "multiplier_group": [
+            1,
+            210
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 210,
+            "classes": 105,
+            "rarest": 2,
+            "candidates": 422
+          },
+          "cross_check": 1.0804490662969408e-13
+        },
+        {
+          "n": 4,
+          "dim": 67,
+          "exact_dim": 67,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 422,
+          "predicted_order": 422,
+          "multiplier_group": [
+            1,
+            210
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 210,
+            "classes": 105,
+            "rarest": 2,
+            "candidates": 422
+          },
+          "cross_check": 1.0213977833302344e-12
+        },
+        {
+          "n": 5,
+          "dim": 81,
+          "exact_dim": 81,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 422,
+          "predicted_order": 422,
+          "multiplier_group": [
+            1,
+            210
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 210,
+            "classes": 105,
+            "rarest": 2,
+            "candidates": 422
+          },
+          "cross_check": 1.968519939723677e-12
+        },
+        {
+          "n": 6,
+          "dim": 95,
+          "exact_dim": 95,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 422,
+          "predicted_order": 422,
+          "multiplier_group": [
+            1,
+            210
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 210,
+            "classes": 105,
+            "rarest": 2,
+            "candidates": 422
+          },
+          "cross_check": 1.903252609596882e-12
+        }
+      ],
+      "filtration_stabiliser_order": 422,
+      "classification": {
+        "order": 422,
+        "element_order_profile": {
+          "1": 1,
+          "2": 1,
+          "211": 210,
+          "422": 210
+        },
+        "abelian": null,
+        "centre_order": 422,
+        "contains_minus_identity": true,
+        "invariant_lines": [
+          [
+            1,
+            0
+          ]
+        ],
+        "inside_borel": true,
+        "dickson_reading": [
+          "contained in a Borel (metacyclic): no binary polyhedral group embeds"
+        ]
+      },
+      "normaliser": {
+        "order": 44310,
+        "index_over_stab": 105
+      }
+    },
+    "_sweep": {
+      "blocks": 2000,
+      "blocks_with_extra_multipliers": 0,
+      "per_level": [
+        {
+          "n": 1,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 2,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 3,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 4,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 5,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 6,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        }
+      ],
+      "filtration_multiplier_orders": {
+        "2": 2000
+      }
+    }
+  }
+}

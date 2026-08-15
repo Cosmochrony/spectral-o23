@@ -1,0 +1,317 @@
+{
+  "manifest": {
+    "q": 101,
+    "seed": 777,
+    "central": "sum",
+    "blocks": 1,
+    "n_max": 6,
+    "bfs_frac": 0.3,
+    "max_nodes": 400000,
+    "chunk": 1500,
+    "sweep": 2000,
+    "sweep_seed": 778,
+    "thresholds": {
+      "rank": 1e-09,
+      "support": 1e-08,
+      "member": 1e-08,
+      "verify": 1e-08
+    }
+  },
+  "blocks": {
+    "block0": {
+      "c_block": [
+        91,
+        62,
+        36
+      ],
+      "c_ambient": 88,
+      "kernels": {
+        "centre_of_SL2": [
+          "+1",
+          "-1"
+        ],
+        "rho(-1)_is_scalar": false,
+        "rho(-1)_scalar_defect": 10.04938301637971,
+        "rho(-1)_is_parity_up_to_phase": true,
+        "projective_kernel": [
+          "+1"
+        ]
+      },
+      "levels": [
+        {
+          "n": 1,
+          "dim": 25,
+          "exact_dim": 25,
+          "dim_match": true,
+          "gap": 24914805147799.523,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 5.794907259932174e-14
+        },
+        {
+          "n": 2,
+          "dim": 31,
+          "exact_dim": 31,
+          "dim_match": true,
+          "gap": 11875689628708.742,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.8432795999043576e-14
+        },
+        {
+          "n": 3,
+          "dim": 33,
+          "exact_dim": 33,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.2333411409040585e-14
+        },
+        {
+          "n": 4,
+          "dim": 35,
+          "exact_dim": 35,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 7.160184886466471e-14
+        },
+        {
+          "n": 5,
+          "dim": 37,
+          "exact_dim": 37,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.717614909279122e-13
+        },
+        {
+          "n": 6,
+          "dim": 39,
+          "exact_dim": 39,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 2.655443620904211e-13
+        }
+      ],
+      "filtration_stabiliser_order": 202,
+      "classification": {
+        "order": 202,
+        "element_order_profile": {
+          "1": 1,
+          "2": 1,
+          "101": 100,
+          "202": 100
+        },
+        "abelian": null,
+        "centre_order": 202,
+        "contains_minus_identity": true,
+        "invariant_lines": [
+          [
+            1,
+            0
+          ]
+        ],
+        "inside_borel": true,
+        "dickson_reading": [
+          "contained in a Borel (metacyclic): no binary polyhedral group embeds"
+        ]
+      },
+      "normaliser": {
+        "order": 10100,
+        "index_over_stab": 50
+      }
+    },
+    "_sweep": {
+      "blocks": 2000,
+      "blocks_with_extra_multipliers": 4,
+      "per_level": [
+        {
+          "n": 1,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 2,
+          "levels": 2000,
+          "extra": 1,
+          "orders": {
+            "2": 1999,
+            "4": 1
+          }
+        },
+        {
+          "n": 3,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 4,
+          "levels": 2000,
+          "extra": 2,
+          "orders": {
+            "2": 1998,
+            "4": 2
+          }
+        },
+        {
+          "n": 5,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 6,
+          "levels": 1934,
+          "extra": 1,
+          "orders": {
+            "2": 1933,
+            "4": 1
+          }
+        }
+      ],
+      "filtration_multiplier_orders": {
+        "2": 2000
+      }
+    }
+  }
+}

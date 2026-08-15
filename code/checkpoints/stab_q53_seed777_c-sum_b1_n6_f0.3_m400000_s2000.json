@@ -1,0 +1,406 @@
+{
+  "manifest": {
+    "q": 53,
+    "seed": 777,
+    "central": "sum",
+    "blocks": 1,
+    "n_max": 6,
+    "bfs_frac": 0.3,
+    "max_nodes": 400000,
+    "chunk": 1500,
+    "sweep": 2000,
+    "sweep_seed": 778,
+    "thresholds": {
+      "rank": 1e-09,
+      "support": 1e-08,
+      "member": 1e-08,
+      "verify": 1e-08
+    }
+  },
+  "blocks": {
+    "block0": {
+      "c_block": [
+        48,
+        32,
+        19
+      ],
+      "c_ambient": 46,
+      "kernels": {
+        "centre_of_SL2": [
+          "+1",
+          "-1"
+        ],
+        "rho(-1)_is_scalar": false,
+        "rho(-1)_scalar_defect": 7.278813919552532,
+        "rho(-1)_is_parity_up_to_phase": true,
+        "projective_kernel": [
+          "+1"
+        ]
+      },
+      "levels": [
+        {
+          "n": 1,
+          "dim": 27,
+          "exact_dim": 27,
+          "dim_match": true,
+          "gap": 89735228198594.02,
+          "stab_order": 106,
+          "predicted_order": 106,
+          "multiplier_group": [
+            1,
+            52
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 52,
+            "classes": 26,
+            "rarest": 2,
+            "candidates": 106
+          },
+          "cross_check": 3.7549588573777336e-14
+        },
+        {
+          "n": 2,
+          "dim": 37,
+          "exact_dim": 37,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 106,
+          "predicted_order": 106,
+          "multiplier_group": [
+            1,
+            52
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 52,
+            "classes": 26,
+            "rarest": 2,
+            "candidates": 106
+          },
+          "cross_check": 2.950984295605587e-14
+        },
+        {
+          "n": 3,
+          "dim": 47,
+          "exact_dim": 47,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 106,
+          "predicted_order": 106,
+          "multiplier_group": [
+            1,
+            52
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 52,
+            "classes": 26,
+            "rarest": 2,
+            "candidates": 106
+          },
+          "cross_check": 5.943433520528173e-14
+        },
+        {
+          "n": 4,
+          "dim": 51,
+          "exact_dim": 51,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 106,
+          "predicted_order": 106,
+          "multiplier_group": [
+            1,
+            52
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 52,
+            "classes": 26,
+            "rarest": 2,
+            "candidates": 106
+          },
+          "cross_check": 6.446080302959358e-14
+        },
+        {
+          "n": 5,
+          "dim": 53,
+          "exact_dim": 53,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": null,
+          "predicted_order": null,
+          "multiplier_group": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "note": "W = C^q: pointwise stabilisers are the kernels of rho_c (lock 2)"
+          },
+          "meta": {
+            "support": 0,
+            "note": "p supported at v=0 only: stabiliser is all of SL(2,q)"
+          },
+          "cross_check": 0.0
+        },
+        {
+          "n": 6,
+          "dim": 53,
+          "exact_dim": 53,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": null,
+          "predicted_order": null,
+          "multiplier_group": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "note": "W = C^q: pointwise stabilisers are the kernels of rho_c (lock 2)"
+          },
+          "meta": {
+            "support": 0,
+            "note": "p supported at v=0 only: stabiliser is all of SL(2,q)"
+          },
+          "cross_check": 0.0
+        }
+      ],
+      "filtration_stabiliser_order": 106,
+      "classification": {
+        "order": 106,
+        "element_order_profile": {
+          "1": 1,
+          "2": 1,
+          "53": 52,
+          "106": 52
+        },
+        "abelian": true,
+        "centre_order": 106,
+        "contains_minus_identity": true,
+        "invariant_lines": [
+          [
+            1,
+            0
+          ]
+        ],
+        "inside_borel": true,
+        "dickson_reading": [
+          "abelian (cyclic or elementary abelian)",
+          "contained in a Borel (metacyclic): no binary polyhedral group embeds"
+        ]
+      },
+      "normaliser": {
+        "order": 2756,
+        "index_over_stab": 26
+      }
+    },
+    "_sweep": {
+      "blocks": 2000,
+      "blocks_with_extra_multipliers": 26,
+      "per_level": [
+        {
+          "n": 1,
+          "levels": 2000,
+          "extra": 1,
+          "orders": {
+            "2": 1999,
+            "4": 1
+          }
+        },
+        {
+          "n": 2,
+          "levels": 2000,
+          "extra": 0,
+          "orders": {
+            "2": 2000
+          }
+        },
+        {
+          "n": 3,
+          "levels": 1898,
+          "extra": 12,
+          "orders": {
+            "2": 1886,
+            "4": 12
+          }
+        },
+        {
+          "n": 4,
+          "levels": 1500,
+          "extra": 3,
+          "orders": {
+            "2": 1497,
+            "4": 3
+          }
+        },
+        {
+          "n": 5,
+          "levels": 1100,
+          "extra": 6,
+          "orders": {
+            "2": 1094,
+            "4": 6
+          }
+        },
+        {
+          "n": 6,
+          "levels": 846,
+          "extra": 4,
+          "orders": {
+            "2": 842,
+            "4": 4
+          }
+        }
+      ],
+      "filtration_multiplier_orders": {
+        "2": 2000
+      }
+    }
+  }
+}

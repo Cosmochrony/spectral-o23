@@ -1,0 +1,913 @@
+{
+  "manifest": {
+    "q": 101,
+    "seed": 12345,
+    "central": "sum",
+    "blocks": 3,
+    "n_max": 8,
+    "bfs_frac": 0.3,
+    "max_nodes": 400000,
+    "chunk": 1500,
+    "sweep": 0,
+    "sweep_seed": null,
+    "thresholds": {
+      "rank": 1e-09,
+      "support": 1e-08,
+      "member": 1e-08,
+      "verify": 1e-08
+    }
+  },
+  "blocks": {
+    "block0": {
+      "c_block": [
+        70,
+        23,
+        79
+      ],
+      "c_ambient": 71,
+      "kernels": {
+        "centre_of_SL2": [
+          "+1",
+          "-1"
+        ],
+        "rho(-1)_is_scalar": false,
+        "rho(-1)_scalar_defect": 10.04938301637971,
+        "rho(-1)_is_parity_up_to_phase": true,
+        "projective_kernel": [
+          "+1"
+        ]
+      },
+      "levels": [
+        {
+          "n": 1,
+          "dim": 27,
+          "exact_dim": 27,
+          "dim_match": true,
+          "gap": 38663664398272.234,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.9210555037893496e-14
+        },
+        {
+          "n": 2,
+          "dim": 45,
+          "exact_dim": 45,
+          "dim_match": true,
+          "gap": 16386843483652.537,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.5307929278140067e-14
+        },
+        {
+          "n": 3,
+          "dim": 57,
+          "exact_dim": 57,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 3.8202526830083334e-14
+        },
+        {
+          "n": 4,
+          "dim": 63,
+          "exact_dim": 63,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.851198542276929e-13
+        },
+        {
+          "n": 5,
+          "dim": 69,
+          "exact_dim": 69,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 7.569436447155936e-13
+        },
+        {
+          "n": 6,
+          "dim": 75,
+          "exact_dim": 75,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.3052649363474279e-12
+        },
+        {
+          "n": 7,
+          "dim": 81,
+          "exact_dim": 81,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.5656316545384173e-12
+        },
+        {
+          "n": 8,
+          "dim": 85,
+          "exact_dim": 85,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.3476722802475986e-12
+        }
+      ],
+      "filtration_stabiliser_order": 202,
+      "classification": {
+        "order": 202,
+        "element_order_profile": {
+          "1": 1,
+          "2": 1,
+          "101": 100,
+          "202": 100
+        },
+        "abelian": null,
+        "centre_order": 202,
+        "contains_minus_identity": true,
+        "invariant_lines": [
+          [
+            1,
+            0
+          ]
+        ],
+        "inside_borel": true,
+        "dickson_reading": [
+          "contained in a Borel (metacyclic): no binary polyhedral group embeds"
+        ]
+      },
+      "normaliser": {
+        "order": 10100,
+        "index_over_stab": 50
+      }
+    },
+    "block1": {
+      "c_block": [
+        32,
+        21,
+        80
+      ],
+      "c_ambient": 32,
+      "kernels": {
+        "centre_of_SL2": [
+          "+1",
+          "-1"
+        ],
+        "rho(-1)_is_scalar": false,
+        "rho(-1)_scalar_defect": 10.04938301637971,
+        "rho(-1)_is_parity_up_to_phase": true,
+        "projective_kernel": [
+          "+1"
+        ]
+      },
+      "levels": [
+        {
+          "n": 1,
+          "dim": 9,
+          "exact_dim": 9,
+          "dim_match": true,
+          "gap": 62215151349114.41,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.9832806735419238e-14
+        },
+        {
+          "n": 2,
+          "dim": 15,
+          "exact_dim": 15,
+          "dim_match": true,
+          "gap": 31474158608225.453,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 2.1176193759994732e-14
+        },
+        {
+          "n": 3,
+          "dim": 19,
+          "exact_dim": 19,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.9331211424360228e-14
+        },
+        {
+          "n": 4,
+          "dim": 23,
+          "exact_dim": 23,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.989873141342256e-14
+        },
+        {
+          "n": 5,
+          "dim": 27,
+          "exact_dim": 27,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.484955696436314e-13
+        },
+        {
+          "n": 6,
+          "dim": 31,
+          "exact_dim": 31,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 2.408334890970465e-13
+        },
+        {
+          "n": 7,
+          "dim": 35,
+          "exact_dim": 35,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.0490906241389734e-13
+        },
+        {
+          "n": 8,
+          "dim": 39,
+          "exact_dim": 39,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 1.7620238021391945e-12
+        }
+      ],
+      "filtration_stabiliser_order": 202,
+      "classification": {
+        "order": 202,
+        "element_order_profile": {
+          "1": 1,
+          "2": 1,
+          "101": 100,
+          "202": 100
+        },
+        "abelian": null,
+        "centre_order": 202,
+        "contains_minus_identity": true,
+        "invariant_lines": [
+          [
+            1,
+            0
+          ]
+        ],
+        "inside_borel": true,
+        "dickson_reading": [
+          "contained in a Borel (metacyclic): no binary polyhedral group embeds"
+        ]
+      },
+      "normaliser": {
+        "order": 10100,
+        "index_over_stab": 50
+      }
+    },
+    "block2": {
+      "c_block": [
+        65,
+        68,
+        99
+      ],
+      "c_ambient": 30,
+      "kernels": {
+        "centre_of_SL2": [
+          "+1",
+          "-1"
+        ],
+        "rho(-1)_is_scalar": false,
+        "rho(-1)_scalar_defect": 10.04938301637971,
+        "rho(-1)_is_parity_up_to_phase": true,
+        "projective_kernel": [
+          "+1"
+        ]
+      },
+      "levels": [
+        {
+          "n": 1,
+          "dim": 27,
+          "exact_dim": 27,
+          "dim_match": true,
+          "gap": 36399299700480.94,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.991018526753098e-14
+        },
+        {
+          "n": 2,
+          "dim": 45,
+          "exact_dim": 45,
+          "dim_match": true,
+          "gap": 12828187965267.209,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 5.281192088764262e-14
+        },
+        {
+          "n": 3,
+          "dim": 63,
+          "exact_dim": 63,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.9743072369618146e-14
+        },
+        {
+          "n": 4,
+          "dim": 81,
+          "exact_dim": 81,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 5.391391582188324e-13
+        },
+        {
+          "n": 5,
+          "dim": 87,
+          "exact_dim": 87,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.960571257647541e-13
+        },
+        {
+          "n": 6,
+          "dim": 91,
+          "exact_dim": 91,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.548867877792428e-13
+        },
+        {
+          "n": 7,
+          "dim": 95,
+          "exact_dim": 95,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 4.2107347409060183e-13
+        },
+        {
+          "n": 8,
+          "dim": 99,
+          "exact_dim": 99,
+          "dim_match": true,
+          "gap": null,
+          "stab_order": 202,
+          "predicted_order": 202,
+          "multiplier_group": [
+            1,
+            100
+          ],
+          "stab_match": true,
+          "pointwise": {
+            "pointwise": 1,
+            "projective_pointwise": 1,
+            "projective_phases": [
+              [
+                1.0,
+                -0.0
+              ]
+            ]
+          },
+          "meta": {
+            "support": 100,
+            "classes": 50,
+            "rarest": 2,
+            "candidates": 202
+          },
+          "cross_check": 3.8871281972849673e-13
+        }
+      ],
+      "filtration_stabiliser_order": 202,
+      "classification": {
+        "order": 202,
+        "element_order_profile": {
+          "1": 1,
+          "2": 1,
+          "101": 100,
+          "202": 100
+        },
+        "abelian": null,
+        "centre_order": 202,
+        "contains_minus_identity": true,
+        "invariant_lines": [
+          [
+            1,
+            0
+          ]
+        ],
+        "inside_borel": true,
+        "dickson_reading": [
+          "contained in a Borel (metacyclic): no binary polyhedral group embeds"
+        ]
+      },
+      "normaliser": {
+        "order": 10100,
+        "index_over_stab": 50
+      }
+    }
+  }
+}
