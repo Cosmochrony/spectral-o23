@@ -76,10 +76,12 @@ Conditional Status of the Threefold Admissibility Threshold\\
     Dicyclic groups are metacyclic, and at explicit generic levels at $q = 53$ and $q = 101$ the
     stabiliser is $\mathrm{Dic}_{q}$, whose restricted Weil module decomposes multiplicity-freely
     as one character together with four pairwise inequivalent two-dimensional irreducible
-    representations.
-    That source therefore supplies genuine spinorial content and no distinguished carrier, so
-    the residual obstruction is the absence of a canonical selector among four components rather
-    than the non-existence of a two-dimensional module.
+    representations, of which exactly two are faithful and therefore admissible carriers.
+    That source supplies genuine spinorial content, and each component is canonical because the
+    decomposition is multiplicity-free; what it does not supply is a derived reason to prefer one
+    admissible carrier over the other.
+    The residual obstruction on this bridge is therefore a twofold selection problem, not the
+    non-existence of a two-dimensional module.
 
     The second bridge is observable identification: no theorem identifies the cumulative
     Gram--Schmidt span $\Sigma_{c}$ of O21 with the dimension of the neutral traceless module,
@@ -480,7 +482,7 @@ Conditional Status of the Threefold Admissibility Threshold\\
     the deposited O12 shell-span filtration, and refines it into an existence part that the
     source does supply and a selection part that it does not.
 
-  \subsection{A proved obstruction on Bridge 1: the O12 filtration cannot supply the carrier}
+  \subsection{What the O12 filtration supplies on Bridge 1, and what it does not}
     \label{ssec:o12-obstruction}
 
     Bridge~1 asks where a non-circular selection of $V_{\rho} \cong \mathbb{C}^{2}$ could come
@@ -489,8 +491,11 @@ Conditional Status of the Threefold Admissibility Threshold\\
     the Weil image stabilised it, that subgroup would be selected by the construction rather
     than supplied by hand, and a binary polyhedral stabiliser would carry a two-dimensional
     spinor module.
-    This subsection proves that this candidate fails, for a structural reason that no choice of
-    prime, block or depth can evade.
+    This subsection determines exactly what that candidate supplies.
+    The answer is neither ``nothing'' nor ``a carrier'': the exceptional binary polyhedral
+    groups are excluded at every proper level, while at explicit levels the stabiliser is
+    dicyclic and the level carries genuine spinorial content, without any derived rule
+    distinguishing one admissible carrier from the other.
 
     Fix an odd prime $q$ and a generic block $c = (c_{1}, c_{2}, c_{3})$ in the sense of O12,
     that is $c_{i} \not\equiv 0$ and $\sum_{i} c_{i} \not\equiv 0 \pmod{q}$.
@@ -659,6 +664,17 @@ Conditional Status of the Threefold Admissibility Threshold\\
       with $\mathbf{1}'$ a one-dimensional character, the $V_{i}$ pairwise inequivalent
       two-dimensional irreducible representations of $\mathrm{Dic}_{q}$, every multiplicity
       equal to one, and $1 + 4 \times 2 = 9$.
+
+      Exactly two of the four are admissible carriers.
+      Writing $V_{j}$ for the two-dimensional irreducible with
+      $\chi_{j}(a^{m}) = 2\cos(\pi j m / q)$, the central element $a^{q} = -\mathbb 1$ acts by
+      $(-1)^{j}$, so $V_{j}$ is faithful, and $\SU(2)$-valued in the sense required by
+      Theorem~\ref{thm:adjoint-dimension}, if and only if $j$ is odd.
+      The constituents are $j \in \{6, 11, 42, 47\}$ at $q = 53$ and
+      $j \in \{12, 41, 60, 89\}$ at $q = 101$, so the admissible ones are $j \in \{11, 47\}$
+      and $j \in \{41, 89\}$ respectively.
+      For even $j$ the central element acts trivially, the representation factors through the
+      dihedral quotient, and it is not a spinor carrier at all.
     \end{proposition}
 
     \begin{proof}[Verification]
@@ -688,12 +704,21 @@ Conditional Status of the Threefold Admissibility Threshold\\
       fixed generators, and that this particular lift is the genuine one rather than a
       projective twist is verified numerically --- the homomorphism defect vanishes to
       $10^{-14}$ over all ordered pairs of the stabiliser --- and is not proved here.
-      The conclusion is nevertheless insensitive to that gap.
-      Two lifts of a projective representation differ by a linear character of the group, and
-      tensoring by a linear character permutes the irreducible constituents while preserving
-      their dimensions and the multiplicity-free property.
-      The shape $1 + 4 \times 2$ and the multiplicity-freeness are therefore independent of the
-      choice of lift; only the labels of the four two-dimensional components depend on it.
+      The scope of that verification should be stated precisely, since a tempting robustness
+      argument does not in fact remove the gap.
+      \emph{If} two maps into the unitary group are both homomorphisms lifting the same
+      projective representation, then they differ by a linear character, and tensoring by a
+      linear character permutes the irreducible constituents while preserving their dimensions
+      and the multiplicity-free property.
+      That argument presupposes what is being checked: it compares two homomorphisms, and says
+      nothing if the constructed map fails to be one.
+      The homomorphism property is therefore established here numerically --- the defect
+      vanishes to $10^{-14}$ over all $|G|^{2}$ ordered pairs of the stabiliser, which is an
+      exhaustive check on the group that matters, not a sample --- and the character
+      computation is conditional on it.
+      What the twisting argument does give, once the map is a homomorphism, is that the
+      \emph{labels} $j$ of the components are convention-dependent while the shape of the
+      decomposition is not.
     \end{remark}
 
     \begin{corollary}[The obstruction is selection, not existence]
@@ -701,14 +726,19 @@ Conditional Status of the Threefold Admissibility Threshold\\
       At the levels of Proposition~\ref{prop:dicyclic-witnesses} the O12 filtration selects a
       subgroup carrying genuine two-dimensional spinorial content, so Borel confinement does not
       by itself obstruct a spinor carrier.
-      It does not, however, select \emph{a} carrier: the spinorial part of $W_{<1}$ is
-      multiplicity-free with four pairwise inequivalent two-dimensional components, and nothing
-      in the construction distinguishes one of them.
-      Bridge~1 is therefore displaced rather than closed: what is missing is not the existence
-      of a two-dimensional module but a canonical selector
+      It supplies exactly two admissible carriers, the faithful constituents $V_{j}$ with $j$
+      odd.
+      Each of them is a well-defined subspace of $W_{<1}$: the decomposition is
+      multiplicity-free, so every isotypic component is mathematically canonical, and no
+      arbitrary choice of basis or complement is involved in naming them.
+      What has \emph{not} been derived is a structural or physical reason to prefer one of the
+      two, that is a justified selector
       \[
-        \{V_{1}, V_{2}, V_{3}, V_{4}\} \longrightarrow V_{\rho}.
+        \{V_{j} : j \text{ odd}\} \longrightarrow V_{\rho}.
       \]
+      Bridge~1 is therefore displaced rather than closed, and the residual ambiguity is twofold
+      rather than fourfold.
+      No claim is made here that such a selector cannot exist; only that none is derived.
     \end{corollary}
 
     \begin{remark}[What is universal, what is measured, and what is not established]
@@ -753,14 +783,29 @@ Conditional Status of the Threefold Admissibility Threshold\\
       a labelled shell family, or a configuration carrying the BFS metric, then it fixes their
       linear span, so the stabiliser of any such configuration is contained in
       $\mathrm{Stab}(W_{<n})$.
-      Second, the four two-dimensional components are individually well defined --- the
-      decomposition is multiplicity-free, so each isotypic component is a canonical subspace of
-      $W_{<1}$ --- but nothing exhibited here distinguishes one of them from the others.
-      Whether a canonical selector exists is open, and is not settled either way by this paper.
-      The natural next test is whether the normaliser of the stabiliser permutes the four
-      components transitively, since a transitive action would show that no selector can be
-      definable from the level and its stabiliser alone, while a non-transitive one would
-      identify invariantly distinguishable candidates.
+      Second, the components are individually well defined, since the decomposition is
+      multiplicity-free, and exactly two of them are admissible carriers; what is absent is a
+      derived reason to prefer one.
+      One internal candidate suggests itself and is recorded here together with its refutation,
+      to prevent it being rediscovered and mistaken for a rule.
+      In both witnesses the ambient central character $c_{\Sigma}$ is itself the index of an
+      admissible constituent: $c_{\Sigma} = 47$ at $q = 53$ and $c_{\Sigma} = 41$ at
+      $q = 101$, both odd and both among the constituents.
+      The rule ``take $j = c_{\Sigma}$'' nevertheless fails.
+      At $q = 53$ with the generic block $c = (10, 35, 18)$ the level is again dicyclic with
+      constituents $j \in \{10, 17, 36, 43\}$ and admissible carriers $j \in \{17, 43\}$,
+      while $c_{\Sigma} = 10$ is a constituent but is even, hence not faithful and not a
+      carrier at all.
+      Across the four distinct dicyclic levels examined, $c_{\Sigma}$ was always among the four
+      constituents but was an admissible carrier in three of them.
+      The regularity $c_{\Sigma} \in \{j\}$ is therefore real and unexplained, and is worth
+      investigating, but it does not by itself furnish a selector.
+
+      A test that does \emph{not} settle the question should also be recorded, since it is the
+      first that comes to mind.
+      The normaliser of the stabiliser does not act on the components, because its elements
+      outside the stabiliser do not preserve $W_{<1}$; asking whether it permutes them
+      transitively is not well posed.
     \end{remark}
 
     \paragraph{Reproduction.}
@@ -836,10 +881,11 @@ Conditional Status of the Threefold Admissibility Threshold\\
     measurement protocol that does not fix the target dimension in advance.
     What Section~\ref{ssec:o12-obstruction} contributes to the first is a change in its type.
     Before, Bridge~1 asked for a two-dimensional carrier and no source was known to produce one.
-    Now a source is known to produce four, canonically defined and pairwise inequivalent, at
-    explicit levels; the bridge asks for a selector among them.
+    Now a source is known to produce two admissible ones, canonically defined and inequivalent,
+    at explicit levels; the bridge asks for a justified selector between them.
     That is a strictly smaller gap, and a testable one: a candidate selector can be checked
-    against the four components directly.
+    against the components directly, as is done in Remark~\ref{rem:o12-scope} for the rule
+    $j = c_{\Sigma}$, which the check refutes.
 
   \subsection{Relation to O21--O22}
     \label{ssec:conditional}
@@ -879,21 +925,23 @@ Conditional Status of the Threefold Admissibility Threshold\\
   It does not exclude a spinor carrier.
   Dicyclic groups are metacyclic, and at explicit generic levels at $q = 53$ and $q = 101$ the
   stabiliser is $\mathrm{Dic}_{q}$, whose restricted Weil module is one character plus four
-  pairwise inequivalent two-dimensional irreducible representations, each of multiplicity one
+  pairwise inequivalent two-dimensional irreducible representations, each of multiplicity one,
+  exactly two of them faithful and hence admissible carriers
   (Proposition~\ref{prop:dicyclic-witnesses}).
-  The filtration therefore supplies genuine spinorial content and no distinguished carrier, so
-  the residual obstruction on this bridge is a selection problem rather than an existence
-  problem (Corollary~\ref{cor:selection-not-existence}).
+  Each component is canonical, the decomposition being multiplicity-free; what has not been
+  derived is a reason to prefer one admissible carrier over the other, so the residual
+  obstruction on this bridge is a twofold selection problem rather than an existence problem
+  (Corollary~\ref{cor:selection-not-existence}).
 
   \paragraph{Interpretive outlook (interpretation, not a result).}
     Read structurally, the admissible filtration turns out to be neither silent nor decisive
     about spin.
     It does produce, at some levels, a group of exactly the kind that can carry a spinor, and
     genuine two-dimensional content inside the admissible level itself; what it does not
-    produce is a reason to prefer one of the four available spinor directions over the others.
+    produce is a reason to prefer one of the two available spinor carriers over the other.
     If the three neutral directions of Theorem~\ref{thm:adjoint-dimension} are eventually to
     explain why observable structure comes in threes, the missing ingredient is now visible and
-    much smaller than before: a principle that breaks a fourfold degeneracy, rather than a
+    much smaller than before: a principle that breaks a twofold degeneracy, rather than a
     construction of the carrier from nothing.
     This reading is offered as orientation, not as an established consequence: the paper locates
     the remaining gap, and does not close it.

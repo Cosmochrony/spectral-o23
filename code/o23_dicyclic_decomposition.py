@@ -55,10 +55,23 @@ TOL_HOM = 1e-8            # ||rho(g)rho(h) - rho(gh)||
 TOL_MULT = 1e-6           # distance of a multiplicity from the nearest integer
 TOL_PROJ = 1e-8           # idempotence / completeness of the isotypic projectors
 
-# The two witnesses deposited in O23 v2.1 (dicyclic-witnesses proposition)
+# The two witnesses deposited in O23 v2.1 (dicyclic-witnesses proposition), each with the
+# EXACT published shape.  The kill-switch below compares against these, so a future change that
+# altered the result would fail the run instead of silently rewriting the evidence.
+# faithful_j: V_j is faithful (an admissible SU(2)-valued carrier) iff j is odd, since the
+# central element a^q acts by (-1)^j.
 WITNESSES = [(53, (47, 21, 32), 1), (101, (41, 95, 6), 1)]
+PUBLISHED = {
+    (53, (47, 21, 32), 1): {"dim_W": 9, "stabiliser_order": 212, "chi_norm": 5.0,
+                            "one_dim": 1, "two_dim": 4, "two_dim_j": [6, 11, 42, 47],
+                            "faithful_j": [11, 47]},
+    (101, (41, 95, 6), 1): {"dim_W": 9, "stabiliser_order": 404, "chi_norm": 5.0,
+                            "one_dim": 1, "two_dim": 4, "two_dim_j": [12, 41, 60, 89],
+                            "faithful_j": [41, 89]},
+}
 
-OUT = Path(__file__).resolve().parent / "checkpoints" / "dicyclic_decomposition.json"
+CKPT_DIR = Path(__file__).resolve().parent / "checkpoints"
+OUT = CKPT_DIR / "dicyclic_decomposition.json"
 
 
 def stabiliser_at_level(q, block, level):
@@ -188,6 +201,8 @@ def decompose(q, block, level, verbose=True):
     completeness = float(np.linalg.norm(total - np.eye(dim)))
 
     dim_from_mult = sum(p["dim"] * p["multiplicity"] for p in proj_report)
+    two_dim_j = sorted(int(p["irrep"][3:]) for p in proj_report if p["dim"] == 2)
+    faithful_j = [j for j in two_dim_j if j % 2 == 1]   # a^q acts by (-1)^j
     result = {
         "q": q, "block": list(block), "level": level, "c_sigma": c_sigma,
         "dim_W": dim, "multiplier_group": M, "stabiliser_order": G,
@@ -200,6 +215,11 @@ def decompose(q, block, level, verbose=True):
         "dimension_check": {"sum_d_times_m": round(dim_from_mult, 9), "dim_W": dim,
                             "ok": abs(dim_from_mult - dim) < TOL_MULT},
         "multiplicity_free": all(abs(p["multiplicity"] - 1) < TOL_MULT for p in proj_report),
+        "two_dim_j": two_dim_j,
+        "faithful_j": faithful_j,
+        "admissible_carrier_count": len(faithful_j),
+        "c_sigma_is_a_constituent": c_sigma in two_dim_j,
+        "c_sigma_is_an_admissible_carrier": c_sigma in faithful_j,
         "thresholds": {"invariance": TOL_INVARIANCE, "homomorphism": TOL_HOM,
                        "multiplicity": TOL_MULT, "projector": TOL_PROJ},
     }
@@ -208,8 +228,28 @@ def decompose(q, block, level, verbose=True):
               and hom_defect < TOL_HOM
               and completeness < TOL_PROJ
               and result["dimension_check"]["ok"]
+              and result["multiplicity_free"]                       # was computed, never tested
               and all(p["idempotence_defect"] < TOL_PROJ for p in proj_report)
               and all(p["rank"] == p["expected_rank"] for p in proj_report))
+
+    # Kill-switch against the exact published shape, for the deposited witnesses only.
+    key = (q, tuple(int(v) for v in block), level)
+    exp = PUBLISHED.get(key)
+    shape_report = None
+    if exp is not None:
+        n1 = len([p for p in proj_report if p["dim"] == 1])
+        n2 = len([p for p in proj_report if p["dim"] == 2])
+        shape_report = {
+            "dim_W": (dim == exp["dim_W"]),
+            "stabiliser_order": (G == exp["stabiliser_order"]),
+            "chi_norm": (abs(chi_norm - exp["chi_norm"]) < TOL_MULT),
+            "one_dim_count": (n1 == exp["one_dim"]),
+            "two_dim_count": (n2 == exp["two_dim"]),
+            "two_dim_j": (two_dim_j == exp["two_dim_j"]),
+            "faithful_j": (faithful_j == exp["faithful_j"]),
+        }
+        passed = passed and all(shape_report.values())
+    result["published_shape_check"] = shape_report
     result["all_checks_passed"] = bool(passed)
 
     if verbose:
@@ -225,6 +265,14 @@ def decompose(q, block, level, verbose=True):
               f"{G*G} pairs {hom_defect:.2e}")
         print(f"  <chi,chi> = {chi_norm:.6f};  constituents: {len(n1)} of dim 1, "
               f"{len(n2)} of dim 2;  multiplicity-free: {result['multiplicity_free']}")
+        print(f"  two-dimensional indices j = {two_dim_j}; faithful (a^q acts by -1, "
+              f"admissible carriers) j = {faithful_j}: {len(faithful_j)} of {len(two_dim_j)}")
+        print(f"  c_Sigma = {c_sigma}: constituent {result['c_sigma_is_a_constituent']}, "
+              f"admissible carrier {result['c_sigma_is_an_admissible_carrier']}")
+        if result["published_shape_check"] is not None:
+            print(f"  published-shape kill-switch: "
+                  f"{all(result['published_shape_check'].values())} "
+                  f"{result['published_shape_check']}")
         print(f"  dimension check: {' + '.join(str(p['dim']) for p in proj_report)} "
               f"= {int(round(dim_from_mult))} = dim W ({result['dimension_check']['ok']})")
         print(f"  isotypic projectors: completeness defect {completeness:.2e}; "
@@ -246,13 +294,17 @@ def main():
 
     if args.q and args.block:
         cases = [(args.q, tuple(int(v) for v in args.block.split(",")), args.level)]
+        # An ad-hoc case must never overwrite the deposited combined evidence file.
+        out = CKPT_DIR / (f"dicyclic_q{args.q}_c{args.block.replace(',', '-')}"
+                          f"_n{args.level}.json")
     else:
         cases = WITNESSES
+        out = OUT
 
     results = [decompose(q, c, n) for q, c, n in cases]
-    OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text(json.dumps(results, indent=2, default=str))
-    print(f"\nevidence written to {OUT.name}")
+    CKPT_DIR.mkdir(exist_ok=True)
+    out.write_text(json.dumps(results, indent=2, default=str))
+    print(f"\nevidence written to {out.name}")
     if not all(r["all_checks_passed"] for r in results):
         raise SystemExit(5)
 

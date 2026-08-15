@@ -83,11 +83,33 @@
       "ok": true
     },
     "multiplicity_free": true,
+    "two_dim_j": [
+      6,
+      11,
+      42,
+      47
+    ],
+    "faithful_j": [
+      11,
+      47
+    ],
+    "admissible_carrier_count": 2,
+    "c_sigma_is_a_constituent": true,
+    "c_sigma_is_an_admissible_carrier": true,
     "thresholds": {
       "invariance": 1e-08,
       "homomorphism": 1e-08,
       "multiplicity": 1e-06,
       "projector": 1e-08
+    },
+    "published_shape_check": {
+      "dim_W": true,
+      "stabiliser_order": true,
+      "chi_norm": true,
+      "one_dim_count": true,
+      "two_dim_count": true,
+      "two_dim_j": true,
+      "faithful_j": true
     },
     "all_checks_passed": true
   },
@@ -175,11 +197,33 @@
       "ok": true
     },
     "multiplicity_free": true,
+    "two_dim_j": [
+      12,
+      41,
+      60,
+      89
+    ],
+    "faithful_j": [
+      41,
+      89
+    ],
+    "admissible_carrier_count": 2,
+    "c_sigma_is_a_constituent": true,
+    "c_sigma_is_an_admissible_carrier": true,
     "thresholds": {
       "invariance": 1e-08,
       "homomorphism": 1e-08,
       "multiplicity": 1e-06,
       "projector": 1e-08
+    },
+    "published_shape_check": {
+      "dim_W": true,
+      "stabiliser_order": true,
+      "chi_norm": true,
+      "one_dim_count": true,
+      "two_dim_count": true,
+      "two_dim_j": true,
+      "faithful_j": true
     },
     "all_checks_passed": true
   }

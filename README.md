@@ -89,11 +89,21 @@ $W_{<1} \cong \mathbf{1}' \oplus V_1 \oplus V_2 \oplus V_3 \oplus V_4$,   $\dim_
 with $\langle\chi,\chi\rangle = 5$ and every multiplicity equal to one. This is a **computational result on
 two named witnesses**, not a universal claim about dicyclic levels.
 
-**Consequence.** The filtration supplies a spinorial group and genuine two-dimensional content, but no
-distinguished carrier: nothing exhibited selects one of the four inequivalent components. Bridge 1 is
-therefore **displaced, not closed** — the missing object is a canonical selector
-$\{V_1,V_2,V_3,V_4\} \to V_\rho$, not the existence of a two-dimensional module. Whether such a selector
-exists is open.
+Exactly **two** of the four are admissible carriers. $V_j$ is faithful, hence $\mathrm{SU}(2)$-valued as
+Result 1 requires, iff $j$ is odd, because the central element $a^q$ acts by $(-1)^j$; for even $j$ the
+representation factors through the dihedral quotient and is not a spinor carrier. The admissible indices are
+$j \in \{11,47\}$ at $q=53$ and $j \in \{41,89\}$ at $q=101$.
+
+**Consequence.** The filtration supplies a spinorial group and two admissible carriers. Each component is
+mathematically canonical — the decomposition is multiplicity-free — so what is missing is not canonicity but
+a **structurally justified** reason to prefer one admissible carrier over the other. Bridge 1 is therefore
+**displaced, not closed**, with a **twofold** residual ambiguity. No claim is made that such a selector
+cannot exist.
+
+One internal candidate is recorded together with its refutation: $c_\Sigma$ is a constituent in every
+dicyclic level examined, and is an admissible carrier in the two deposited witnesses, but at $q=53$ with
+block $(10,35,18)$ it is even, hence not faithful. The rule "$j = c_\Sigma$" therefore does not select an
+admissible carrier.
 
 ## The Two Open Bridges
 
@@ -105,8 +115,8 @@ bridges, both **open**:
    odd-order reversed); the fibre identification is a typed open classification problem (O18 Problem 2.8).
    One candidate source is now analysed exactly (Result 5): it excludes the exceptional binary polyhedral
    groups, but it *does* select a dicyclic stabiliser carrying multiplicity-free two-dimensional content at
-   explicit levels. The bridge is therefore sharpened rather than closed — what is missing is a canonical
-   selector among four inequivalent components. Enriching the object with shell labels or the BFS metric
+   explicit levels. The bridge is therefore sharpened rather than closed — what is missing is a justified
+   selector between the two admissible carriers. Enriching the object with shell labels or the BFS metric
    cannot enlarge the stabiliser, since fixing a set of vectors fixes their span.
 2. **Observable identification**: no theorem identifies the cumulative Gram–Schmidt span $\Sigma_c$ with
    $\dim_{\mathbb{R}} \mathfrak{su}(V_\rho)$.
@@ -133,7 +143,9 @@ $\Sigma_c(n_3) = 3$.
 - Exact stabiliser of each O12 **level**, $U \rtimes M_n \subseteq B(L)$: **proved, unconditional**
 - No **exceptional** binary polyhedral group ($2T$, $2O$, $2I$) selected: **proved, unconditional**
 - Dicyclic stabiliser with multiplicity-free spinorial content: **computational, two named witnesses**
-- A canonical selector among the four two-dimensional components: **open**
+- Exactly two of the four constituents faithful (admissible carriers): **proved from the central character**
+- A structurally justified selector between the two admissible carriers: **open** (the candidate
+  "$j = c_\Sigma$" is refuted by an explicit counterexample)
 - $\mathrm{Stab}(W_{<n}) \cong C_{2q}$: **measured on the sampled blocks**, not a theorem (Remark 4.4)
 - Filtration intersection $\{\pm 1\}$ for all generic blocks: **not established** (Remark 4.4)
 - $\Sigma_c(n_3) = 3$: **supplied selection rule / open**, awaiting the two bridges

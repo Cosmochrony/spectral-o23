@@ -21,15 +21,31 @@ python3 o23_dicyclic_decomposition.py --q 53 --block 47,21,32 --level 1
 
 Expected output for each witness: $\dim W_{<1} = 9$, $|\mathrm{Stab}| = 4q$, dicyclic confirmed,
 $\langle\chi,\chi\rangle = 5$, one one-dimensional and four two-dimensional constituents each of
-multiplicity one, and $1 + 4\times 2 = 9$. Evidence is written to
-`checkpoints/dicyclic_decomposition.json`.
+multiplicity one, and $1 + 4\times 2 = 9$. Of the four two-dimensional constituents, exactly **two** are
+faithful and therefore admissible $\mathrm{SU}(2)$-valued carriers: $V_j$ is faithful iff $j$ is odd,
+since the central element $a^q$ acts by $(-1)^j$. The script reports `two_dim_j`, `faithful_j` and
+`admissible_carrier_count`, and a published-shape kill-switch compares all of these against the deposited
+values, failing the run on any deviation (verified by tampering).
+
+Evidence for the two deposited witnesses goes to `checkpoints/dicyclic_decomposition.json`. An ad-hoc run
+(`--q/--block/--level`) writes to its own `checkpoints/dicyclic_q<q>_c<block>_n<level>.json` and can never
+overwrite the deposited combined file.
+
+The script also reports whether $c_\Sigma$ is a constituent and whether it is an admissible carrier. This
+records a candidate selector and its refutation: $c_\Sigma$ was a constituent in every dicyclic level
+examined, but at $q=53$ with block $(10,35,18)$ it is **even**, hence not faithful, so the rule
+"$j = c_\Sigma$" does not select an admissible carrier. That counterexample is stored in
+`checkpoints/dicyclic_q53_c10-35-18_n1.json`.
 
 **Status of the lift.** A genuine linear Weil representation exists for $q$ an odd prime (Weil 1964;
 Gérardin 1977). That this Bruhat-word implementation realises that genuine lift rather than a projective
 twist is verified numerically (homomorphism defect $\sim 10^{-14}$ over all ordered pairs) and is not
-proved. The conclusion is insensitive to the gap: two lifts differ by a linear character, and twisting by
-a linear character permutes the constituents while preserving dimensions and multiplicity-freeness, so the
-shape $1 + 4\times 2$ is lift-independent; only the component labels are not.
+proved, and the character computation is conditional on it. The check is exhaustive on the group that
+matters — all $|G|^2$ ordered pairs of the stabiliser — rather than a sample. Note that the tempting
+robustness argument does *not* close the gap: two maps that are *both* homomorphisms lifting the same
+projective representation differ by a linear character, so twisting shows only that the component *labels*
+are convention-dependent once the map is known to be a homomorphism. It says nothing if the constructed map
+fails to be one.
 
 Everything the script reads or writes lies inside this repository. There are no external data
 dependencies: all inputs are generated from the prime $q$ and the documented seed.
