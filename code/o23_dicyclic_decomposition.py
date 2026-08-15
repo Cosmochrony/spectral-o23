@@ -23,12 +23,14 @@ What is computed, for each witness (q, block c, level n):
 
 Epistemic status of the lift.  A genuine linear Weil representation of SL(2,q) exists for q an
 odd prime (Weil 1964; Gerardin 1977).  That THIS Bruhat-word implementation realises that
-genuine lift, rather than a projective twist of it, is verified numerically here and is not
-proved.  The conclusion is robust to that gap: two lifts of a projective representation differ
-by a linear character of the group, and twisting by a linear character permutes the irreducible
-constituents while preserving their dimensions and the multiplicity-free property.  The SHAPE of
-the decomposition is therefore independent of the choice of lift; only the labels of the
-individual components depend on it.
+genuine lift, rather than a projective twist of it, is verified numerically here -- the
+homomorphism defect vanishes to ~1e-14 over ALL |G|^2 ordered pairs of the stabiliser, which is
+exhaustive on the group that matters -- and is NOT proved; the character computation is
+conditional on it.  A tempting robustness argument does not close this gap and must not be
+quoted as if it did: two maps that are BOTH homomorphisms lifting the same projective
+representation differ by a linear character, so twisting shows only that the component LABELS
+are convention-dependent once the map is known to be a homomorphism.  It says nothing at all if
+the constructed map fails to be one.
 
 Usage:
     python3 o23_dicyclic_decomposition.py                 # both deposited witnesses
@@ -60,7 +62,7 @@ TOL_PROJ = 1e-8           # idempotence / completeness of the isotypic projector
 # altered the result would fail the run instead of silently rewriting the evidence.
 # faithful_j: V_j is faithful (an admissible SU(2)-valued carrier) iff j is odd, since the
 # central element a^q acts by (-1)^j.
-WITNESSES = [(53, (47, 21, 32), 1), (101, (41, 95, 6), 1)]
+WITNESSES = [(53, (47, 21, 32), 1), (101, (41, 95, 6), 1), (53, (10, 35, 18), 1)]
 PUBLISHED = {
     (53, (47, 21, 32), 1): {"dim_W": 9, "stabiliser_order": 212, "chi_norm": 5.0,
                             "one_dim": 1, "two_dim": 4, "two_dim_j": [6, 11, 42, 47],
@@ -68,6 +70,12 @@ PUBLISHED = {
     (101, (41, 95, 6), 1): {"dim_W": 9, "stabiliser_order": 404, "chi_norm": 5.0,
                             "one_dim": 1, "two_dim": 4, "two_dim_j": [12, 41, 60, 89],
                             "faithful_j": [41, 89]},
+    # Cited in the paper as the counterexample to the ORIENTED rule j = c_Sigma: here c_Sigma
+    # is a constituent but is even, hence not faithful.  The SIGN-COMPLETED rule
+    # j in {c_Sigma, q - c_Sigma} then take the odd one still selects correctly (43).
+    (53, (10, 35, 18), 1): {"dim_W": 9, "stabiliser_order": 212, "chi_norm": 5.0,
+                            "one_dim": 1, "two_dim": 4, "two_dim_j": [10, 17, 36, 43],
+                            "faithful_j": [17, 43]},
 }
 
 CKPT_DIR = Path(__file__).resolve().parent / "checkpoints"
@@ -178,8 +186,21 @@ def decompose(q, block, level, verbose=True):
     chi_norm = float(sum(abs(v) ** 2 for v in chi.values()) / G)
 
     lin, two, _ = dicyclic_characters(q, a, x, stab)
-    mult_lin = [float((sum(chi[g] * np.conj(t[g]) for g in stab) / G).real) for t in lin]
-    mult_two = [float((sum(chi[g] * np.conj(t[g]) for g in stab) / G).real) for t in two]
+
+    def multiplicity(table):
+        """<chi, chi_i> as a COMPLEX number, with its imaginary part and its distance to the
+        nearest integer reported.  A multiplicity is only meaningful if both are negligible;
+        rounding first would hide a failure of the character identification."""
+        z = complex(sum(chi[g] * np.conj(table[g]) for g in stab) / G)
+        return {"value": z, "imag": abs(z.imag),
+                "integer_defect": abs(z.real - round(z.real))}
+
+    mult_lin_c = [multiplicity(t) for t in lin]
+    mult_two_c = [multiplicity(t) for t in two]
+    worst_imag = max([m["imag"] for m in mult_lin_c + mult_two_c])
+    worst_int = max([m["integer_defect"] for m in mult_lin_c + mult_two_c])
+    mult_lin = [m["value"].real for m in mult_lin_c]
+    mult_two = [m["value"].real for m in mult_two_c]
 
     # isotypic projectors on W: P_i = (d_i/|G|) sum_g conj(chi_i(g)) rho_W(g)
     dim = B.shape[1]
@@ -215,11 +236,21 @@ def decompose(q, block, level, verbose=True):
         "dimension_check": {"sum_d_times_m": round(dim_from_mult, 9), "dim_W": dim,
                             "ok": abs(dim_from_mult - dim) < TOL_MULT},
         "multiplicity_free": all(abs(p["multiplicity"] - 1) < TOL_MULT for p in proj_report),
+        "worst_multiplicity_imaginary_part": worst_imag,
+        "worst_multiplicity_integer_defect": worst_int,
         "two_dim_j": two_dim_j,
         "faithful_j": faithful_j,
         "admissible_carrier_count": len(faithful_j),
         "c_sigma_is_a_constituent": c_sigma in two_dim_j,
         "c_sigma_is_an_admissible_carrier": c_sigma in faithful_j,
+        # oriented rule "j = c_Sigma" vs sign-completed rule
+        # "j in {c_Sigma, q - c_Sigma}, take the odd one"
+        "sign_pair": sorted({c_sigma, (q - c_sigma) % q}),
+        "sign_pair_are_constituents": set([c_sigma, (q - c_sigma) % q]) <= set(two_dim_j),
+        "sign_completed_selection": next(
+            (j for j in (c_sigma, (q - c_sigma) % q) if j % 2 == 1), None),
+        "sign_completed_rule_selects_an_admissible_carrier": bool(
+            next((j for j in (c_sigma, (q - c_sigma) % q) if j % 2 == 1), None) in faithful_j),
         "thresholds": {"invariance": TOL_INVARIANCE, "homomorphism": TOL_HOM,
                        "multiplicity": TOL_MULT, "projector": TOL_PROJ},
     }
@@ -229,6 +260,8 @@ def decompose(q, block, level, verbose=True):
               and completeness < TOL_PROJ
               and result["dimension_check"]["ok"]
               and result["multiplicity_free"]                       # was computed, never tested
+              and worst_imag < TOL_MULT                             # multiplicities are real
+              and worst_int < TOL_MULT                              # and are integers
               and all(p["idempotence_defect"] < TOL_PROJ for p in proj_report)
               and all(p["rank"] == p["expected_rank"] for p in proj_report))
 
@@ -269,6 +302,12 @@ def decompose(q, block, level, verbose=True):
               f"admissible carriers) j = {faithful_j}: {len(faithful_j)} of {len(two_dim_j)}")
         print(f"  c_Sigma = {c_sigma}: constituent {result['c_sigma_is_a_constituent']}, "
               f"admissible carrier {result['c_sigma_is_an_admissible_carrier']}")
+        print(f"  sign pair {{c_Sigma, q-c_Sigma}} = {result['sign_pair']}: both constituents "
+              f"{result['sign_pair_are_constituents']}; sign-completed rule selects j = "
+              f"{result['sign_completed_selection']}, admissible: "
+              f"{result['sign_completed_rule_selects_an_admissible_carrier']}")
+        print(f"  multiplicities: worst |Im| {worst_imag:.2e}, worst integer defect "
+              f"{worst_int:.2e}")
         if result["published_shape_check"] is not None:
             print(f"  published-shape kill-switch: "
                   f"{all(result['published_shape_check'].values())} "
@@ -284,12 +323,59 @@ def decompose(q, block, level, verbose=True):
     return result
 
 
+def selector_sweep(per_prime, primes=(53, 101), seed=99):
+    """Audit the sign-completed selector rule on dicyclic level-1 blocks.
+
+    Oriented rule:        j = c_Sigma.
+    Sign-completed rule:  j in {c_Sigma, q - c_Sigma}, then take the unique odd member.
+    Exactly one member is odd because q is odd.  Reports both, so the refutation of the
+    oriented rule and the survival of the sign-completed one are both traceable.
+    """
+    from o23_filtration_stabiliser import bfs_shells as _bfs
+    rows, ok, ok_oriented = [], 0, 0
+    for q in primes:
+        rng = np.random.default_rng(seed)
+        gens = build_generators(q)
+        gens_arr = np.array(gens, dtype=np.int64)
+        shells = _bfs(gens, q, min(int(0.30 * q ** 3), 400_000))
+        seen = set()
+        for _ in range(20000):
+            c = tuple(int(v) for v in rng.integers(1, q, size=3))
+            if sum(c) % q == 0 or c in seen:
+                continue
+            F = exact_frequency_set(np.array(shells[0], dtype=np.int64),
+                                    np.array(c), gens_arr, q)
+            if len(F) >= q:
+                continue
+            M = multiplier_group(F, q)
+            if len(M) != 4 or not any((s * s) % q == q - 1 for s in M):
+                continue
+            seen.add(c)
+            r = decompose(q, c, 1, verbose=False)
+            rows.append({k: r[k] for k in
+                         ("q", "block", "c_sigma", "two_dim_j", "faithful_j", "sign_pair",
+                          "sign_pair_are_constituents", "sign_completed_selection",
+                          "sign_completed_rule_selects_an_admissible_carrier",
+                          "c_sigma_is_an_admissible_carrier", "multiplicity_free",
+                          "all_checks_passed")})
+            ok += bool(r["sign_completed_rule_selects_an_admissible_carrier"]
+                       and r["sign_pair_are_constituents"])
+            ok_oriented += bool(r["c_sigma_is_an_admissible_carrier"])
+            if len(seen) >= per_prime:
+                break
+    return {"primes": list(primes), "levels": len(rows), "successes": ok,
+            "oriented_successes": ok_oriented, "rows": rows}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--q", type=int)
     ap.add_argument("--block", type=str, help="comma-separated c1,c2,c3")
     ap.add_argument("--level", type=int, default=1)
+    ap.add_argument("--selector-sweep", type=int, default=0, dest="sweep",
+                    help="audit the sign-completed selector rule on this many further "
+                         "dicyclic level-1 blocks per prime, and deposit the evidence")
     args = ap.parse_args()
 
     if args.q and args.block:
@@ -300,6 +386,17 @@ def main():
     else:
         cases = WITNESSES
         out = OUT
+
+    if args.sweep:
+        out = CKPT_DIR / f"selector_rule_sweep_{args.sweep}.json"
+        sweep = selector_sweep(args.sweep)
+        CKPT_DIR.mkdir(exist_ok=True)
+        out.write_text(json.dumps(sweep, indent=2, default=str))
+        print(f"\nsign-completed rule: {sweep['successes']}/{sweep['levels']} levels "
+              f"({sweep['primes']}); oriented rule j = c_Sigma: "
+              f"{sweep['oriented_successes']}/{sweep['levels']}")
+        print(f"evidence written to {out.name}")
+        raise SystemExit(0 if sweep["successes"] == sweep["levels"] else 6)
 
     results = [decompose(q, c, n) for q, c, n in cases]
     CKPT_DIR.mkdir(exist_ok=True)

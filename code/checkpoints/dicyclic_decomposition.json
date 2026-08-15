@@ -83,6 +83,8 @@
       "ok": true
     },
     "multiplicity_free": true,
+    "worst_multiplicity_imaginary_part": 2.743976149759501e-16,
+    "worst_multiplicity_integer_defect": 6.591130942921312e-15,
     "two_dim_j": [
       6,
       11,
@@ -96,6 +98,13 @@
     "admissible_carrier_count": 2,
     "c_sigma_is_a_constituent": true,
     "c_sigma_is_an_admissible_carrier": true,
+    "sign_pair": [
+      6,
+      47
+    ],
+    "sign_pair_are_constituents": true,
+    "sign_completed_selection": 47,
+    "sign_completed_rule_selects_an_admissible_carrier": true,
     "thresholds": {
       "invariance": 1e-08,
       "homomorphism": 1e-08,
@@ -197,6 +206,8 @@
       "ok": true
     },
     "multiplicity_free": true,
+    "worst_multiplicity_imaginary_part": 9.670505740226024e-17,
+    "worst_multiplicity_integer_defect": 1.2471949009854896e-14,
     "two_dim_j": [
       12,
       41,
@@ -210,6 +221,136 @@
     "admissible_carrier_count": 2,
     "c_sigma_is_a_constituent": true,
     "c_sigma_is_an_admissible_carrier": true,
+    "sign_pair": [
+      41,
+      60
+    ],
+    "sign_pair_are_constituents": true,
+    "sign_completed_selection": 41,
+    "sign_completed_rule_selects_an_admissible_carrier": true,
+    "thresholds": {
+      "invariance": 1e-08,
+      "homomorphism": 1e-08,
+      "multiplicity": 1e-06,
+      "projector": 1e-08
+    },
+    "published_shape_check": {
+      "dim_W": true,
+      "stabiliser_order": true,
+      "chi_norm": true,
+      "one_dim_count": true,
+      "two_dim_count": true,
+      "two_dim_j": true,
+      "faithful_j": true
+    },
+    "all_checks_passed": true
+  },
+  {
+    "q": 53,
+    "block": [
+      10,
+      35,
+      18
+    ],
+    "level": 1,
+    "c_sigma": 10,
+    "dim_W": 9,
+    "multiplier_group": [
+      1,
+      23,
+      30,
+      52
+    ],
+    "stabiliser_order": 212,
+    "dicyclic": {
+      "order": 212,
+      "expected_4q": 212,
+      "multiplier_order": 4,
+      "sqrt_minus_one_in_M": [
+        23,
+        30
+      ],
+      "order_a": 106,
+      "order_x": 4,
+      "x2_is_minus_I": true,
+      "x_inverts_a": true,
+      "generated_by_a_x": true,
+      "is_dicyclic": true
+    },
+    "invariance_defect": 3.610815104657526e-14,
+    "homomorphism_defect": 7.797282991098494e-15,
+    "chi_norm": 5.000000000000001,
+    "constituents": [
+      {
+        "irrep": "lin0",
+        "dim": 1,
+        "multiplicity": 1.0,
+        "idempotence_defect": 1.5824486699213415e-16,
+        "rank": 1,
+        "expected_rank": 1
+      },
+      {
+        "irrep": "two10",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 2.776255854743741e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two17",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 5.0361245973967395e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two36",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 7.094072852126563e-15,
+        "rank": 2,
+        "expected_rank": 2
+      },
+      {
+        "irrep": "two43",
+        "dim": 2,
+        "multiplicity": 1.0,
+        "idempotence_defect": 1.3535836836301208e-14,
+        "rank": 2,
+        "expected_rank": 2
+      }
+    ],
+    "isotypic_completeness_defect": 2.1736167692113252e-14,
+    "dimension_check": {
+      "sum_d_times_m": 9.0,
+      "dim_W": 9,
+      "ok": true
+    },
+    "multiplicity_free": true,
+    "worst_multiplicity_imaginary_part": 2.7402773938016876e-16,
+    "worst_multiplicity_integer_defect": 6.2267408210713154e-15,
+    "two_dim_j": [
+      10,
+      17,
+      36,
+      43
+    ],
+    "faithful_j": [
+      17,
+      43
+    ],
+    "admissible_carrier_count": 2,
+    "c_sigma_is_a_constituent": true,
+    "c_sigma_is_an_admissible_carrier": false,
+    "sign_pair": [
+      10,
+      43
+    ],
+    "sign_pair_are_constituents": true,
+    "sign_completed_selection": 43,
+    "sign_completed_rule_selects_an_admissible_carrier": true,
     "thresholds": {
       "invariance": 1e-08,
       "homomorphism": 1e-08,

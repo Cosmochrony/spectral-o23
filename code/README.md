@@ -31,11 +31,24 @@ Evidence for the two deposited witnesses goes to `checkpoints/dicyclic_decomposi
 (`--q/--block/--level`) writes to its own `checkpoints/dicyclic_q<q>_c<block>_n<level>.json` and can never
 overwrite the deposited combined file.
 
-The script also reports whether $c_\Sigma$ is a constituent and whether it is an admissible carrier. This
-records a candidate selector and its refutation: $c_\Sigma$ was a constituent in every dicyclic level
-examined, but at $q=53$ with block $(10,35,18)$ it is **even**, hence not faithful, so the rule
-"$j = c_\Sigma$" does not select an admissible carrier. That counterexample is stored in
-`checkpoints/dicyclic_q53_c10-35-18_n1.json`.
+The script reports both candidate selector rules per level: the **oriented** rule "$j = c_\Sigma$" and the
+**sign-completed** rule "take the unique odd member of $\{c_\Sigma, q-c_\Sigma\}$". The block
+$(53,(10,35,18),1)$, where $c_\Sigma = 10$ is a constituent but is even, refutes the oriented rule and is
+now a deposited witness covered by the kill-switch.
+
+The sign-completed rule is audited separately and its evidence deposited:
+
+```bash
+python3 o23_dicyclic_decomposition.py --selector-sweep 8     # 8 dicyclic levels per prime
+```
+
+This writes `checkpoints/selector_rule_sweep_8.json` and exits non-zero if any level fails. Deposited
+result: sign-completed rule 14/14, oriented rule 6/14. With the three deposited decompositions this gives
+17/17 for the sign-completed rule.
+
+Multiplicities are computed as complex numbers; the run reports the worst imaginary part and the worst
+distance to the nearest integer, and fails if either exceeds `TOL_MULT`, so no failure of the character
+identification can be hidden by rounding.
 
 **Status of the lift.** A genuine linear Weil representation exists for $q$ an odd prime (Weil 1964;
 Gérardin 1977). That this Bruhat-word implementation realises that genuine lift rather than a projective

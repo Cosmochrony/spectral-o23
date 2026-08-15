@@ -1,0 +1,417 @@
+{
+  "primes": [
+    53,
+    101
+  ],
+  "levels": 14,
+  "successes": 14,
+  "oriented_successes": 6,
+  "rows": [
+    {
+      "q": 53,
+      "block": [
+        2,
+        7,
+        46
+      ],
+      "c_sigma": 2,
+      "two_dim_j": [
+        2,
+        14,
+        39,
+        51
+      ],
+      "faithful_j": [
+        39,
+        51
+      ],
+      "sign_pair": [
+        2,
+        51
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 51,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        24,
+        22,
+        31
+      ],
+      "c_sigma": 24,
+      "two_dim_j": [
+        9,
+        24,
+        29,
+        44
+      ],
+      "faithful_j": [
+        9,
+        29
+      ],
+      "sign_pair": [
+        24,
+        29
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 29,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        2,
+        46,
+        7
+      ],
+      "c_sigma": 2,
+      "two_dim_j": [
+        2,
+        14,
+        39,
+        51
+      ],
+      "faithful_j": [
+        39,
+        51
+      ],
+      "sign_pair": [
+        2,
+        51
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 51,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        30,
+        1,
+        52
+      ],
+      "c_sigma": 30,
+      "two_dim_j": [
+        2,
+        23,
+        30,
+        51
+      ],
+      "faithful_j": [
+        23,
+        51
+      ],
+      "sign_pair": [
+        23,
+        30
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 23,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        18,
+        10,
+        43
+      ],
+      "c_sigma": 18,
+      "two_dim_j": [
+        18,
+        20,
+        33,
+        35
+      ],
+      "faithful_j": [
+        33,
+        35
+      ],
+      "sign_pair": [
+        18,
+        35
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 35,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        15,
+        27,
+        26
+      ],
+      "c_sigma": 15,
+      "two_dim_j": [
+        1,
+        15,
+        38,
+        52
+      ],
+      "faithful_j": [
+        1,
+        15
+      ],
+      "sign_pair": [
+        15,
+        38
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 15,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": true,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        22,
+        29,
+        24
+      ],
+      "c_sigma": 22,
+      "two_dim_j": [
+        5,
+        22,
+        31,
+        48
+      ],
+      "faithful_j": [
+        5,
+        31
+      ],
+      "sign_pair": [
+        22,
+        31
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 31,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 53,
+      "block": [
+        43,
+        18,
+        35
+      ],
+      "c_sigma": 43,
+      "two_dim_j": [
+        10,
+        17,
+        36,
+        43
+      ],
+      "faithful_j": [
+        17,
+        43
+      ],
+      "sign_pair": [
+        10,
+        43
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 43,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": true,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 101,
+      "block": [
+        26,
+        58,
+        43
+      ],
+      "c_sigma": 26,
+      "two_dim_j": [
+        15,
+        26,
+        75,
+        86
+      ],
+      "faithful_j": [
+        15,
+        75
+      ],
+      "sign_pair": [
+        26,
+        75
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 75,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 101,
+      "block": [
+        87,
+        39,
+        62
+      ],
+      "c_sigma": 87,
+      "two_dim_j": [
+        14,
+        23,
+        78,
+        87
+      ],
+      "faithful_j": [
+        23,
+        87
+      ],
+      "sign_pair": [
+        14,
+        87
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 87,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": true,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 101,
+      "block": [
+        21,
+        8,
+        93
+      ],
+      "c_sigma": 21,
+      "two_dim_j": [
+        16,
+        21,
+        80,
+        85
+      ],
+      "faithful_j": [
+        21,
+        85
+      ],
+      "sign_pair": [
+        21,
+        80
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 21,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": true,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 101,
+      "block": [
+        29,
+        13,
+        88
+      ],
+      "c_sigma": 29,
+      "two_dim_j": [
+        26,
+        29,
+        72,
+        75
+      ],
+      "faithful_j": [
+        29,
+        75
+      ],
+      "sign_pair": [
+        29,
+        72
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 29,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": true,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 101,
+      "block": [
+        68,
+        74,
+        27
+      ],
+      "c_sigma": 68,
+      "two_dim_j": [
+        33,
+        47,
+        54,
+        68
+      ],
+      "faithful_j": [
+        33,
+        47
+      ],
+      "sign_pair": [
+        33,
+        68
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 33,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": false,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    },
+    {
+      "q": 101,
+      "block": [
+        57,
+        65,
+        36
+      ],
+      "c_sigma": 57,
+      "two_dim_j": [
+        29,
+        44,
+        57,
+        72
+      ],
+      "faithful_j": [
+        29,
+        57
+      ],
+      "sign_pair": [
+        44,
+        57
+      ],
+      "sign_pair_are_constituents": true,
+      "sign_completed_selection": 57,
+      "sign_completed_rule_selects_an_admissible_carrier": true,
+      "c_sigma_is_an_admissible_carrier": true,
+      "multiplicity_free": true,
+      "all_checks_passed": true
+    }
+  ]
+}

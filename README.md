@@ -96,14 +96,20 @@ $j \in \{11,47\}$ at $q=53$ and $j \in \{41,89\}$ at $q=101$.
 
 **Consequence.** The filtration supplies a spinorial group and two admissible carriers. Each component is
 mathematically canonical — the decomposition is multiplicity-free — so what is missing is not canonicity but
-a **structurally justified** reason to prefer one admissible carrier over the other. Bridge 1 is therefore
-**displaced, not closed**, with a **twofold** residual ambiguity. No claim is made that such a selector
-cannot exist.
+a **proved** rule selecting one of the two. Bridge 1 is therefore **displaced, not closed**.
 
-One internal candidate is recorded together with its refutation: $c_\Sigma$ is a constituent in every
-dicyclic level examined, and is an admissible carrier in the two deposited witnesses, but at $q=53$ with
-block $(10,35,18)$ it is even, hence not faithful. The rule "$j = c_\Sigma$" therefore does not select an
-admissible carrier.
+A candidate selector is identified, and the paper is careful about which form of it survives:
+
+- the **oriented** rule "$j = c_\Sigma$" **fails** — at $q=53$ with block $(10,35,18)$, $c_\Sigma = 10$ is a
+  constituent but is even, hence not faithful (6/14 on the audited levels);
+- the **sign-completed** rule "take the unique odd member of $\{c_\Sigma,\, q-c_\Sigma\}$" **does not
+  fail**: it selects an admissible carrier in **17 of 17** dicyclic levels examined (three with deposited
+  decompositions, fourteen more in the deposited selector sweep).
+
+Two ingredients are immediate: exactly one of $c_\Sigma$, $q-c_\Sigma$ is odd because $q$ is odd, and both
+$\pm c_\Sigma$ always lie in $F_1$ since the frequency is $\sum_i c_i b_i$ and the word with
+$b_1=b_2=b_3=\pm1$ exists in the generating set. The remaining step — that this pair appears among the
+constituent labels — is **observed, not proved**. No claim of an irreducible ambiguity is made.
 
 ## The Two Open Bridges
 
@@ -144,8 +150,9 @@ $\Sigma_c(n_3) = 3$.
 - No **exceptional** binary polyhedral group ($2T$, $2O$, $2I$) selected: **proved, unconditional**
 - Dicyclic stabiliser with multiplicity-free spinorial content: **computational, two named witnesses**
 - Exactly two of the four constituents faithful (admissible carriers): **proved from the central character**
-- A structurally justified selector between the two admissible carriers: **open** (the candidate
-  "$j = c_\Sigma$" is refuted by an explicit counterexample)
+- A **proved** selector between the two admissible carriers: **open**; the oriented candidate
+  "$j = c_\Sigma$" is refuted, its sign-completed form survives 17/17 audited levels with one
+  unproved step
 - $\mathrm{Stab}(W_{<n}) \cong C_{2q}$: **measured on the sampled blocks**, not a theorem (Remark 4.4)
 - Filtration intersection $\{\pm 1\}$ for all generic blocks: **not established** (Remark 4.4)
 - $\Sigma_c(n_3) = 3$: **supplied selection rule / open**, awaiting the two bridges
