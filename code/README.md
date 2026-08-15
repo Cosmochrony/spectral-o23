@@ -52,11 +52,14 @@ decomposition checks. That second condition was added after an audit showed the 
 `TOL_HOM` forced to zero every row failed its checks while the sweep still reported full success and exited
 0. Verified: tampered run now exits 6, untampered exits 0.
 
-Deposited result: sign-completed rule 14/14 rows, oriented rule 6/14. Counting **distinct exact subspaces**
-rather than rows, the 14 rows realise 11 distinct $W_{<1}$, of which 10 are new relative to the three
-deposited witnesses, giving 13 distinct levels in total. The run reports rows per prime, the distinct count,
-and warns when the search exhausts the available blocks before reaching its quota (it does at $q=101$, where
-only 6 of the requested 8 exist under this seed).
+Deposited result: sign-completed rule 14/14 rows, oriented rule 6/14. Two counts matter, because the
+selector is a function of the pair $(W_{<1}, \rho_{c_\Sigma})$ and not of the subspace alone — distinct
+blocks may realise the same subspace under different ambient central characters. With the three deposited
+witnesses the audit is **17 typed instances** over **13 distinct underlying subspaces** $W_{<1}$ (the 14
+sweep rows realise 11 distinct subspaces, 10 of them new). The run reports rows per prime, the distinct count,
+and warns when it returns fewer instances than requested. That happens at $q=101$, where the search stops on
+its **draw budget** of 20 000 random blocks and returns 6 of the 8 requested. This is a budget cutoff, not
+evidence that only 6 admissible blocks exist.
 
 Multiplicities are computed as complex numbers; the run reports the worst imaginary part and the worst
 distance to the nearest integer, and fails if either exceeds `TOL_MULT`, so no failure of the character

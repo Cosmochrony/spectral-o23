@@ -52,55 +52,41 @@ Conditional Status of the Threefold Admissibility Threshold\\
   \maketitle
 
   \begin{abstract}
-    O21 defined the observable shell $n_{3}$ via the threshold condition
-    $\Sigma_{c}(n_{3}) = 3$ and used it as structural input for the fibre-level transfer
-    $\dpair \to \bstar$.
-    The present paper determines the exact status of the value three in that threshold.
+    O21 defined the observable shell $n_{3}$ by the threshold $\Sigma_{c}(n_{3}) = 3$ and used it
+    as structural input.
+    This paper determines the exact status of the value three.
     The positive result is conditional: if the admissible neutral sector is carried by an
-    irreducible two-dimensional $\SU(2)$-valued representation $V_{\rho} \cong \mathbb{C}^{2}$,
-    then its traceless neutral sector is the real Lie algebra $\su(2) \cong \ImH$, of real
-    dimension exactly three.
-    This is a representation-theoretic theorem about the supplied carrier, and it explains why a
-    spinorial neutral sector carries three independent directions.
-    Two bridges separate it from a derivation of $\Sigma_{c}(n_{3}) = 3$, and both are open.
+    irreducible two-dimensional $\SU(2)$-valued $V_{\rho} \cong \mathbb{C}^{2}$, its traceless
+    neutral sector is $\su(2) \cong \ImH$, of real dimension exactly three.
+    Two bridges separate this theorem from a derivation of the threshold, and both are open.
 
-    The first is carrier selection, and the paper determines exactly what one candidate source
-    supplies.
-    The fingerprint vectors of the deposited O12 shell-span filtration are pure Fourier modes,
-    so every proper level is a coordinate subspace whose Weyl support is a single line, and the
-    exact stabiliser of that level in the Weil image of $\SL(2,\mathbb{Z}/q\mathbb{Z})$ is the
-    metacyclic group $U \rtimes M_{n}$ inside the corresponding Borel subgroup.
+    On the first, carrier selection, the paper determines what one candidate source supplies.
+    The fingerprint vectors of the deposited O12 filtration are pure Fourier modes, so every
+    proper level is a coordinate subspace with single-line Weyl support, and the exact stabiliser
+    of that level in the Weil image of $\SL(2,\mathbb{Z}/q\mathbb{Z})$ is $U \rtimes M_{n}$,
+    inside a Borel subgroup.
     This excludes the exceptional binary polyhedral groups $2T$, $2O$ and $2I$ at every proper
-    level, including at the primes where they exist in the ambient group.
-    It does not exclude a spinor carrier.
-    Dicyclic groups are metacyclic, and at explicit generic levels at $q = 53$ and $q = 101$ the
-    stabiliser is $\mathrm{Dic}_{q}$, whose restricted Weil module decomposes multiplicity-freely
-    as one character together with four pairwise inequivalent two-dimensional irreducible
-    representations, of which exactly two are faithful and therefore admissible carriers.
-    That source supplies genuine spinorial content, and each component is canonical because the
-    decomposition is multiplicity-free; what it does not yet supply is a \emph{proved} rule
-    selecting one admissible carrier.
-    A structurally motivated candidate is available and survives every audit performed: take the
-    unique odd member of the pair $\{c_{\Sigma},\, q - c_{\Sigma}\}$ formed from the ambient
-    central character.
-    It selects an admissible carrier in all thirteen distinct dicyclic levels examined, and one
-    step of its justification remains unproved.
-    That candidate operates inside a level already known to be dicyclic, so the bridge as a whole
-    is not reduced to it: selecting which prime, block and level the projection should single out
-    within the generic filtration remains a separate open step.
-    What the analysis removes is the non-existence reading: the source does supply
-    two-dimensional modules, and the residual difficulty is selection at two distinct levels of
-    the construction.
+    level, including at primes where they exist in the ambient group.
+    It does not exclude a spinor carrier: at explicit generic levels at $q = 53$ and $q = 101$
+    the stabiliser is $\mathrm{Dic}_{q}$, whose restricted Weil module is multiplicity-free, one
+    character plus four inequivalent two-dimensional irreducibles, exactly two of them faithful
+    and $\SU(2)$-valued.
+    The source therefore supplies genuine spinorial content, and the difficulty is selection, not
+    existence.
+    It splits in two: selecting which prime, block and depth the projection singles out within
+    the generic filtration, which nothing here addresses; and, inside a level already known to be
+    dicyclic, choosing between the two admissible carriers, for which a structurally motivated
+    candidate --- the unique odd member of $\{c_{\Sigma}, q - c_{\Sigma}\}$ --- succeeds on all
+    $17$ audited instances over $13$ distinct subspaces, with one step observed and not proved.
 
     The second bridge is observable identification: no theorem identifies the cumulative
-    Gram--Schmidt span $\Sigma_{c}$ of O21 with the dimension of the neutral traceless module,
-    and since $n_{3}$ is defined as the shell where $\Sigma_{c}$ reaches three, the threshold
-    remains a supplied selection rule.
-    A structural caution accompanies the positive result: in the faithful two-dimensional
-    representation of $Q_{8}$ the set $\{\pm\mathbf{i}, \pm\mathbf{j}\}$ generates the group
-    with only two generator axes, the third direction arising only under commutator closure.
-    The ADE observation of three non-trivial eigenvalue classes is retained as a consistency
-    check compatible with, but not probative of, the threefold structure.
+    Gram--Schmidt span $\Sigma_{c}$ with the dimension of the neutral traceless module, so the
+    threshold remains a supplied selection rule.
+    A caution accompanies the positive result: in the faithful two-dimensional representation of
+    $Q_{8}$ the set $\{\pm\mathbf{i}, \pm\mathbf{j}\}$ generates the group with only two
+    generator axes.
+    The ADE observation of three eigenvalue classes is retained as a consistency check, not as
+    evidence.
   \end{abstract}
 
   \paragraph{Keywords.}
@@ -683,10 +669,25 @@ Conditional Status of the Threefold Admissibility Threshold\\
       equal to one, and $1 + 4 \times 2 = 9$.
 
       Exactly two of the four are admissible carriers.
-      Writing $V_{j}$ for the two-dimensional irreducible with
-      $\chi_{j}(a^{m}) = 2\cos(\pi j m / q)$, the central element $a^{q} = -\mathbb 1$ acts by
-      $(-1)^{j}$, so $V_{j}$ is faithful, and $\SU(2)$-valued in the sense required by
-      Theorem~\ref{thm:adjoint-dimension}, if and only if $j$ is odd.
+      Write $V_{j}$, for $1 \le j \le q-1$, for the two-dimensional irreducible determined by
+      $\rho_{j}(a) = \mathrm{diag}(\omega^{j}, \omega^{-j})$ with $\omega$ a primitive
+      $2q$-th root of unity and
+      $\rho_{j}(x) = \left(\begin{smallmatrix} 0 & 1 \\ (-1)^{j} & 0 \end{smallmatrix}\right)$,
+      so that $\chi_{j}(a^{m}) = 2\cos(\pi j m / q)$.
+      Two conditions must be checked, and they coincide.
+      \emph{Faithfulness.} $\rho_{j}$ is faithful exactly when $\rho_{j}(a)$ has order $2q$,
+      that is when $\omega^{j}$ is again a primitive $2q$-th root of unity, that is when
+      $\gcd(j, 2q) = 1$.
+      Since $q$ is prime and $1 \le j \le q-1$, the factor $q$ never divides $j$, so
+      $\gcd(j, 2q) = 1$ reduces to $\gcd(j,2) = 1$, i.e.\ to $j$ odd.
+      Equivalently, the central element $a^{q} = -\mathbb 1$ acts by $(-1)^{j}$, and acts
+      trivially exactly when $j$ is even.
+      \emph{Determinant one.} Being $\SU(2)$-valued in the sense required by
+      Theorem~\ref{thm:adjoint-dimension} additionally requires $\det \rho_{j} \equiv 1$.
+      Here $\det \rho_{j}(a) = \omega^{j} \omega^{-j} = 1$ always, while
+      $\det \rho_{j}(x) = -(-1)^{j} = (-1)^{j+1}$, which equals $1$ exactly when $j$ is odd.
+      Both conditions therefore select the same indices, and $V_{j}$ is an admissible carrier if
+      and only if $j$ is odd.
       The constituents are $j \in \{6, 11, 42, 47\}$ at $q = 53$ and
       $j \in \{12, 41, 60, 89\}$ at $q = 101$, so the admissible ones are $j \in \{11, 47\}$
       and $j \in \{41, 89\}$ respectively.
@@ -824,13 +825,17 @@ Conditional Status of the Threefold Admissibility Threshold\\
       $b_{1} = b_{2} = b_{3} = \pm 1$ is available in the deposited generating set.
       The remaining step, that the pair $\{c_{\Sigma}, q - c_{\Sigma}\}$ appears among the
       labels of the two-dimensional constituents, is observed and not proved.
-      It held, together with the selection of an admissible carrier, in every level audited.
-      The count is stated in distinct exact subspaces rather than in runs: the three levels with
-      deposited decompositions and the deposited selector sweep together comprise $13$ distinct
-      subspaces $W_{<1}$ ($14$ sweep rows realise $11$ distinct subspaces, of which $10$ are new
-      relative to the three witnesses), and the rule succeeded on all $13$.
-      The sweep also exhausted the available blocks at $q = 101$ before reaching its quota,
-      which the run reports.
+      It held, together with the selection of an admissible carrier, in every case audited.
+      Two counts are reported, because the selector is a function of the pair
+      $(W_{<1}, \rho_{c_{\Sigma}})$ and not of the subspace alone: distinct blocks may realise
+      the same subspace while carrying different ambient central characters, hence different
+      instances of the rule.
+      The audit comprises $17$ typed instances --- three deposited decompositions and fourteen
+      sweep rows --- realised on $13$ distinct underlying subspaces $W_{<1}$, and the rule
+      succeeded on all $17$.
+      At $q = 101$ the sweep stopped on its draw budget of $20\,000$ random blocks rather than
+      on an exhaustion of the admissible blocks, returning six instances instead of the eight
+      requested; the run reports this.
 
       Consequently no claim of an irreducible twofold ambiguity is made.
       What is established is that two admissible carriers are present and that a structurally
@@ -927,13 +932,22 @@ Conditional Status of the Threefold Admissibility Threshold\\
     projection structure, and an observable-identification theorem for $\Sigma_{c}$.
     Both are open problems of the programme, and the second requires in addition a rank
     measurement protocol that does not fix the target dimension in advance.
-    What Section~\ref{ssec:o12-obstruction} contributes to the first is a change in its type.
+    What Section~\ref{ssec:o12-obstruction} contributes to the first is a change in its type,
+    and a decomposition into two steps rather than one.
     Before, Bridge~1 asked for a two-dimensional carrier and no source was known to produce one.
     Now a source is known to produce two admissible ones, canonically defined and inequivalent,
-    at explicit levels; the bridge asks for a justified selector between them.
-    That is a strictly smaller gap, and a testable one: a candidate selector can be checked
+    at explicit levels.
+    The bridge accordingly splits.
+    Its first step is the selection of an admissible level: which prime, which generic block and
+    which depth the projection is supposed to single out within the generic filtration, dicyclic
+    levels being sparse among generic blocks.
+    Nothing in this paper addresses that step, and it is not reduced by anything proved here.
+    Its second step, internal to a level already known to be dicyclic, is a justified selector
+    between the two admissible carriers; that step is testable, and a candidate can be checked
     against the components directly, as is done in Remark~\ref{rem:o12-scope}, where the
     oriented rule $j = c_{\Sigma}$ is refuted and its sign-completed form is not.
+    Only the second step is reduced to a well-posed proof obligation; the first remains
+    untouched.
 
   \subsection{Relation to O21--O22}
     \label{ssec:conditional}
