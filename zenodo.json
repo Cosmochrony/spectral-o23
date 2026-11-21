@@ -3,5 +3,6 @@
   "web_url": "https://cosmochrony.org/science/spectral/program/o23/",
   "main_tex": "tex/SpectralO23.tex",
   "zenodo_id": 19375136,
-  "doi": "10.5281/zenodo.19375136"
+  "doi": "10.5281/zenodo.19375136",
+  "notes": "Version 2.1.1. The bibliography entry for O22 carries its version-1.19 title, 'Projection Locking of the Saturation Depth: A Discrete Admissibility Theorem under Born-Infeld Saturation' (formerly 'Shell-Alignment from Projection Locking'). The README describes O22 1.19: a realisable Born-Infeld saturation depth lies on a BFS shell under O22's definition of realisability, and the withdrawn Corollary 5.1 leaves the O21 shell-alignment conjecture open. No other change."
 }
