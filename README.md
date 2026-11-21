@@ -3,7 +3,7 @@ This repository contains the source of the **O23 Cosmochrony paper**
 Conditional Status of the Threefold Admissibility Threshold*.
 
 This work belongs to the **spectral admissibility sub-programme** and determines the exact status of the
-value three in the threshold condition isolated by **O21** and **O22**:
+value three in the threshold condition isolated by **O21**:
 
 > A spinorial neutral sector carries exactly three independent directions;
 > the threshold $\Sigma_c(n_3) = 3$ is a supplied selection rule compatible with that structure, not a derived constant.
@@ -22,8 +22,10 @@ value three in the threshold condition isolated by **O21** and **O22**:
 
 **O22** proved that:
 
-- saturation necessarily occurs on a BFS shell (projection locking)
-- shell-alignment is a theorem, not a conjecture
+- under its definition of physical realisability, a realisable Born–Infeld saturation depth lies on a BFS
+  shell (projection locking)
+- it does not identify that depth with the O21 rank $n_3^{\mathrm{obs}}$; O22 1.19 withdraws the former
+  corollary that did, so the O21 shell-alignment conjecture remains open
 
 The value **3** entering the threshold is the object of the present paper.
 
